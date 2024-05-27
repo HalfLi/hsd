@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/* body에 선언한 글자의 스타일은 body내부의 태그에 상속이 됨 (단, 글자 속성만) */
+body {
+    color: #3d3d3d; /* 글자 색상 */
+    font-family: "Noto Sans KR", sans-serif; /* 서체 */
+    font-size: 15px; /* 글자 크기 */
+    font-weight: 400; /* 글자 두께 (regular 400) */
+    letter-spacing: -0.05em; /* 글자 자간 */
+    line-height: 1.4; /* 행간 - 1.4배수 */
+    word-break: keep-all; /* 단어별로 줄바꿈 */
+}
+/* 모든 태그의 여백을 모두 삭제 - 필요한 여백을 내가 줌 */
+* {
+    padding: 0;
+    margin: 0;
+}
+/* 홈페이지의 넓이를 제한하고 브라우저의 가운데 정렬 */
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 20px;
+    color: #20c85a;
+    font-weight: 400;
+    margin: 50px 0 20px 0;
+
+}
+.tit {
+    color: #1d1d1d;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+
+}
+p {
+    margin: 0 0 36px 0;
+}
+.photo {
+    margin: 0 0 36px 0;
+}
+strong {
+    color: #20c85a;
+    font-weight: 700;
+}
