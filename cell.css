@@ -1,0 +1,33 @@
+/* 본고딕을 웹폰트로 선언하는 css 불러오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+h1 {
+    color:#20c85a;
+    font-size: 25px;
+    margin: 55px 0 30px 0; /* 위-오른쪽-아래-왼쪽 시계방향 */   
+}
+p {
+    font-size: 20px;
+    color: #2d2d2d;
+    letter-spacing: -0.05em;
+    word-break: keep-all;
+    margin: 0 0 50px 0;
+}
+.tit {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    line-height: 1.2;
+    
+}
