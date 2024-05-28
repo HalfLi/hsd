@@ -1,0 +1,104 @@
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+/* 홈페이지 전체에 적용될 기본 글자 스타일 */
+body {
+    font-family: "Pretendard";
+    font-weight: 400;
+    color: #3d3d3d;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    font-size: 20px;
+    word-break: keep-all;
+}
+/* 홈페이지의 넓이를 제한하고 브라우저의 가운데 정렬 */
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+/* 모든 태그의 여백을 모두 삭제 - 필요한 여백을 내가 줌 [* <- 와일드카드 ] */ 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* 높이/넓이가 padding때문에 늘어나는 현상을 막는 속성 [box-sizing : border-box] */
+}
+em { /* 태그의 기울임 스타일 삭제 */
+    font-style: normal;
+    font-weight: 700;
+}
+.intro {
+    text-align: center;
+    margin: 110px 0 170px 0;
+}
+.biz {
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 80px 0 80px 0;
+}
+.intro h1,
+.biz h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.intro p,
+.biz p {
+    color: #666666;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.intro p em,
+.biz p em {
+    color: #1d1d1d;
+}
+.intro p strong,
+.biz p strong {
+    color: #0091ff;
+}
+.company h1 {
+    color: #1d1d1d;
+    font-size: 50px;
+    font-weight: 400;
+    margin: 120px 0 60px 0;
+}
+.company {
+    margin: 0 0 100px 0;
+}
+.company p strong {
+    color: #1d1d1d;
+    font-weight: 700;
+}
+.overview {
+    /* 배경에 아무리 커다란 이미지를 넣어도 그 영역이 존재하는 만큼만 보임 
+    [즉 영역이 작으면 이미지 짤림] */
+    background: url(../images/overview_bg.png) no-repeat center center / cover;
+    height: 375px;
+    color: #ffffff;
+    /* 배경때문에 글자의 색상이 변경되었다면, 배경과 글자색상을 동시에 선언하는게 좋음*/
+    text-align: right;
+    padding: 80px 80px 0 0;
+    
+}
+.overview h1 {
+    margin: 0 0 60px 0;
+}
+.overview p {
+    font-size: 20px;
+    font-weight: 400;
+}
+.overview p strong {
+    font-weight: 700;
+    text-decoration: underline;
+}
