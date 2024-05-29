@@ -60,7 +60,7 @@ html, body {
 }
 
 .core {
-    margin: 92px 0 200px 0;
+    margin: 92px 0 0 0;
     display: flex;
 }
 .core .text {
@@ -78,4 +78,40 @@ html, body {
 }
 .core .photo img {
     border-radius: 30px;
+}
+.reqm h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 170px 0 65px 0;
+    text-align: center;
+}
+.reqm ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.reqm ul li {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    width: 511px;
+    height: 264px;
+    padding: 165px 0 0 35px;
+    border-radius: 30px;
+    margin: 0 12px 24px 12px;
+
+    
+}
+.reqm ul li:nth-child(1) {
+    background-image: url(../images/reqm1.png);
+}
+.reqm ul li:nth-child(2) {
+    background-image: url(../images/reqm2.png);
+}
+.reqm ul li:nth-child(3) {
+    background-image: url(../images/reqm3.png);
+}
+.reqm ul li:nth-child(4) {
+    background-image: url(../images/reqm4.png);
 }
