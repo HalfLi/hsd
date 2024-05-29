@@ -1,0 +1,17 @@
+/* 태그의 스타일 초기화 - 브라우저가 태그에 준 스타일 모두 삭제 */
+* {
+    padding: 0;
+    margin: 0; /* 모든태그 여백삭제 */ 
+    box-sizing: border-box; /* width/padding을 같이주면 width가 늘어나는 현상을 막음 */
+}
+li { /* ul li에 도트 삭제 */
+    list-style: none;
+}
+/* 글자 크기가 커지고, 두꺼워지는 스타일 삭제 */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit; /* 상위요소에서 정의된대로 상속 inherit */
+    font-weight: inherit;
+}
+em {
+    font-style: normal;
+}
