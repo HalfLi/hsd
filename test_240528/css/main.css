@@ -119,9 +119,13 @@ li {
     font-weight: 400;
 }
 .color h2 {
-    margin: 80px 0 10px 0;
+    margin: 80px 0 25px 0;
     color: #1d1d1d;
     font-size: 25px;
+    font-weight: 400;
+}
+.color h3 {
+    font-size: 15px;
     font-weight: 400;
 }
 .color ul {
@@ -152,10 +156,7 @@ li {
 .color ul li.silver {
     background-color: #8d908f;
 }
-.color h3 {
-    font-size: 15px;
-    font-weight: 400;
-}
 .color p {
     font-size: 12px;
+    margin: 10px 0 0 0;
 }
