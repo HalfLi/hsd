@@ -45,7 +45,7 @@ html, body {
     font-size: 16px;
     font-weight: 500; /* 얘는 px 안들어감 */
     color: #3d3d3d;
-    line-height: auto; /* 행간 */
+    line-height: 1.6; /* 행간 */
     letter-spacing: 0; /* 자간 */
     word-break: keep-all;
 }
