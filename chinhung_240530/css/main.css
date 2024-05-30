@@ -1,0 +1,104 @@
+@import url(../css/default.css);
+/*--------------여기서 폰트추가-------------------*/
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+
+    
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+
+    
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Midium'), url(../fonts/Pretendard-Medium.woff2) format('woff2'), url(../fonts/Pretendard-Medium.woff) format('woff');
+
+    
+}
+
+.wrapper { /* 홈페이지 넓이를 제한하고 넓이 가운데정렬 */
+    width: 1260px;
+    margin: 0 auto;
+}
+
+html, body {
+    /* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
+    font-family: "Pretendard", sans-serif;
+    font-size: 15px;
+    font-weight: 400; /* 글자두께 얘는 px 안들어감 */
+    color: #3d3d3d;
+    line-height: 1.4; /* 행간 */
+    letter-spacing: 0; /* 자간 */
+    word-break: keep-all;
+}
+
+/* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 30px 0 0 0;
+}
+header .gnb ul {
+    display: flex;   
+}
+header .gnb ul li a {
+    font-size: 22px;
+    color: #1d1d1d;
+    line-height: 100px; /* header와 같은 높이의 값을 줌 */
+    /* 행간을 100px를 주면 높이 100px안에 (header에 준 height값) 같은 값 글자가 위아래 가운데로 정렬 */
+    display: block; /* inline요소인 a를 block으로 변경하게 해줌 */
+    padding: 0 29px;
+}
+header .gnb ul li a:hover { /* :hover 마우스를 오버 했을때 */
+    font-weight: 900;
+    color: #114294;
+    text-decoration: overline;
+}
+.visual {
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    height: 700px;
+    color: #fff;
+    text-align: center;
+}
+.visual h2 {
+    font-size: 65px;
+    font-weight: 800;
+    line-height: 1.1;
+    padding: 200px 0 25px 0;
+}
+.biz .title h2 {
+    color: #1774d0;
+    padding: 100px 0 0 0;
+}
+.biz .title p {
+    font-size: 50px;
+    font-weight: 800;
+    color: #1d1d1d;
+    margin-bottom: 35px;
+}
+.biz .list ul {
+    display: flex;
+}
