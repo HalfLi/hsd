@@ -12,6 +12,9 @@ h1, h2, h3, h4, h5, h6, strong {
     font-size: inherit; /* 상위요소에서 정의된대로 상속 inherit */
     font-weight: inherit;
 }
+address {
+    font-style: normal;
+}
 em { /* 글자 기울임 */
     font-style: normal;
 }

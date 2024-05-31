@@ -99,6 +99,92 @@ header .gnb ul li a:hover { /* :hover 마우스를 오버 했을때 */
     color: #1d1d1d;
     margin-bottom: 35px;
 }
-.biz .list ul {
+.biz .list ul { /* flex는 기본 왼쪽정렬 */
     display: flex;
+    justify-content: space-between;
+}
+.biz .list ul li { /* 넓이 제한으로 이미지 크기 제한 */
+    width: 297px;
+    text-align: center;
+}
+.biz .list ul li a {
+    display: block;
+}
+
+.biz .list ul li a h3 {
+    text-align: center;
+    font-size: 35px;
+    color: #1d1d1d;
+    margin: 20px 0 20px 0;
+}
+.biz .list ul li p {
+    margin: 0 13.5pt 25pt 13.5pt;
+}
+.biz .list ul li a .more {
+    width: 244px;
+    height: 46px;
+    line-height: 46px; /* 행간을 박스 높이와 똑같이 주면 가운데 정렬 */
+    border: 1px solid #cccccc; /* 선 두께,선 종류,선 색상 순서 */
+    display: inline-block; /*  */
+}
+
+.brand {
+    background: url(../images/brand_bg.png) no-repeat center center / cover;
+    color: #ffffff;
+    height: 1201px;
+    margin: 121px 0 0 0;
+}
+.brand h2 { /* strong태그로 줬다면 inline로 인식해서 padding,margin값 안먹음
+            그래서 display: inline-block으로 바꿔줘야함 */
+    font-size: 30px;
+    font-weight: 800;
+    color: #1774d0;
+    padding: 75px 0 10px 0;
+} 
+.brand p {
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 1.1;
+    padding: 0 0 30px 0;
+}
+.brand a {
+    border: 1px solid rgba(255,255,255, 0.6);
+    padding: 13px 50px; /* 위아래 13, 좌우양옆 50px */
+    display: inline-block;
+    /*   width: 243px;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    display: inline-block; 
+    이거는 고정된 사이즈의 박스버튼을 만들때 사용 /위의 본문코딩 경우에는 언제나 상하좌우 여백이 동일하게 들어가는 버튼 만들때 사용*/
+}
+footer { /* footer여백은 웬만하면 항상 footer자체에 주는게 좋음 */
+    background-color: #333333;
+    color: rgba(255,255,255,0.8);
+    padding: 30px 0 52px 0;   
+}
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li {
+    margin: 0 39px 0 0;
+}
+/* li.privacy (여백없음) li중에서 privacy라는 클래스명을 가진 클래스 지칭
+    (여백)li.privacy (여백있음) li안에서 privacy라는 클래스명을 갖은 요소 지칭*/
+footer .f_nav ul li.privacy {
+    font-weight: 700;
+}
+footer .f_sub {
+   border-top: 1px solid rgba(255,255,255, 0.2);
+   margin: 33.5px 0 0 0; /* 선 밖 여백 */
+   padding: 33.5px 0 0 0; /* 선 내부 여백 */
+}
+footer .f_sub .f_info span {
+    margin: 0 36px 10px 0;
+    display: inline-block;
+}
+footer .f_sub .copy {
+    margin: 40px 0 0 0;
+    color: rgba(255,255,255,0.8);
 }
