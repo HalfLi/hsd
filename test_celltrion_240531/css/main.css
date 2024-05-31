@@ -1,0 +1,160 @@
+@import url(../css/default.css);
+/*--------------여기서 폰트추가-------------------*/
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+
+    
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+
+    
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Midium'), url(../fonts/Pretendard-Medium.woff2) format('woff2'), url(../fonts/Pretendard-Medium.woff) format('woff');
+
+    
+}
+#wrap{ /* (#은 id를 지칭) 홈페이지 전체를 감싸는 요소 */
+    min-width: 1260px;
+}
+
+.wrapper { /* 홈페이지 넓이를 제한하고 넓이 가운데정렬 */
+    width: 1260px;
+    margin: 0 auto;
+}
+
+html, body {
+    /* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
+    font-family: "Pretendard", sans-serif;
+    font-size: 15px; /* 글자크기 */
+    font-weight: 700; /* 글자두께 얘는 px 안들어감 */
+    color: #1d1d1d; /* 글자색상*/
+    line-height: 1.2; /* 행간 */
+    letter-spacing: 0; /* 자간 */
+    word-break: keep-all; /* 단어별 줄바꿈 */
+}
+/* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+.notice h1 {
+    font-size: 60px;
+    margin: 150px 0 20px 0;
+}
+.notice ul {
+    display: flex;
+    justify-content: space-between;
+}
+/*
+    li와 a사이즈를 같게 하기 위해서....
+    <li> ----- 너비값 설정 추천
+        <a>
+        </a> ---- 높이값 설정 추천
+    </li>
+    a에 높이를 주면 li는 a의 높이값을 동일하게 갖음
+    감싸는 요소는 내부요소의 높이값만큼 높이가 생성됨.
+    (안에 있는 것이 늘어나면 밖에 있는 것은 같이 늘어남)
+    [ li에는 넓이값!!!!!! a에는 높이값!!!!! ]
+*/
+.notice ul li {
+    width: 404px;
+}
+.notice ul li a {
+    height: 320px;
+    display: block; /* block으로 넓이 100% */
+    background-color: #f1f1f1;
+    border-radius: 30px;
+    padding: 46px 35px 0 35px;
+}
+.notice ul li a strong {
+    display: block;
+    color: #1d1d1d;
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+.notice ul li a .memo {
+    display: block;
+    color: rgba(29,29,29,0.6);
+}
+.notice ul li a .group {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(29,29,29,0.3);
+    color: rgba(29,29,29,0.6);
+    margin: 18px 0 0 0;
+    padding: 10px 0 0 0;
+}
+/* 마우스오버시 나타내는 효과 */
+.notice ul li a:hover {
+    background-color: #0c7dfc;
+}
+/* a에 마우스를 올렸을때 strong 효과 */
+.notice ul li a:hover strong { 
+    color: rgba(255,255,255,1.0);
+}
+.notice ul li a:hover .group {
+    border-top: 1px solid rgba(255,255,255,0.3)
+}
+.notice ul li a:hover .memo {
+    color: rgba(255,255,255,0.6);
+}
+.bbs ul {
+    display: flex;
+    margin: 60px 0 0 0;
+    justify-content: space-between;
+}
+.bbs ul li {
+    width: 404px;
+}
+.bbs ul li a {
+    background-color: #f1f1f1;
+    height: 318px;
+    border-radius: 30px;
+    display: block;
+    padding: 43px 32px 0 32px;
+    border: 3px solid #f1f1f1;
+     /* border값과 padding값 합산값이 여백으로 들어감
+        -여백이 더 많아짐.
+        border값 만큼 padding에서 빼줘야함 */
+}
+.bbs ul li a h2 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+}
+.bbs ul li a p {
+    color: rgba(29,29,29,0.6);
+}
+.bbs ul li a div {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(29,29,29,0.6);
+    border-top: 1px solid rgba(29,29,29,0.3);
+    margin: 18px 0 0 0;
+    padding: 10px 0 0 0;
+}
+/* 마우스를 오버했을때 border를 주고자 한다면 
+원래 border가 있는데 색상만 변경된 것으로 해야함
+(배경색,두께를 같게 해둠) */
+.bbs ul li a:hover {
+    border: 3px solid #0c7dfc;
+    /* 그림자 효과 순서대로 distance,spread,size,color(rgba)*/
+    box-shadow: 5px 0 7px rgba(12,125,252,0.3);
+}
