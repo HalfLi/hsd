@@ -155,6 +155,6 @@ html, body {
 (배경색,두께를 같게 해둠) */
 .bbs ul li a:hover {
     border: 3px solid #0c7dfc;
-    /* 그림자 효과 순서대로 distance,spread,size,color(rgba)*/
+    /* 그림자 효과 (box-shadow) 순서대로 distance,spread,size,color(rgba)*/
     box-shadow: 5px 0 7px rgba(12,125,252,0.3);
 }
