@@ -63,6 +63,12 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 	display: block; /* 인라인요소는 여백 적용x block으로 바꿈 */
 	font-weight: 600;
 }
+.visual .point {
+	color: #8ECAE6;
+}
+.visual .point2 {
+	color: #FFB703;
+}
 .visual h2 {
 	font-size: 40px;
 	font-weight: 600;
