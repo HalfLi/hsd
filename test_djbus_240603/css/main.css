@@ -1,56 +1,69 @@
 @import url(default.css);
-/*--------------여기서 폰트추가-------------------*/
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 700;
-	font-display: swap;
-	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
-}
+@import url(fonts.css); /* <이게 폰트 불러옴 */
 
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 400;
-	font-display: swap;
-	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
-
-    
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 900;
-	font-display: swap;
-	src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
-
-    
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 500;
-	font-display: swap;
-	src: local('Pretendard Midium'), url(../fonts/Pretendard-Medium.woff2) format('woff2'), url(../fonts/Pretendard-Medium.woff) format('woff');
-
-    
-}
 #wrap{ /* (#은 id를 지칭) 홈페이지 전체를 감싸는 요소 */
     min-width: 1260px;
 }
 
 .wrapper { /* 홈페이지 넓이를 제한하고 넓이 가운데정렬 */
     width: 1260px;
-    margin: 0 auto;
+    margin: 0 auto; /* 가운데정렬 이유는 아직 몲 */
 }
-
+/* 글자의 스타일은 상속받음. 기본 글자의 스타일은 모든 태그를 감싸는 html,body에 선언함. */
 html, body {
     /* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
     font-family: "Pretendard", sans-serif;
-    font-size: 16px; /* 글자크기 */
+    font-size: 15px; /* 글자크기 */
     font-weight: 500; /* 얘는 px 안들어감 */
-    color: #1d1d1d; /* 글자색상*/
-    line-height: auto; /* 행간 */
-    letter-spacing: 0; /* 자간 */
+    color: #2d2d2d; /* 글자색상*/
+    line-height: 1.2; /* 행간 [글자크기의 배수] */
+    letter-spacing: 0em; /* 자간 */
     word-break: keep-all; /* 단어별 줄바꿈 */
 }
 
 /* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+header {
+    height: 100px;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+	margin: 22px 0 0 0;
+}
+header .gnb ul {
+    display: flex;   
+}
+/* 1차메뉴는 큼직하게 눌려야 함. 그래서 a에 속성을 줌[여백,사이즈] */
+header .gnb ul li a {
+    font-size: 20px;
+    color: #1d1d1d;
+    display: block; /* inline요소인 a를 block으로 변경하게 해줌 */
+    padding: 39px 25px 37px 25px; /* (좌우)사이여백의 반값을 줌 */
+}
+header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
+    font-weight: 600;
+    color: #FFB703;
+    text-decoration: overline;
+}
+
+.visual {
+	height: 720px;
+	background-image: url(../images/visual_bg_test.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background를 한번에 선언하는 방법 (1.url (이미지 경로) 2.no-repeat (반복) 3.center center (위치) / cover (이미지 채움) */
+	background: url(../images/visual_bg.png) no-repeat center center / cover;
+	color: #fff;
+}
+.visual strong {
+	padding: 175px 0 0 0;
+	display: block; /* 인라인요소는 여백 적용x block으로 바꿈 */
+	font-weight: 600;
+}
+.visual h2 {
+	font-size: 40px;
+	font-weight: 600;
+}

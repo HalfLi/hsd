@@ -9,10 +9,29 @@
 <body>
     <!-- 홈페이지 전체를 감싸는 요소 [id는 class와는 다른 선택자] , [id명은 절대 중복사용 불가] -->
     <div id="wrap">
-        <header></header>
+        <header>
+            <div class="wrapper"> <!-- 레이아웃을 감싸는 영역 -->
+                <!-- 로고를 클릭하면 무조건 첫페이지 링크 -->
+                <h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="대전복합터미널 Daejeon Terminal Complex 로고"></a></h1>
+                <!-- global navigation bar -->
+                <nav class="gnb">
+                    <ul> <!-- 임시링크 #n (href ="" 이렇게 두면 클릭시 새로고침됨 a태그에 href 속성 없으면 스타일변경 )-->
+                        <li><a href="#n">대전복합터미널 개요</a></li>
+                        <li><a href="#n">DTC아트센터</a></li>
+                        <li><a href="#n">홍보마당</a></li>
+                        <li><a href="#n">고객지원 센터</a></li>
+                        <li><a href="#n">(재)이구열 장학재단</a></li>
+                    </ul>
+                </nav>
+            </div> <!-- wrapper -->
+        </header> <!-- header -->
         <div class="container"> <!-- header와 footer를 제외한 나머지 전부를 container -->
-            <section class="visual">
-                ㅇ
+            <section class="visual"> <!-- section태그 안에는 무조건 h2~h6 속성이 들어가야함 -->
+                <div class="wrapper">
+                    <strong>365일 불이 꺼지지 않는 곳</strong>
+                    <h2>‘친절’과 ‘근면’ 정신이 담긴 대중교통 허브<br>
+                        고객의 <span style="color: #8ECAE6;">행복</span>과 <span style="color: #8ECAE6;">만족</span> 그리고 <span style="color: #FFB703;">밝은 내일을 위한 가치</span></h2> 
+                </div> <!-- visual wrapper -->
             </section> <!-- visual -->
             <section class="introduce">
                 <div class="art">
