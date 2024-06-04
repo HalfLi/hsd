@@ -1,7 +1,7 @@
 @import url(default.css);
 @import url(fonts.css); /* <이게 폰트 불러옴 */
 
-#wrap{ /* (#은 id를 지칭) 홈페이지 전체를 감싸는 요소 */
+#wrap{ /* (#은 id를 지칭) 홈페이지 전체를 감싸는 요소,홈페이지 슬라이드시 백그라운드 짤리는거 방지 */
     min-width: 1260px;
 }
 
@@ -72,4 +72,117 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 .visual h2 {
 	font-size: 40px;
 	font-weight: 600;
+}
+
+.introduce .art {
+	display: flex;
+	justify-content: center;
+	margin: 143px 0 0 0;
+}
+.introduce .art .text { /* width너비를 이미지 끝에 맞춰야 딱 맞게 들어감 */
+	margin-left: 107px;
+	width: 535px;
+}
+.introduce .foundation {
+	display: flex;
+	justify-content: center;
+	margin: 98px 0 0 0;
+	text-align: right;
+}
+.introduce h2 {
+	font-size: 40px;
+	font-weight: 800;
+}
+.introduce strong {
+	font-size: 26px;
+	font-weight: 800;
+	margin: 29px 0 29px 0;
+	display: block;
+}
+.introduce .text h2 {
+	margin: 76px 0 0 0;
+}
+.introduce .btn {
+	display: flex;
+	margin: 41px 0 0 0;
+	/* a태그는 원래 좌우로 배치됨 but 사이사이 여백이 발생함 이 여백을 없애기 위해 flex로 배치 */
+}
+.introduce .btn a {
+	border: 1px solid #666666;
+	padding: 9px 15px;
+	display: block; /* 위에서 flex를 주었기 때문에 inline-block이 아니라 block 사용가능 */
+	margin: 0 11px 0 0;
+}
+.introduce .btn a:hover { /* hover전에 boder가 있었다면 hover후에도 border를 주는것이 사이즈가 유지 됨 */
+	background-color: #666666;
+	color: #fff;
+	border: 1px solid #666666;
+}
+.introduce .btn a:last-child { /* btn클래스 안에 있는 a중에서 마지막 a */
+	margin-right: 0;
+}
+.introduce .foundation .btn { /* flex로 배치한 버튼을 오른쪽으로 정렬 / text align의 영향을 받지 않음. */
+	justify-content: flex-end;
+}
+.introduce .foundation .text { /* width너비를 이미지 끝에 맞춰야 딱 맞게 들어감 */
+	margin-right: 107px;
+	width: 535px;
+}
+
+.promotion { /* 배경보다 promotion 콘텐츠 길이가 더 길다. 배경의 위치를 정확하게 가운데 상단 center top / background-size 주면 안됨...
+					디자인한 사이즈대로 들어가야 하기 때문에..*/
+	background:url(../images/promotion_bg.png) no-repeat center top;
+	margin: 85px 0 0 0;
+	height: 705px;
+}
+.promotion .news {
+	color: #fff;
+	padding: 116px 0 70px 0;
+}
+.promotion .news .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.promotion .notic h2 {
+	font-size: 40px;
+	font-weight: 800;
+	margin:37px 0 13px 0;
+}
+.promotion .notic .point {
+	color: #FFB703;
+}
+.promotion .notic .btn a {
+	border: 1px solid rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.6);
+	padding: 9px 15px;
+	margin-top: 17px;
+	display: inline-block; /* inline요소는 padding,margine 안먹음 */
+}
+.promotion .notic .btn a:hover {
+	border: 1px solid rgba(255,255,255,1.0);
+	color: #012D43;
+	background-color: #fff;
+}
+.promotion .list {
+	width: 619px;
+}
+.promotion .list ul li {
+	border-bottom: 1px solid rgba(33,158,188,0.6);
+}
+.promotion .list ul li span {
+	color: rgba(255,255,255,0.8);
+}
+.promotion .list ul li a {
+	display: flex; /* display:flex는 해당 요소를 block요소로 만들어 넓이를 100%로 만듬 */
+	justify-content: space-between;
+	align-items: center; /* 위아래 가운데 맞추기 */
+	padding: 37px 0 11px 0; /* margine으로 여백을 주면 a의 클릭영역이 사라짐 padding으로 주면 여백만큼 클릭영역 확보가능 */ 
+}
+.promotion .list ul li:hover {
+	border-color: #FFB703;
+	color: #FFB703;
+}
+.promotion .list ul li:hover span {
+	color: #FFB703;
+	
 }
