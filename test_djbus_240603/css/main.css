@@ -114,9 +114,9 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 	margin: 0 11px 0 0;
 }
 .introduce .btn a:hover { /* hover전에 boder가 있었다면 hover후에도 border를 주는것이 사이즈가 유지 됨 */
-	background-color: #666666;
+	background-color: #FFB703;
 	color: #fff;
-	border: 1px solid #666666;
+	border: 1px solid #FFB703;
 }
 .introduce .btn a:last-child { /* btn클래스 안에 있는 a중에서 마지막 a */
 	margin-right: 0;
@@ -129,11 +129,10 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 	width: 535px;
 }
 
-.promotion { /* 배경보다 promotion 콘텐츠 길이가 더 길다. 배경의 위치를 정확하게 가운데 상단 center top / background-size 주면 안됨...
+.promotion { /* 배경보다 promotion 콘텐츠 길이가 더 길다. 배경의 위치를 정확하게 가운데 상단 [center top] / background-size 주면 안됨...
 					디자인한 사이즈대로 들어가야 하기 때문에..*/
 	background:url(../images/promotion_bg.png) no-repeat center top;
 	margin: 85px 0 0 0;
-	height: 705px;
 }
 .promotion .news {
 	color: #fff;
@@ -163,26 +162,88 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 	color: #012D43;
 	background-color: #fff;
 }
-.promotion .list {
+.promotion .news .list {
 	width: 619px;
 }
-.promotion .list ul li {
+.promotion .news .list ul li {
 	border-bottom: 1px solid rgba(33,158,188,0.6);
 }
-.promotion .list ul li span {
+.promotion .news .list ul li span {
 	color: rgba(255,255,255,0.8);
 }
-.promotion .list ul li a {
+.promotion .news .list ul li a {
 	display: flex; /* display:flex는 해당 요소를 block요소로 만들어 넓이를 100%로 만듬 */
 	justify-content: space-between;
 	align-items: center; /* 위아래 가운데 맞추기 */
 	padding: 37px 0 11px 0; /* margine으로 여백을 주면 a의 클릭영역이 사라짐 padding으로 주면 여백만큼 클릭영역 확보가능 */ 
 }
-.promotion .list ul li:hover {
+.promotion .news .list ul li:hover {
 	border-color: #FFB703;
 	color: #FFB703;
 }
-.promotion .list ul li:hover span {
+.promotion .news .list ul li:hover span {
 	color: #FFB703;
-	
+}
+.promotion .movie .notic h2 {
+	margin: 0 0 41px 0;
+	color: #fff;
+}
+.promotion .movie .notic .list ul {
+	display: flex;
+	justify-content: space-between;
+}
+.promotion .movie .notic .list ul li a {
+	display: block; /* a도 블록요소로 만들어 a와 li의 영역 크기를 동일하게 줌 */
+}
+.promotion .movie .notic .list ul li a .photo img {
+	border-radius: 30px; /* 이미지에 border 태그를 통해 테두리를 주면 이미지 밖으로 border가 생성됨
+							이미지는 감싸는 영역의 크기를 이미지보다 작게해도 이미지가 자동으로 줄어들지 않음.
+							본인의 사이즈대로 나타남. 글자는 줄바꿈을 함. */
+	width: 100%; /* 나를 감싸는 photo의 넓이 100% - border는 별도
+					넓이 100%에서 테두리값을 뺀 넓이를 주면 됨.. */
+				 /* width: calc (100% - border px); */
+}
+.promotion .movie .notic .list ul li a h3 {
+	font-weight: 700;
+	margin: 17px 0 0 0;
+}
+/* 마우스를 오버 했을때 스타일이 변경되는 요소 선택자를 그대로 복사해서 와야함 */
+.promotion .movie .notic .list ul li a:hover h3 {
+	color: #023047;
+	font-weight: 900;
+}
+.promotion .movie .notic .list ul li a:hover .photo img {
+	border: 2px solid #FFB703;
+	width: calc(100% - 2px);
+}
+
+footer { /* footer는 footer 자체에서 여백처리 하는게 좋음 */
+	margin: 124px 0 0 0;
+	padding: 83px 0 78px 0;
+	color: rgba(255,255,255,0.8);
+	background-color: #1C1C1C;
+}
+footer .f_nav ul {
+	display: flex;
+}
+footer .f_nav ul li {
+	margin: 0 38px 0 0;
+}
+footer .f_nav ul li.privacy {
+	font-weight: 800;
+}
+footer .f_info {
+	margin: 24px 0 28px 0;
+}
+/*  footer .f_info adress, span
+	이렇게 선택자를 쓰면 footer안에 f_info라는 클래스명을 갖은 요소 안에있는 
+	address와 이 html내부의 모든 span가 되어버림 */
+footer .f_info address, /* 이렇게 다 써야함 */
+footer .f_info span {
+	margin: 0 35px 5px 0;
+	display: inline-block; /* address는 원래 block태그라서 span태그와 좌우 배치되려고
+							  span은 margin을 적용시키려고.. */
+}
+footer .copy {
+	color: rgba(255,255,255,0.6);
 }
