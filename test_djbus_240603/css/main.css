@@ -131,7 +131,7 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 
 .promotion { /* 배경보다 promotion 콘텐츠 길이가 더 길다. 배경의 위치를 정확하게 가운데 상단 [center top] / background-size 주면 안됨...
 					디자인한 사이즈대로 들어가야 하기 때문에..*/
-	background:url(../images/promotion_bg.png) no-repeat center top;
+	background:url(../images/promotion_bg2.png) no-repeat center top;
 	margin: 85px 0 0 0;
 }
 .promotion .news {
