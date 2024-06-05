@@ -13,6 +13,7 @@
 html, body {
     /* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
     font-family: "Pretendard", sans-serif;
+	/* font-family: "Noto Serif KR", serif; */
     font-size: 15px; /* 글자크기 */
     font-weight: 500; /* 얘는 px 안들어감 */
     color: #2d2d2d; /* 글자색상*/
@@ -150,18 +151,6 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 .promotion .notic .point {
 	color: #FFB703;
 }
-.promotion .notic .btn a {
-	border: 1px solid rgba(255,255,255,0.6);
-	color: rgba(255,255,255,0.6);
-	padding: 9px 15px;
-	margin-top: 17px;
-	display: inline-block; /* inline요소는 padding,margine 안먹음 */
-}
-.promotion .notic .btn a:hover {
-	border: 1px solid rgba(255,255,255,1.0);
-	color: #012D43;
-	background-color: #fff;
-}
 .promotion .news .list {
 	width: 619px;
 }
@@ -183,6 +172,33 @@ header .gnb ul li a:hover { /* a:hover a에게 마우스를 올렸을때 */
 }
 .promotion .news .list ul li:hover span {
 	color: #FFB703;
+}
+.promotion .news .wrapper {
+	position: relative;
+	/* more 정렬의 기준
+	   more를 감싸는 wrapper를 기준으로 정렬
+	   wrapper에 position값을 줘야함.
+	   position 속성값 중 유일하게 relative 값만이 요소에 아무런 영향을 끼치지 않음. */
+}
+.promotion .news .more {
+	border: 1px solid rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.6);
+	padding: 9px 15px;
+	display: inline-block; /* inline요소는 padding,margine 안먹음 */
+	position: absolute;
+	left: 0;
+	top:133px;
+	/* position:absolute는 반드시 좌우위치 left right
+								 위아래 위치 top bottom 값을 반드시 넣어야하고
+								 이 값을 어디서 부터 계산하는지 기준이 필요함 
+								 !!나를 감싸는 요소!!중에서 posittion 속성(relative)을 
+								 포함한 요소를 기준으로 정렬*/
+	/* .wrapper를 기준으로 정렬 */
+}
+.promotion .news .more:hover {
+	border: 1px solid rgba(255,255,255,1.0);
+	color: #012D43;
+	background-color: #fff;
 }
 .promotion .movie .notic h2 {
 	margin: 0 0 41px 0;
@@ -246,4 +262,25 @@ footer .f_info span {
 }
 footer .copy {
 	color: rgba(255,255,255,0.6);
+}
+footer .wrapper {
+	/* footer .family 정렬의 기준 */
+	position: relative;
+}
+footer .family {
+	position: absolute;
+	right: 0;
+	top: -15px;
+	/* footer .wrapper 기준으로 정렬 */
+}
+footer .family button {
+	border: 1px solid rgba(255,255,255,0.8);
+	width: 190px;
+	height: 35px;
+	/* 원래 버튼 태그는 좌우,위아래 가운데 정렬 */
+	display: flex;
+	justify-content: space-between;
+	/* 내부 두 요소를 좌우 끝단에 배치 */
+	align-items: center; /* 위아래 가운데 */
+	padding: 0 20px;
 }
