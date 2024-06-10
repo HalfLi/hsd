@@ -1,0 +1,112 @@
+@import url(default.css);
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+html, body {
+    /* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
+    font-family: "Pretendard", sans-serif;
+    font-size: 15px;
+    color: #3d3d3d;
+    line-height: 1.2;
+    font-weight: 400;
+    word-break: keep-all;
+    letter-spacing: -0.02em;
+}
+.asset h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 140px 0 35px 0;
+}
+.asset ul {
+    display: flex; /* 지금처럼 ul 태그에 flex 태그를 주면 
+                   !!무조건!! 그 아래속성부터 들어감 ex)ul속 li */
+    justify-content: space-between;
+    margin: 50px 0 0 0;
+}
+.asset ul li {
+    width: 404px;
+    height: 162px;
+    background-color: #ededed;
+    border-radius: 30px;
+    padding: 45px 0 0 35px;
+}
+
+.asset ul li p {
+    font-size: 35px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+
+.core {
+    margin: 92px 0 0 0;
+    display: flex;
+}
+.core .text {
+    margin: 60px 0 0 131px;
+}
+
+.core .text h1 {
+    font-size: 15px;
+    color: #0a72dd;
+}
+.core .text p {
+    font-size: 50px;
+    font-weight: 700;
+    color: #3d3d3d;
+}
+.core .photo img {
+    border-radius: 30px;
+}
+.reqm h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 170px 0 65px 0;
+    text-align: center;
+}
+.reqm ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.reqm ul li {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    width: 511px;
+    height: 264px;
+    padding: 165px 0 0 35px;
+    border-radius: 30px;
+    margin: 0 12px 24px 12px;
+    
+}
+.reqm ul li:nth-child(1) {
+    background-image: url(../images/reqm1.png);
+}
+.reqm ul li:nth-child(2) {
+    background-image: url(../images/reqm2.png);
+}
+.reqm ul li:nth-child(3) {
+    background-image: url(../images/reqm3.png);
+}
+.reqm ul li:nth-child(4) {
+    background-image: url(../images/reqm4.png);
+}

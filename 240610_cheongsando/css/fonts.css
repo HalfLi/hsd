@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'S-CoreDream';
+    font-weight: 400;
+    font-style: normal;
+	src: local('S-CoreDream Regular'), url(../fonts/SCoreDreamRegular.woff2) format('woff2'), url(../fonts/SCoreDreamRegular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    font-weight: 900;
+    font-style: normal;
+	src: local('S-CoreDream Black'), url(../fonts/SCoreDreamBlack.woff2) format('woff2'), url(../fonts/SCoreDreamBlack.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'S-CoreDream';
+    font-weight: 500;
+    font-style: normal;
+	src: local('S-CoreDream Medium'), url(../fonts/SCoreDreamMedium.woff2) format('woff2'), url(../fonts/SCoreDreamMedium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'JSArirangHON';
+    font-weight: 900;
+    font-style: normal;
+	src: local('JSArirangHON Regular'), url(../fonts/JSArirangHON-Regular.woff2) format('woff2'), url(../fonts/JSArirangHON-Regular.woff) format('woff');
+}

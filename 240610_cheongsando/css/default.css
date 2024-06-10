@@ -1,0 +1,41 @@
+/* 태그의 스타일 초기화 - 브라우저가 태그에 준 스타일 모두 삭제 */
+* { /* *<-[와이드카드] 모든태그를 뜻함 / 상속이 되지 않는 속성을 줄때 사용 */
+    padding: 0; /* 모든태그 여백삭제 */
+    margin: 0; /* 모든태그 여백삭제 */ 
+    box-sizing: border-box; /* width/padding을 같이주면 width가 늘어나는 현상을 막음 */
+}
+li { /* ul li에 리스트 도트 삭제 */
+    list-style: none;
+}
+/* 글자 크기가 커지고, 두께를 변화시키는 태그 / 그 스타일을 삭제하고 상속받게 함 */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit; /* 상위요소 (html,body)에서 정의된대로 상속 inherit */
+    font-weight: inherit; /* 브라우저가 주는 스타일은 무시 */
+}
+address { /* 주소 */
+    font-style: normal;
+}
+em { /* 글자 기울임 */
+    font-style: normal;
+}
+a { /* 링크 스타일 */
+    color: inherit; /* 상위영역에서 정의된거 상속 */
+    text-decoration: none; /* 밑줄삭제 */
+}
+img { /* 이미지를 a태그로 감싸면 (일부 브라우저에서) 이미지에 파란색 테두리 생기는거 삭제 */
+    border: 0;
+}
+button { /* 버튼태그는 글자의 스타일을 상속받지 않음 */
+    background-color: transparent; /* 투명 transparent */
+    border: 0; /* 테두리 */
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+.photo {
+    font-size: 0;
+	line-height: 0;
+}

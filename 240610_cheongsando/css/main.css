@@ -1,0 +1,291 @@
+@import url(default.css); /* 기본서식 불러옴 */
+@import url(fonts.css); /* 폰트 불러옴 */
+
+#wrap{ /* (#은 id를 지칭) 홈페이지 전체를 감싸는 요소,홈페이지 슬라이드시 백그라운드 짤리는거 방지 */
+    min-width: 1260px;
+}
+
+.wrapper { /* 홈페이지 넓이를 제한하고 넓이 가운데정렬 */
+    width: 1260px;
+    margin: 0 auto; /* 가운데정렬 이유는 아직 몲 */
+}
+/* 글자의 스타일은 상속받음. 기본 글자의 스타일은 모든 태그를 감싸는 html,body에 선언함. */
+html, body {
+    /* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
+    font-family: 'S-CoreDream','JSArirangHON',sans-serif;
+    font-size: 16px; /* 글자크기 */
+    font-weight: 400; /* 얘는 px 안들어감 */
+    color: #2d2d2d; /* 글자색상*/
+    line-height: 1.6; /* 행간 [글자크기의 배수] */
+    letter-spacing: 0em; /* 자간 */
+    word-break: keep-all; /* 단어별 줄바꿈 */
+}
+
+/* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+header {
+	height: 100px;
+	position: absolute; /* 감싸는 요소 어떤값에도 position을 안주면
+							body를 기준으로 정렬
+							header는 원래 block요소 이기 때문에 넓이가 브라우저 넓이만큼 들어감 
+							근데, position: absolute값이 적용되면 넓이값은 내부 콘텐츠 요소의 넓이값
+							만큼 적용됨 
+							!!!!!!!!header에 absolute를 주면 width: 100%준다고 생각!!!!!!!!*/
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 100; /* position값이 있는 요소들은 서로 순서가 존재(위,아래)
+					기본적으로 나중에 코딩된 position이 선언된 요소가 더 위에 존재함
+					z-index는 숫자가 높을수록 위에 존재
+					대부분 header는 100 (제일 위에 있어야 하니까)
+					나머지 콘텐츠들은 100아래 값 
+					감싸는 요소가 z-index가 10이면 그 하위요소들은 그 보다 높은 값 줘도 10이상으로 안들어감*/
+}
+header .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+header .logo {
+	margin: 26px 0 0 0;	
+}
+header .gnb ul {
+	display: flex;
+	color: #fff;
+}
+header .gnb ul li a {
+	display: block;
+	padding: 35px 32px;
+	font-weight: 500;
+	font-size: 18px;
+}
+header .gnb ul li a:hover {
+	color: #71BF43;
+	font-weight: 900;
+}
+
+.visual {
+	background: url(../images/visual_bg.png) no-repeat center center / cover;
+	border-radius: 0 0 200px 0;
+}
+.visual .wrapper {
+	height: 900px; /* .visual .camera absolute의 기준
+					absolute는 감싸는 요소 중에서 position 속성을 가지고있는
+					가장 가까운 요소를 기준으로 정렬이 됨*/
+	position: relative;
+}
+.visual h2 {
+	text-align: center; /* text-align으로 줘도 이미지 가운데 정렬 가능 */
+	padding: 100px 362px 0 236px;
+}
+.visual .camera {
+	position: absolute;
+	left: 1095px;
+    top: 800px;
+}
+.visual .camera a {
+	display: flex; /* flex도 block */
+	flex-direction: column-reverse;
+    justify-content: center;
+	width: 165px;
+	height: 165px;
+	border-radius: 50%; /* 정사각형에 border-radius 50%를 주면 원형도형 가능 */
+	background-color: #51B3CA;
+	color: #fff;
+	box-shadow: 1px 1px 20px rgba(0,0,0,1);
+	text-align: center;
+}
+.visual .camera a:hover {
+	color: #FCC838;
+}
+.visual .camera a img {
+	margin: 20px 0 0 0;
+}
+.visual .camera a span {
+	display: block; /* i태그랑 줄바꿈 하려고 */
+	margin-top: 15px;
+}
+
+.culture .title {
+	margin: 244px 0 0 0;
+}
+.culture .title h2 {
+	color: #1d1d1d;
+	font-size: 30px;
+	font-weight: 900;
+}
+.culture .list ul {
+	display: flex;
+	justify-content: space-between;
+	margin: 22px 0 0 0;
+}
+.culture .list ul li h3 {
+	color: #1d1d1d;
+	font-size: 20px;
+	font-weight: 900;
+	margin: 13px 0 5px 0;
+}
+.culture .list ul li p {
+	width: 300px;
+	color: rgba(35,35,35,0.8);
+}
+.culture .list ul li a .photo {
+	font-size: 0;
+	line-height: 0;
+	/* 이미지 하단에는 글자의 행간(여백)값이 들어감. 그래서 하단에 여백이 조금 발생
+	이 여백을 없애고 싶다면 이미지를 감싸는 요소가 글자크기0 행간0 값을 줘야함. */
+	overflow: hidden;
+	/*overflow: hidden:영역의 크기보다 큰 부분의 콘텐츠를 숨김*/
+}
+.culture .list ul li a .photo img { /* 마우스 오버 시 변경되는 속성이 부드럽게 처리되기 원한다면, 오버전에 transiton을 줘야함 */
+	transition: 0.5s;
+}
+.culture .list ul li a:hover .photo img { 
+	transform: scale3d(1.2, 1.2, 1); /*(1.2배 확대) 마지막 값을 1로 설정할 경우 가운데를 중심으로 확대/축소*/
+}
+.culture .wrapper {
+	position: relative; /* more a 정렬의 중심 */
+}
+.culture .more {
+	background-image: url(../images/more_b.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+	position: absolute;
+	right: 0;
+	top: 40px;
+}
+.culture .more a {
+	display: block;
+	padding: 10px;
+	transition: 0.5s; /* 나중에 a에 class가 추가되거나 또는 오버를 해서 스타일이 변경된다면 0.5s시간동안 천천히 변하기 */
+	width: 30px;
+	height: 30px;
+}
+.culture .more a:hover {
+	background-image: url(../images/more_a.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+.tour .title {
+	margin: 114px 0 0 0;
+}
+.tour .title h2 {
+	color: #1d1d1d;
+	font-size: 30px;
+	font-weight: 900;
+}
+.tour .list ul {
+	display: flex;
+	justify-content: space-between;
+	margin: 22px 0 0 0;
+}
+.tour .list ul li {
+	width: 190px;
+	color: rgba(255,255,255,0.8);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.tour .list ul li.tour1 {
+	background-image: url(../images/tour_img1.png);
+}
+.tour .list ul li.tour2 {
+	background-image: url(../images/tour_img2.png);
+}
+.tour .list ul li.tour3 {
+	background-image: url(../images/tour_img3.png);
+}
+.tour .list ul li.tour4 {
+	background-image: url(../images/tour_img4.png);
+}
+.tour .list ul li.active { /* li중 active 클래스를 갖고있는 li 선택자 */
+	width: 618px;
+}
+.tour .list ul li a {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	height: 400px;
+	padding: 294px 50px 0 50px;
+}
+.tour .list ul li a h3 {
+	font-size: 20px;
+	font-weight: 900;
+	color: #fff;
+}
+.tour .list ul li.active a p {
+	display: block; /* none으로 나온거 풀려면 disply 아무거나 줘도 됨 */
+}
+.tour .list ul li a p {
+	display: none; /* display 숨김 */
+}
+.tour .wrapper {
+	position: relative;
+}
+.tour .more {
+	background-image:url(../images/more_b.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right center;
+	position: absolute;
+	right: 0;
+	top: 40px;
+}
+.tour .more a {
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+}
+.tour .more a:hover {
+	background-image: url(../images/more_a.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+.community {
+	height: 950px;
+	background: url(../images/community_bg.png) no-repeat center center / cover;
+	color: #fff;
+	margin: 150px 0 0 0;
+}
+.community .wrapper {
+	display: flex;
+}
+.community .title {
+	margin: 203px 0 0 0;
+	width: 428px;
+}
+.community .title h2 {
+	font-size: 50px;
+	font-weight: 900;
+	line-height: 1.4;
+}
+.community .title strong {
+	font-size: 30px;
+	padding: 10px 0 13px 0;
+	display: block;
+}
+.community .title p {
+	color: rgba(255,255,255,0.8);
+}
+.community .news {
+	margin: 190px 0 0 0;
+	padding: 0px 34px;
+	width: 404px;
+	height: 400px;
+	background-color: rgba(61,90,128,0.35);
+	border-radius: 30px;
+	backdrop-filter: blur(5px); /* 박스의 뒷배경을 흐리게 하는 효과 */
+}
+.community .news h3 {
+	font-size: 20px;
+	font-weight: 900;
+	margin: 21px 0 28px 0;
+}
+.community .link {
+	margin: 190px 0 0 0;
+}
+
+footer {
+	margin-top: 500px;
+}
