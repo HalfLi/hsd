@@ -205,7 +205,7 @@ header .gnb ul li a:hover {
 	align-items: flex-start;
 	flex-direction: column;
 	height: 400px;
-	padding: 294px 50px 0 50px;
+	padding: 294px 50px 0 57px;
 }
 .tour .list ul li a h3 {
 	font-size: 20px;
@@ -274,18 +274,135 @@ header .gnb ul li a:hover {
 	width: 404px;
 	height: 400px;
 	background-color: rgba(61,90,128,0.35);
-	border-radius: 30px;
 	backdrop-filter: blur(5px); /* 박스의 뒷배경을 흐리게 하는 효과 */
+	border-radius: 30px;
 }
 .community .news h3 {
 	font-size: 20px;
 	font-weight: 900;
-	margin: 21px 0 28px 0;
+	margin: 21px 0 22px 0;
 }
-.community .link {
-	margin: 190px 0 0 0;
+.community .news ul li:first-child {
+	border-top: 0;
+}
+.community .news ul li a {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 0 3px 0px;
+}
+.community .news ul li a span {
+	color: rgba(255,255,255,0.8);
+}
+.community .news ul li a:hover {
+	color: #FCC838;
+	font-weight: 500;
+}
+.community .news ul li a:hover span {
+	color: rgba(252,200,56,0.8);
+}
+.community .link { /* .link내에서 ul을 하단으로 정렬 */
+	display: flex;
+	align-items: flex-end;
+	width: 428px;
+	/* or margin 노가다로 해도 됨*/
+}
+.community .link ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 24px;
+}
+.community .link ul li {
+	width: 190px;
+	height: 188px;
+	background-color: rgba(61,90,128,0.35);
+	backdrop-filter: blur(5px);
+	border-radius: 30px;
+}
+.community .link ul li:nth-child(1) { /* li에 class를 줘서 하는 방법도 있음 */
+	background-image: url(../images/commuity_ico1.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
+}
+.community .link ul li:nth-child(2) {
+	background-image: url(../images/commuity_ico2.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
+}
+.community .link ul li:nth-child(3) {
+	background-image: url(../images/commuity_ico3.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
+}
+.community .link ul li:nth-child(4) {
+	background-image: url(../images/commuity_ico4.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
+}
+.community .link ul li a {
+	display: block;
+	height: 188px;
+	padding: 20px 0 0 34px;
+	font-size: 20px;
+	font-weight: 900;
+}
+.community .link ul li a:hover {
+	color: #FCC838;
+}
+.community .link ul li:nth-child(1) a:hover {
+	background-image: url(../images/over1.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
+}
+.community .link ul li:nth-child(2) a:hover {
+	background-image: url(../images/over2.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
+}
+.community .link ul li:nth-child(3) a:hover {
+	background-image: url(../images/over3.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
+}
+.community .link ul li:nth-child(4) a:hover {
+	background-image: url(../images/over4.svg);
+	background-repeat: no-repeat;
+	background-position: right 41px bottom 35px;
 }
 
 footer {
-	margin-top: 500px;
+	background-color: #2D2D2D;
+	color: #fff;
+	padding: 43px 0 123px 0;
+}
+footer .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+footer .f_nav ul {
+	display: flex;
+}
+footer .f_nav ul li {
+	padding: 0 48px 0 0;
+}
+footer .f_info {
+	display: flex;
+	padding: 20px 0 20px 0;
+}
+footer .f_info address {
+	padding: 0 48px 0 0;
+}
+footer .copy {
+	color: rgba(255,255,255,0.5);
+}
+footer .family {
+	color: #2D2D2D;
+	width: 190px;
+	height: 42px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 7px 0 0 18px;
+	background: url(../images/more_b.svg) no-repeat right 19px center;
+	background-size: 10%;
+	background-color: #fff;
 }
