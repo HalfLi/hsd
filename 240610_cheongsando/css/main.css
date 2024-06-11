@@ -385,6 +385,9 @@ footer .f_nav ul {
 footer .f_nav ul li {
 	padding: 0 48px 0 0;
 }
+footer .f_nav ul li strong {
+	font-weight: 900;
+}
 footer .f_info {
 	display: flex;
 	padding: 20px 0 20px 0;
