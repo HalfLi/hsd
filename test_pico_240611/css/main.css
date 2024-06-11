@@ -1,0 +1,179 @@
+@import url(default.css); /* 기본서식 불러옴 */
+@import url(fonts.css); /* 폰트 불러옴 */
+
+#wrap{ /* (#은 id를 지칭) 홈페이지 전체를 감싸는 요소,홈페이지 슬라이드시 백그라운드 짤리는거 방지 */
+    min-width: 1260px;
+}
+
+.wrapper { /* 홈페이지 넓이를 제한하고 넓이 가운데정렬 */
+    width: 1260px;
+    margin: 0 auto; /* 가운데정렬 이유는 아직 몲 */
+}
+/* 글자의 스타일은 상속받음. 기본 글자의 스타일은 모든 태그를 감싸는 html,body에 선언함. */
+html, body {
+    /* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
+    font-family: "Pretendard", sans-serif;
+    font-size: 15px; /* 글자크기 */
+    font-weight: 400; /* 얘는 px 안들어감 */
+    color: #2d2d2d; /* 글자색상*/
+    line-height: 1.2; /* 행간 [글자크기의 배수] */
+    letter-spacing: 0em; /* 자간 */
+    word-break: keep-all; /* 단어별 줄바꿈 */
+}
+@media screen and (max-width:640px){ /* 640px 이하에서만 우선적용 , 선택자가 동일해야함
+	pc버전 스타일과 mobile버전 스타일이 동시에 적용되는 것이라
+	변경되는 요소만 스타일 적용 */
+	html, body {
+		font-size: 13px; /* 글자크기 */
+	}
+	#wrap {
+		min-width: 100%; /* 최소넓이 꽉차게 */
+	}
+	.wrapper { /* 홈페이지 넓이를 제한하고 넓이 가운데정렬 */
+		width: auto; /* div(블록)속성대로 알아서 넓이
+						100%를 주면 margin이 좌우로 20px씩 들어가서
+						실제 넓이가 100% + 40px로 사이즈가 넘침
+						auto로 주면 알아서 여백까지 꽉차게 들어감 */
+		margin: 0 20px; /* 좌우여백 20px */
+	}
+} /* media */
+/* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+
+.eco h2 {
+	font-size: 30px;
+	font-weight: 900;
+	margin: 63px 0 38px 0;
+	color: #1d1d1d;
+}
+.eco ul {
+	display: flex;
+	justify-content: space-between;
+}
+.eco ul li {
+	width: 404px;
+}
+.eco ul li a h3 {
+	font-size: 20px;
+	font-weight: 700;
+	margin: 32px 0 13px 0;
+	color: #1d1d1d;
+}
+
+@media screen and (max-width:640px){
+	.eco h2 {
+		font-size: 20px;
+		margin: 37px 0 33px 0;
+	}
+	.eco ul {
+		display: flex;
+		justify-content: space-between;
+	}
+	.eco ul li {
+		width: calc(50% - 8px);
+		/* 두개의 li가 반반들어가는데 사이 여백이 16px 고정으로 들어감 
+			(100% /나누기/ li갯수) - (사이여백의 총합 /나누기/ (li갯수) 
+			(100% /2 ) - (16px / 2 ) = 50% - 8px 
+			퍼센트와 px 두 단위를 동시에 계산하는 계산식 calc(00% - 0px) !!반드시 계산부호 앞뒤로 여백이 있어야함 */
+	}
+	.eco ul li:last-child { /* 3개 나오다가 2개나옴 마지막 display none함으로써 사라짐 */
+		display: none;
+	}
+	.eco ul li a .photo img { /* 글자는 넓이가 부족하면 줄이 바뀜 / 하지만 이미지는 넓이를 주지 않으면 넓이가 바뀌지 않음 
+							  -아무리 이미지를 감싸는 영역의 넓이가 줄어도 이미지는 삐져나옴 */
+		width: 100%; /* 넓이만 줌 - 높이는 비율에 맞게 알아서 들어감
+						(넓이와 높이를 동시에 선언하면 비율에 맞지 않게 깨질수있음)
+						100% - 이미지를 감싸는 요소 넓이의 100%
+						==> 만약 이미지의 사이즈가 더 작다면 늘어남 */	
+	}
+	.eco ul li a h3 {
+		font-size: 18px;
+		margin: 22px 0 14px 0;
+		color: #1d1d1d;
+	}
+} /* media*/
+
+.pure {
+	background: url(../images/pure_bg.png) no-repeat center center;
+	color: #fff;
+	margin: 184px 0 0 0;
+	height: 1000px;
+	text-align: center;
+}
+.pure h2 {
+	font-size: 50px;
+	font-weight: 800;
+	padding: 228px 0 45px 0;
+}
+.pure p {
+	font-size: 20px;
+	font-weight: 500;
+}
+.pure ul {
+	display: flex;
+	margin: 205px 0 0 0;
+	justify-content: space-between;
+}
+.pure ul li {
+	width: 297px;
+	height: 332px;
+	border: 5px solid #fff;
+	border-radius: 30px;
+}
+@media screen and (max-width:640px){
+	.pure {
+		padding: 95px 0 47px 0; /* 모바일에서 높이는 계속 바뀜,높이를 지정해주는게 아니라 콘텐츠 하단에 여백(padding)을 줌 */
+		height: auto; /* 기존에 선언된 높이값을 해제하는 방법
+						 auto로 주면 내부 콘텐츠의 길이대로 늘어남 (원래대로) */
+	}
+	.pure h2 {
+		font-size: 30px;
+		padding: 38px 0 36px 0;
+	}
+	.pure p {
+		font-size: 13px;
+		font-weight: 500;
+	}
+	.pure ul {
+		margin: 95px 0 0 0;
+		gap: 16px; /* li사이여백 */
+		flex-wrap: wrap;
+	}
+	.pure ul li {
+		width: calc(50% - 8px);
+		height: 164px;
+		border-radius: 30px;
+	}
+} /* media */
+.tech {
+	margin: 270px 0 0 0;
+}
+.tech .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+.tech strong {
+	color: #208149;
+	font-size: 20px;
+	font-weight: 500;
+}
+.tech h2 {
+	font-size: 60px;
+	font-weight: 800;
+	padding: 22px 0 22px 0;
+	display: block;
+}
+.tech p {
+	width: 485px;
+	padding: 0 0 195px 0;
+}
+@media screen and (max-width:640px){
+	.tech .wrapper {
+		display: block; /* flex를 해제하기 위해서는 display의 다른 속성을 선언 ex)inline,block*/
+	}
+	.tech p {
+		width: auto;
+	}
+	.tech .photo {
+		width: 100%;
+	}
+} /* media */
