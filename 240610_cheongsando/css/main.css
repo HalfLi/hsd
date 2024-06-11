@@ -384,6 +384,21 @@ footer .f_nav ul {
 }
 footer .f_nav ul li {
 	padding: 0 48px 0 0;
+	position: relative;
+}
+footer .f_nav ul li::after {
+	content: ""; /* 가상요소 before와 after를 사용할때는 반드시 content 가 사용되어야함.
+					지우면 나타나지 않음. */
+	width: 1px;
+	height: 13px;
+	background-color: rgba(255,255,255,0.3);
+	display: block;
+	position: absolute; /* 각각의 li를 기준으로 정렬 */
+	right: 23px;
+	top: 6px;
+}
+footer .f_nav ul li:last-child::after { /* li중 마지막의 after */
+	display: none; /* 숨김 */
 }
 footer .f_nav ul li strong {
 	font-weight: 900;
@@ -405,7 +420,7 @@ footer .family {
 	border: 1px solid #fff;
 	border-radius: 10px;
 	padding: 7px 0 0 18px;
-	background: url(../images/more_b.svg) no-repeat right 19px center;
+	background: url(../images/family_ico.svg) no-repeat right 19px center;
 	background-size: 10%;
 	background-color: #fff;
 }
