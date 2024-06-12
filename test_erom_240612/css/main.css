@@ -155,6 +155,9 @@
 		font-size: 30px;
 		margin: 11px 0 34px 0;
 	}
+	.Story .txt p br {
+		display: none;
+	}
 	.Story .txt .more {
 		margin: 40px 0 33px 0;
 		font-size: 11px;
@@ -172,3 +175,119 @@
 		width: 100%; /* 이 요소를 감싸는 요소 넓이의 100%*/
 	}
 }
+
+.news h2 {
+	font-size: 40px;
+	font-weight: 700;
+	margin: 348px 0 68px 0;
+	color: #1d1d1d;
+}
+.news ul {
+	display: flex;
+	justify-content: space-between;
+}
+.news ul li {
+	width: 297px;
+	border: 1px solid #3d3d3d;
+}
+.news ul li a {
+	display: block;
+	padding: 35px 20px 36px 20px;
+}
+.news ul li a strong {
+	color: #366DFB;
+	font-size: 18px;
+	font-weight: 700;
+}
+.news ul li a .green {
+	color: #00AC4F;
+}
+.news ul li a h3 {
+	color: #1d1d1d;
+	font-size: 15px;
+	font-weight: 700;
+	margin: 20px 0 23px 0;
+	/* 1줄로 제한하기 !!주의사항!! - 절대 padding 금지 */
+	white-space: nowrap; /* 줄바꿈 금지 */
+	overflow: hidden; /* 영역에서 넘치는 부분 자르기 - 이 요소가 block요소여야함 */
+	text-overflow: ellipsis; /* 글자 마지막에 ... 추가 (글자가 잘리는 현상 막아줌) -주의사항 ... 수정 불가능 */
+
+}
+.news ul li a p {
+	color: #1d1d1d;
+	margin: 0 0 26px 0;
+	/* 3줄로 제한하기 !!주의사항!! - 절대 padding 금지 */
+	line-height: 1.2;
+	height: 3.6em; /* 행간 X 줄수 = 단위는 em */
+	overflow: hidden;
+}
+.news ul li a span {
+	color: #666;
+	font-size: 13px;
+}
+
+.container {
+	margin-bottom: 200px;
+}
+@media screen and (max-width:640px){
+	.news h2 {
+		font-size: 30px;
+		margin: 132px 0 51px 0;
+	}
+	.news ul {
+		/* display: flex;
+		justify-content: space-between;
+		2개씩 2줄 나올 예정 */
+		flex-wrap: wrap; /* 줄바꿈 허용 */
+	}
+	.news ul li {
+		width: calc(50% - 8px);
+		margin-bottom: 16px;
+	}
+	.news ul li a {
+		display: block;
+		padding: 35px 20px 36px 20px;
+	}
+	.news ul li a strong {
+		color: #366DFB;
+		font-size: 18px;
+		font-weight: 700;
+	}
+	.news ul li a h3 {
+		color: #1d1d1d;
+		font-size: 15px;
+		font-weight: 700;
+		margin: 20px 0 23px 0;
+		/* 1줄로 제한하기 !!주의사항!! - 절대 padding 금지 */
+		white-space: nowrap; /* 줄바꿈 금지 */
+		overflow: hidden; /* 영역에서 넘치는 부분 자르기 - 이 요소가 block요소여야함 */
+		text-overflow: ellipsis; /* 글자 마지막에 ... 추가 (글자가 잘리는 현상 막아줌) -주의사항 ... 수정 불가능 */
+	
+	}
+	.news ul li a p {
+		color: #1d1d1d;
+		margin: 0 0 26px 0;
+		/* 3줄로 제한하기 !!주의사항!! - 절대 padding 금지 */
+		line-height: 1.2;
+		height: 3.6em; /* 행간 X 줄수 = 단위는 em */
+		overflow: hidden;
+	}
+	.news ul li a span {
+		color: #666;
+		font-size: 13px;
+	}
+	
+	.container {
+		margin-bottom: 200px;
+	}
+} /* media */
+
+@media screen and (max-width:350px){
+	.news ul {
+		display: block;
+	}
+	.news ul li {
+		width: auto;
+		margin-bottom: 16px;
+	}
+} /* media */
