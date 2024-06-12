@@ -1,0 +1,34 @@
+@import url(default.css);
+@import url(fonts.css); /* <이게 폰트 불러옴 */
+@import url(common.css); /* <이게 공통사항 불러옴 */
+/* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+.sound {
+	background: url(../images/sound_bg.png) no-repeat center center / cover;
+	color: #fff;
+	text-align: center;
+	height: 350px;
+}
+.sound h2 {
+	font-size: 40px;
+	font-weight: 700;
+	padding: 87px 0 12px 0;
+}
+.sound p {
+	margin: 0 404px; /* 글자에 좌우 여백이 있어서 글자가 들어가기 좁아서 2줄이 되도록 함 
+							width로 주면 가운데 정렬이 안됨*/
+}
+@media screen and (max-width:640px){
+	.sound {
+		height: auto; /* pc버전에서 준 height값 auto로 삭제 
+						auto로 컨텐츠 길이에 알아서 조절됨 */
+		padding: 0 0 130px 0;
+	}
+	.sound h2 {
+		font-size: 25px;
+		margin: 0 0 10px 0;
+	}
+	.sound p {
+		margin: 0; 	/* pc버전에서 준 여백 삭제하려면 0주면 됨 */		
+	}
+	
+}/* media */
