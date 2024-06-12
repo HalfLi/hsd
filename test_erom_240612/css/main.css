@@ -30,5 +30,145 @@
 	.sound p {
 		margin: 0; 	/* pc버전에서 준 여백 삭제하려면 0주면 됨 */		
 	}
-	
 }/* media */
+
+.health {
+	background: url(../images/sound_bg.png) no-repeat center center / cover;
+	text-align: center;
+	padding: 90px 0 117px 0;
+	color: #fff;
+}
+.health h2 {
+	font-size: 40px;
+	font-weight: 700;
+	padding: 0 0 10px 0;
+}
+@media screen and (max-width:640px){
+	.health {
+		padding: 92px 0 130px 0;
+	}
+	.health h2 {
+		font-size: 25px;
+		margin: 0 0 10px 0;
+	}
+	.health p br {
+		display: none; /* 줄바꿈을 주던 태그 삭제 */
+	}
+}
+
+.solution {
+	background: url(../images/sound_bg.png) no-repeat center center / cover;
+	text-align: center;
+	padding: 90px 0 117px 0;
+	color: #fff;
+}
+.solution h2 {
+	font-size: 40px;
+	font-weight: 700;
+	padding: 0 0 10px 0;
+}
+.solution p span {
+	display: block;
+}
+@media screen and (max-width:640px){
+	.solution {
+		padding: 92px 0 130px 0;
+	}
+	.solution h2 {
+		font-size: 25px;
+		margin: 0 0 10px 0;
+	}
+	.solution p span {
+		display: inline;
+	}
+}
+.Story .rowgroup1,
+.Story .rowgroup2 {
+	display: flex;
+	align-items: center;
+}
+.Story .rowgroup1 {
+	margin: 105px 0 0 0;
+}
+.Story .rowgroup2 {
+	flex-direction: row-reverse;
+}
+.Story .txt {
+	width: 630px;
+	padding: 0 0 0 83px;
+}
+.Story .txt strong {
+	font-weight: 500;
+}
+.Story .txt h2 {
+	font-size: 40px;
+	font-weight: 700;
+	color: #1d1d1d;
+	margin: 11px 0 38px 0;
+}
+.Story .txt .more {
+	margin: 84px 0 0 0;
+	font-weight: 700;
+	font-size: 13px;
+}
+.Story .txt .more a {
+	color: #fff;
+	background-color: #00AC4F;
+	padding: 17px 77px 17px 22px;
+	display: inline-block;
+	position: relative;
+}
+.Story .txt .more a::after {
+	/* 아이콘은 background-size contain / 배경이미지 같은 경우에는 background-size cover */
+	background: url(../images/more.svg) no-repeat center center / contain; /* contain (resize를 자동으로 걸어줌)*/
+	content: "";
+	width: 24px;
+	height: 24px;
+	position: absolute; /* 내가 원하는 위치에 배치하려면 사실상 absolute가 필수 */
+	right: 32px;
+	top: 14px;
+}
+@media screen and (max-width:640px){
+	.Story .rowgroup1,
+	.Story .rowgroup2 {
+		display: block;
+		/* align-items: center; <- flex 상태일때만 적용되는 속성이라 해제 필요 X*/
+	}
+	.Story .rowgroup1 {
+		margin: 37px 0 0 0;
+	}
+	.Story .rowgroup2 {
+		margin: 117px 0 0 0;
+	}
+	.Story .txt {
+		width: auto;
+		padding: 0 0 0 0;
+	}
+	.Story .txt strong {
+		margin: 0 31.25% 0 0; /* 계산식 ? */
+		display: block;
+	}
+	.Story .txt strong br {
+		display: none;
+	}
+	.Story .txt h2 {
+		font-size: 30px;
+		margin: 11px 0 34px 0;
+	}
+	.Story .txt .more {
+		margin: 40px 0 33px 0;
+		font-size: 11px;
+	}
+	.Story .txt .more a {
+		padding: 11px 69px 10px 10px;
+	}
+	.Story .txt .more a::after {
+		width: 20px;
+		height: 20px;
+		right: 21px;
+		top: 7px;
+	}
+	.Story .photo img {
+		width: 100%; /* 이 요소를 감싸는 요소 넓이의 100%*/
+	}
+}
