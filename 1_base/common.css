@@ -12,6 +12,7 @@ html, body {
     line-height: 1.2; /* 행간 [글자크기의 배수] */
     letter-spacing: 0em; /* 자간 */
     word-break: keep-all; /* 단어별 줄바꿈 */
+	word-wrap: break-word; /* 만약 단어가 엄청 길면 줄바꿈 강제로 실행 */
 }
 
 .wrapper { /* 홈페이지 넓이를 제한하고 넓이 가운데정렬 */
