@@ -1,0 +1,158 @@
+@import url(default.css);
+@import url(fonts.css); /* <이게 폰트 불러옴 */
+@import url(common.css); /* <이게 공통사항 불러옴 */
+/* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+
+/* 폰트2개 혼용사용할때 제목,본문 서체 적용하는방법
+1. css에 해당 요소 모두 선택자 불러서 각각 폰트선언하기
+2. css를 하나 만들어둠 (ex) .tit 그 후 html에서 해당 폰트를 써야하는 html 요소에
+<section class= "biz"  
+	<h2 class="tit"> </h2> <<이것처럼 필요한곳에 class명을 주는 방식
+</section> */
+
+header {
+	position: absolute; /* body기준으로 정렬 */
+	left: 0;
+	top: 0;
+	z-index: 100; /* !!!position을 가지고 있는 요소중 제일 높은 숫자를 줘서 제일 높게 배치 (메뉴 안눌림 방지)!!! */
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+}
+header .wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+header .logo {
+	margin: 17px 0 0 0;
+}
+header .gnb .gnb_open {
+	display: none; /* 모바일에서만 나타나기 때문에 여기서는 숨김처리 */
+}
+header .gnb .gnb_wrap ul {
+	display: flex;
+}
+header .gnb .gnb_wrap ul li a {
+	display: block;
+	padding: 38px 23px;
+	position: relative; /* a::after의 정렬기준 */
+}
+/* =====gnb메뉴에 도트추가 하기=====
+header .gnb .gnb_wrap ul li a::after {
+	content: "";
+	position: absolute;
+	right: -3px;
+    top: 47px;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: rgba(255,255,255,0.5);
+}
+header .gnb .gnb_wrap ul li:last-child a::after {
+	display: none;
+} 
+*/
+header .gnb .gnb_wrap ul li a:hover {
+	color: #3DB8E7;
+}
+@media screen and (max-width:640px){
+	header {
+		height: 45px;
+		border-bottom: 0px;
+	}
+	header .logo {
+		margin: 10px 0 0 0;
+	}
+	header .logo img { /* 이미지태그로 코딩한 요소는 사이즈가 변경되면 반드시 css에서 img태그를 불러서 스타일 줘야함
+					   감싸는 요소에 줘도 적용안됨, 이미지는 넓이만 주면 높이는 알아서 적용됨 (background는 둘다 줘야함) */
+		width: 83px;
+	}
+	header .gnb .gnb_open {
+		display: block; /* 모바일에서만 나타나기 때문에 여기서는 숨김처리 */
+		position: absolute; /*가장 최근에 줬던 상위 position인 header를 기준으로 됨 */
+		right: 15px;
+		top: 15px;
+		width: 30px;
+		height: 30px;
+		background-image: url(../images/gnb_open.svg);
+		background-repeat: no-repeat;
+		font-size: 0px; /* 텍스트 사라지게 하기 */
+		line-height: 0px; /* 텍스트 사라지게 하기 */
+	}
+	header .gnb .gnb_wrap {
+		display: none; /* 메뉴는 열기 버튼을 클릭했을때만 나옴 */
+	}
+}
+
+.visual {
+	background: url(../images/visual_bg.png) no-repeat center center / cover;
+	color: #fff;
+	height: 770px;
+	padding: 0 0 0 83px;
+}
+.visual strong {
+	display: block;
+	padding: 294px 0 25px 0;
+	font-size: 28px;
+}
+.visual h2 {
+	padding: 0 0 23px 0;
+	font-size: 60px;
+	color: #004288;
+}
+.visual p {
+	font-size: 20px;
+}
+@media screen and (max-width:640px){
+	.visual {
+		height: auto;
+		padding: 100px 0 113px 0 ;
+	}
+	.visual strong {
+		padding: 0 0 15px 0;
+		font-size: 15px;
+	}
+	.visual h2 {
+		padding: 0 0 0 0;
+		font-size: 30px;
+	}
+	.visual p {
+		display: none;
+	}
+}
+
+.biz .wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+.biz .subject {
+	position: sticky;
+	top: 30px;
+}
+.biz .subject h2 {
+	color: #004288;
+	font-size: 34px;
+}
+.biz .subject strong  {
+	display: block;
+	font-size: 28px;
+	color: #2d2d2d;
+	font-weight: 700;
+	margin: 18px 0 18px 0;
+}
+.biz .subject p {
+	font-size: 22px;
+}
+.biz .list {
+	width: 500px;
+	height: 1500px;
+	background-color: #3DB8E7;
+}
+
+footer {
+	margin-top: 200px;
+}
