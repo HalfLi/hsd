@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>삼성꿈장학재단</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="tit"> <!-- gmarket서체 사용 -->
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><img src="images/logo.svg" alt="삼성꿈장학재단 Samsung Dream Scholarship Foundation"></a></h1>
+                <nav class="gnb">
+                    <!-- 클릭하면 기능이 작동됨 (페이지 이동X) 
+                        이런건 button 태그 사용 
+                        대부분 icon은 css에서 배경으로 처리함...
+                    -->
+                    <button class="gnb_open">메뉴열기</button>
+                    <!-- wrap 클래스명 gnb를 감싸는 요소-->
+                    <div class="gnb_wrap">
+                        <ul>
+                            <li><a href="#n">사업소개</a></li>
+                            <li><a href="#n">장학신청</a></li>
+                            <li><a href="#n">정보마당</a></li>
+                            <li><a href="#n">재단소개</a></li>
+                        </ul>
+                    </div>
+                    <!-- <button class="gnb_close">메뉴닫기</button> -->
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <section class="visual tit"> <!-- tit 지마켓서체적용 -->
+                <div class="wrapper">
+                    <strong>Samsung Dream Scholarship Foundation</strong>
+                    <h2>세상을 바꾸는 것은 사람입니다.<br>
+                        <em class="tit_b">그리고 사람을 키우는 것은 사랑과 관심입니다.</em></h2>
+                </div>
+            </section><!--biz-->
+            <section class="biz">
+                <div class="wrapper">
+                    <!-- 왼쪽에 고정할 요소는 div 하나로 묶어줌
+                         오른쪽은 왼쪽보다 무조건 길어야함
+                         왼쪽/오른쪽 요소를 flex로 정렬하면 둘의 길이가 같아짐 
+                         그래서 반드시 길이를 다르게 css 설정해야함 -->
+                    <div class="subject">
+                        <strong class="tit">장학사업</strong>
+                        <h2 class="tit_b">더불어 성장하는<br>
+                            배움공동체</h2>
+                        <p>다양한 교육의 기회를 함께 나눕니다.</p>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/biz1.png" alt="사업 활동 사진"></div>
+                                    <h3 class="tit_b">멘토링 꿈장학사업</h3>
+                                    <p>청소년들을 멘토와 함께 선발하여 멘토 선생님의 지지를 받으면서 장학금을 지원하는 사업</p>
+                                    <span class="more">자세히보기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/biz4.png" alt="사업 활동 사진"></div>
+                                    <h3 class="tit_b">리더육성 장학사업</h3>
+                                    <p>재단 출신 꿈장학생 가운데 성장이 돋보이고 학업역량 및 의지가 우수한 대학(원)생을 선발하여 지원하는 사업</p>
+                                    <span class="more">자세히보기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/biz2.png" alt="사업 활동 사진"></div>
+                                    <h3 class="tit_b">배움터 교육지원사업</h3>
+                                    <p>지역의 다양한 배움터들이 협력하여 양질의 교육프로그램을 운영하고 교육복지 안전망을 구축할 수 있도록 지원하는 사업</p>
+                                    <span class="more">자세히보기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/biz5.png" alt="사업 활동 사진"></div>
+                                    <h3 class="tit_b">글로벌 장학사업</h3>
+                                    <p>개발도상국 현지 아동·청소년을 교육적으로 지원하여 글로벌 리더로 양성하는 사업</p>
+                                    <span class="more">자세히보기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/biz3.png" alt="사업 활동 사진"></div>
+                                    <h3 class="tit_b">방과후학교 대상</h3>
+                                    <p>매년 1월 교육부가 주최하여 우수한 방과후학교 프로그램을 운영하는 학교, 교사, 비영리단체를 시상</p>
+                                    <span class="more">자세히보기</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/biz6.png" alt="사업 활동 사진"></div>
+                                    <h3 class="tit_b">청소년치아교정지원사업</h3>
+                                    <p>대한치과교정학회와 (사)바른이봉사회의 후원으로 무료 치아교정의 기회를 제공하는 사업</p>
+                                    <span class="more">자세히보기</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section><!--biz-->
+            <section class="news">
+                <div class="wrapper">
+                    <div class="subject">
+                        <strong class="tit">장학사업, 재단 운영과 관련된 주요 소식</strong>
+                        <h2 class="tit_b">장학재단소식</h2>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <h3 class="tit">[공지] 2024년 글로벌 국외장학사업 공모 안내</h3>
+                                    <p>⌜글로벌 국외장학사업⌟은 교육 지원의 필요성이 높은 개발도상국 아동‧청소년에게 양질의 맞춤형 교육을 지원합니다. 자기주도적인 참여과 상호협력에 기반한 교육방법을 통해 아동‧청소년이 배움 공동체의 일원으로서 나눔을 장학생을 선발하여 지원함</p>
+                                    <span class="date">2024-04-22</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <h3 class="tit">[입찰공고] 2024년 배움터 교육지원사업 지원금 정산 및 결산 평가 용역</h3>
+                                    <p>삼성꿈장학재단 2024년 배움터 교육지원사업 회계담당자의 회계관리 역량 강화 및 지원금의 적절한 사용 및 운영의 투명성 확보를 위하여 회계 검토 및 평가 를 실시하고자 함. 배움터 교육지원사업 개요 참고 사업규모 장학생을 선발하여 지원함</p>
+                                    <span class="date">2024-05-28</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <h3 class="tit">[공모] 2024년 멘토와 함께하는 꿈장학 공모</h3>
+                                    <p>꿈과 가능성이 있는 청소년들이 멘토 선생님의 교육적․정서적 지지를 받으면서  주도적으로 자신의 꿈을 찾고 성장할 수 있도록 장학생을 선발하여 지원함. 어려운 여건 속에 있는 학생들에게 힘이 되어 줄 수 있는 것은 그들의 장학생을 선발하여 지원함</p>
+                                    <span class="date">2024-03-08</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more"><a href="#n">더보기</a></div>
+                </div>
+            </section><!--biz-->
+            <section class="webzine">
+                <div class="wrapper">
+                    <div class="subject">
+                        <strong class="tit">vol.96 - 2024.05</strong>
+                        <h2 class="tit_b">삼성꿈장학재단 웹진</h2>
+                    </div>
+                    <div class="list tit">
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/webzine1.png" alt="행사사진"></div>
+                                    <strong>글로벌 국외장학사업</strong>
+                                    <h3>제3회 한국초청연수 Global Dream Workshop 개최 협력과 참여로 만들어</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/webzine2.png" alt="행사사진"></div>
+                                    <strong>리더육성 장학사업</strong>
+                                    <h3>이날만을 기다렸다! 아낌없이 주는 졸업생 선배들이 전하는 노하우</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <div class="photo"><img src="images/webzine3.png" alt="행사사진"></div>
+                                    <strong>배움터 교육지원사업</strong>
+                                    <h3>함께하면 더 멀리 나아갈 수 있으니까! 2024 배움터 교사 아카데미</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="more"><a href="#n">더보기</a></div>
+                </div>
+            </section><!--biz-->
+            <section class="introduce">
+                <div class="wrapper"></div>
+            </section><!--biz-->
+        </div><!--container-->
+        <footer>
+            <div class="wrapper"></div>
+        </footer>
+    </div>
+</body>
+</html>
