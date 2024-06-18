@@ -694,6 +694,7 @@ header .gnb .gnb_wrap ul li:last-child a::after {
         font-size: 0;
         line-height: 0;
         position: relative; /* after 정렬의 기준 */
+        top: -4px;
     }
     .webzine .more a::after {
         content: "";
@@ -715,6 +716,254 @@ header .gnb .gnb_wrap ul li:last-child a::after {
     }
 }
 
+.introduce {
+    display: flex;
+    margin: 161px 0 0 0;
+}
+.introduce a {
+    height: 263px;
+    display: block;
+    color: #fff;
+}
+.introduce .intro_left {
+    width: 50%;
+    height: 263px;
+    background-image: url(../images/intro1.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+}
+.introduce .intro_left a {
+    padding: 77px 208px 68px 0;
+}
+.introduce .intro_left h3 {
+    font-size: 35px;
+    font-weight: 700;
+    padding: 0 0 13px 0;
+    font-family: 'GmarketSans';
+}
+.introduce .intro_left p {
+    margin: 0 0 10px 0;
+}
+.introduce .intro_left .more {
+    position: relative;
+    margin: 0 0 0 5px;
+}
+.introduce .intro_left .more::after {
+    content: "";
+    position: absolute;
+    background: url(../images/arrow_circle_right.svg) no-repeat center center;
+    right: -25px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+}
+.introduce .intro_right {
+    width: 50%;
+    height: 263px;
+    background-image: url(../images/intro2.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+}
+.introduce .intro_right a {
+    padding: 77px 208px 113px 51px;
+}
+.introduce .intro_right h3 {
+    font-size: 35px;
+    font-weight: 700;
+    padding: 0 0 13px 0;
+    font-family: 'GmarketSans';
+}
+.introduce .intro_right p {
+    margin: 0 0 10px 0;
+}
+.introduce .intro_right .more {
+    position: relative;
+}
+.introduce .intro_right .more::after {
+    content: "";
+    position: absolute;
+    background: url(../images/arrow_circle_right.svg) no-repeat center center;
+    right: -25px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+}
+@media screen and (max-width:640px) {
+    .introduce {
+        margin: 64px 0 0 0;
+    }
+    .introduce a {
+        height: auto;
+        width: auto;
+        color: #fff;
+        padding: 36px 52px 40px 52px;
+        text-align: center;
+    }
+    .introduce .intro_left {
+        height: 50%;
+        width: 50%;
+        display: block;
+    }
+    .introduce .intro_left a {
+        padding: 36px 52px 40px 52px;
+    }
+    .introduce .intro_left h3 {
+        font-size: 20px;
+        padding: 0 0 2px 0;
+    }
+    .introduce .intro_left p {
+        display: none;
+    }
+    .introduce .intro_left .more {
+        position: relative;
+        margin: 0 0 0 0;
+    }
+    .introduce .intro_left .more::after {
+        content: "";
+        position: absolute;
+        background: url(../images/arrow_circle_right.svg) no-repeat center center;
+        right: -20px;
+        top: 1px;
+        width: 14px;
+        height: 14px;
+    }
+    .introduce .intro_right {
+        width: 50%;
+        height: 50%;
+        display: block;
+    }
+    .introduce .intro_right a {
+        padding: 36px 40px 40px 40px;
+    }
+    .introduce .intro_right h3 {
+        font-size: 20px;
+        padding: 0 0 2px 0;
+    }
+    .introduce .intro_right p {
+        display: none;
+        margin: 0 0 0 0;
+    }
+    .introduce .intro_right .more {
+        position: relative;
+        margin: 0 0 0 0;
+    }
+    .introduce .intro_right .more::after {
+        content: "";
+        position: absolute;
+        background: url(../images/arrow_circle_right.svg) no-repeat center center;
+        right: -20px;
+        top: 1px;
+        width: 14px;
+        height: 14px;
+    }
+}
 footer {
-    margin-top: 2000px;
+    background-color: #2d2d2d;
+    color: rgba(255,255,255,0.8);
+    padding: 51px 0 60px 0;
+}
+footer .wrapper {
+    position: relative;
+}
+footer .top {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+footer .top button {
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 15px 0 0 0;
+    font-size: 13px;
+}
+footer .top button::after {
+    content: "";
+    background: url(../images/keyboard_arrow_up.svg) no-repeat center center / contain;
+    position: absolute;
+    top: 10px;
+    right: 19px;
+    width: 11px;
+    height: 6px;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 35px;
+}
+footer .f_nav ul li {
+    position: relative; /* after의 정렬기준 */
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: -18px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.2);
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_info {
+    display: flex;
+    margin: 32px 0 0 0;
+    gap: 35px;
+}
+footer .copy {
+    color: rgba(255,255,255,0.6);
+}
+@media screen and (max-width:640px){
+    footer {
+        padding: 15px 0 77px 0;
+    }
+    footer .top {
+        position: relative;
+        right: auto;
+        top: auto;
+        text-align: right;
+        margin: 0 0 32px 0;
+    }
+    footer .top button {
+        width: 40px;
+        height: 40px;
+        padding: 15px 0 0 0;
+        font-size: 11px;
+    }
+    footer .top button::after {
+        top: 10px;
+        right: 16px;
+        width: 8px;
+        height: 5px;
+    }
+    footer .f_nav ul {
+        flex-wrap: wrap; /* 여러줄 허용 */
+        gap: 0;
+    }
+    footer .f_nav ul li {
+        margin: 0 30px 5px 0;
+    }
+    footer .f_nav ul li::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        right: -18px;
+        width: 1px;
+        height: 9px;
+        background-color: rgba(255,255,255,0.2);
+    }
+    footer .f_info {
+        flex-wrap: wrap;
+        margin: 26px 0 12px 0;
+        gap: 0;
+    }
+    footer .f_info span {
+        padding: 0 28px 0 0;
+    }
 }
