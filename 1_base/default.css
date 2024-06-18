@@ -34,6 +34,7 @@ button { /* 버튼태그는 글자의 스타일을 상속받지 않음 */
     letter-spacing: inherit;
     line-height: inherit;
     color: inherit;
+    cursor: pointer; /* 마우스포인터를 손바닥으로 */
 }
 .photo {
     font-size: 0;
