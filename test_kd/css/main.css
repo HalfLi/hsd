@@ -1,0 +1,68 @@
+@import url(default.css);
+@import url(fonts.css); /* <이게 폰트 불러옴 */
+@import url(common.css); /* <이게 공통사항 불러옴 */
+/* ---------------------------------여기까지 기본 ---------------------------- 아래부터 삭제하고 ㄱ*/
+.biz {
+    margin: 85px 0 0 0;
+}
+.biz .tit h2 {
+    font-size: 45px;
+    text-align: center;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+    color: #1d1d1d;
+}
+.biz .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz .list li {
+    width: 297px;
+}
+.biz .list li h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 13px 0 7px 0;
+    color: #1d1d1d;
+}
+.biz .list li p {
+    font-size: 15px;
+}
+.tech {
+    margin: 167px 0 80px 0;
+}
+.tech .tit h2 {
+    font-size: 45px;
+    text-align: center;
+    font-weight: 700;
+    margin: 85px 0 20px 0;
+    color: #1d1d1d;
+}
+.tech .list .techpic1  {
+    background: url(../images/tech01.png) no-repeat center center / cover;
+}
+.tech .list .techpic2 {
+    background: url(../images/tech02.png) no-repeat center center / cover;
+}
+.tech .list ul {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    text-align: center;
+}
+.tech .list ul li {
+    width: 618px;
+    height: 514px;
+}
+.tech .list ul li a {
+    height: 514px;
+    display: block;
+}
+.tech .list ul li h3 {
+    font-size: 35px;
+    font-weight: 700;
+    padding: 196px 0 12px 0;
+}
+.tech .list ul li p {
+    font-size: 15px;   
+}
