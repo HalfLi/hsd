@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- 구글아이콘 코드 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>반응형,swiper 테스트</title>
 </head>
 <body>
@@ -147,6 +149,102 @@
                     <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
                     <button class="swiper-button-prev"></button>
                     <button class="swiper-button-next"></button>
+                </div>
+            </section>
+            <section class="visual">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide bg1">
+                            <div class="wrapper">
+                                <h2>PROGRAM</h2>
+                                <p>KAIST GGGS에서는 녹색성장과 지속가능성 문제해결을 위해 탄소중립기후기술 및 정책·금융에 대한 통섭적인 이해를 갖춘<br>
+                                국가 핵심인재를 양성합니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <div class="wrapper">
+                                <h2>FACULTY</h2>
+                                <p>우리는 탄소중립 난제를 해결하고 녹색성장을 이끌기 위해 모였습니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg3">
+                            <div class="wrapper">
+                                <h2>ONLY ONE EARTH</h2>
+                                <p>과학기술에 정책과 금융을 더해 탄소중립을 실현합니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap">
+                        <div class="paging"></div>
+                        <button class="play" title="재생"><i class="material-symbols-outlined">pause_circle</i></button>
+                        <button class="stop" title="일시정지"><i class="material-symbols-outlined">play_circle</i></button>
+                    </div>
+                    <button class="btn_prev" title="이전팝업"><i class="material-symbols-outlined">arrow_circle_left</i></button>
+                    <button class="btn_next" title="다음팝업"><i class="material-symbols-outlined">arrow_circle_right</i></button>
+                </div>
+            </section>
+            <section class="book"> <!-- 쭈욱 슬라이드가 보이게 -->
+                <div class="wrapper">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book1.png" alt=""></div>
+                                    <h2>친애하는 슐츠 씨</h2>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book2.png" alt=""></div>
+                                    <h2>나는 왜 이런 사람이 됐을까?</h2>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book3.png" alt=""></div>
+                                    <h2>달빛 그림자 가게 3</h2>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book4.png" alt=""></div>
+                                    <h2>인생의 방향은 언제든 바뀔 수 있다</h2>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="sns"> <!-- 모바일에서 2개씩 보이게 -->
+                <div class="wrapper">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book1.png" alt=""></div>
+                                    <h2>친애하는 슐츠 씨</h2>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book2.png" alt=""></div>
+                                    <h2>나는 왜 이런 사람이 됐을까?</h2>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book3.png" alt=""></div>
+                                    <h2>달빛 그림자 가게 3</h2>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a>
+                                    <div class="photo"><img src="images/book4.png" alt=""></div>
+                                    <h2>인생의 방향은 언제든 바뀔 수 있다</h2>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </main>

@@ -217,4 +217,167 @@
     position: relative;
 }
 .popup .swiper { height:226px } /* 팝업의 높이가 됨 */
-.popup .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; } /* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌
+.popup .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; } /* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌*/
+
+.visual {
+    margin: 100px 0;
+    position: relative; /* 팝업을 감싸는 요소에 position: relative를 주는편 */
+}
+.visual ul li {
+    height: 800px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.visual ul li.bg1 {
+    background-image: url(../images/visual_bg1.png);
+}
+.visual ul li.bg2 {
+    background-image: url(../images/visual_bg2.png);
+}
+.visual ul li.bg3 {
+    background-image: url(../images/visual_bg3.png);
+}
+.visual ul li h2 {
+    font-size: 50px;
+    font-weight: 900;
+    margin: 329px 0 0 0;
+}
+.visual ul li p {
+    font-size: 25px;
+}
+.visual .btn_prev,
+.visual .btn_next {
+    position: absolute; /* swiper를 기준으로 정렬됨 */
+    top: 370px;
+    z-index: 10; /* swiper자체 스크립트 안에 많은 position:absolute들이 존재해서 z-index로 올려줘야함. */
+}
+.visual .btn_prev i,
+.visual .btn_next i {
+    font-size: 50px; /* 아이콘크기 */
+    font-weight: 200; /* 아이콘두께 */
+    color: #fff; /* 아이콘색상 */
+}
+.visual .btn_prev {
+    left: 0px;
+}
+.visual .btn_next {
+    right: 0px;
+}
+.visual .btn_wrap {
+    position: absolute; /* swiper를 기준으로 정렬됨 */
+    left: 0;
+    bottom: 40px;
+    width: 100%; /* swiper와 넓이가 같아짐. */
+    z-index: 10;
+    color: #fff;
+    display: flex; /* 하위 play,stop 버튼을 위해 flex */
+    justify-content: center; /* flex영역의 가운데 */
+    align-items: center;
+}
+.visual .btn_wrap .paging {
+    width: auto;
+}
+.visual .btn_wrap .play i {
+    font-size: 30px;
+    font-weight: 200;
+}
+.visual .btn_wrap .stop i {
+    font-size: 30px;
+    font-weight: 200;
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet { /* paging의 기본 도트 */
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    background: none;
+    border: 1px solid #fff;    
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet.swiper-pagination-bullet-active{ /* 현재 선택된 도트 */
+    background-color: #fff;
+}
+@media screen and (max-width:640px){
+    .visual ul li {
+        height: 300px;
+    }
+    .visual ul li h2 {
+        font-size: 30px;
+        font-weight: 900;
+        margin: 73px 0 0 0;
+    }
+    .visual ul li p {
+        font-size: 13px;
+    }
+    .visual .btn_prev,
+    .visual .btn_next {
+        display: none;
+    }
+    .visual .btn_wrap {
+        left: 0;
+        bottom: 24px;
+        color: #fff;
+    }
+    .visual .btn_wrap .paging {
+        width: auto;
+    }
+    .visual .btn_wrap .play i {
+        font-size: 15px;
+        font-weight: 200;
+    }
+    .visual .btn_wrap .stop i {
+        font-size: 15px;
+        font-weight: 200;
+    }
+    .visual .btn_wrap .paging .swiper-pagination-bullet { /* paging의 기본 도트 */
+        width: 10px;
+        height: 10px;
+    }
+    .visual .btn_wrap .paging .swiper-pagination-bullet.swiper-pagination-bullet-active{ /* 현재 선택된 도트 */
+        background-color: #fff;
+    }
+}
+.book {
+    margin: 0 0 100px 0;
+}
+.book ul li {
+    width: 297px;
+}
+.book ul li a .photo {
+    overflow: hidden;
+}
+.book ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px){
+    .book {
+        margin: 0 0 100px 0;
+    }
+    .book ul li {
+        width: 200px;
+    }
+    .book ul li a .photo {
+        overflow: hidden;
+    }
+    .book ul li a .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.sns {
+    margin: 0 0 100px 0;
+}
+.sns ul li {
+    width: 297px;
+}
+.sns ul li a .photo {
+    overflow: hidden;
+}
+.sns ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
