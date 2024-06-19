@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- swiper 라이브러리 연결 (CDN방식) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <title>반응형,swiper 테스트</title>
+</head>
+<body>
+    <div id="wrap">
+        <main class="container">
+            <section class="biz">
+                <div class="wrapper">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <!--pc에서는 사진위에 글자가 들어가지만 모바일에선 사진 아래에 글자가 들어가야함-->
+                                <div class="photo"><img src="images/biz1.png" alt=""></div>
+                                <h2>재단설립목적</h2>
+                                <p>삼성꿈장학재단은 교육 소외계층의 실질적인 교육기회 확대를 위한 장학사업</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/biz2.png" alt=""></div>
+                                <h2>기본 방향</h2>
+                                <p>재단은 설립 목적을 달성하기 위해 다음을 사업의 기본 방향으로 합니다.</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/biz3.png" alt=""></div>
+                                <h2>멘토링 꿈장학사업</h2>
+                                <p>다양한 분야에 꿈과 가능성이 있는 청소년들을 멘토와 함께 선발</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <!--pc에서는 사진위에 글자가 들어가지만 모바일에선 사진 아래에 글자가 들어가야함-->
+                                <div class="photo"><img src="images/biz4.png" alt=""></div>
+                                <h2>리더육성 장학사업</h2>
+                                <p>재단 출신 꿈장학생 가운데 성장이 돋보이고 학업역량 및 의지가 우수한 대학(원)생</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="business">
+                <div class="wrapper">
+                    <ul><!-- pc,mobile 모두 글자하단에 이미지가 나타남 그럼 background로 처리
+                        각각의 li를 구분해서 배경 이미지를 주기위해 li한테 class를 줘서 처리-->
+                        <li class="biz1">
+                            <a href="#n">
+                                <h2>재단설립목적</h2>
+                                <p>삼성꿈장학재단은 교육 소외계층의 실질적인 교육기회 확대를 위한 장학사업</p>
+                            </a>
+                        </li>
+                        <li class="biz2">
+                            <a href="#n">
+                                <h2>기본 방향</h2>
+                                <p>재단은 설립 목적을 달성하기 위해 다음을 사업의 기본 방향으로 합니다.</p>
+                            </a>
+                        </li>
+                        <li class="biz3">
+                            <a href="#n">
+                                <h2>멘토링 꿈장학사업</h2>
+                                <p>다양한 분야에 꿈과 가능성이 있는 청소년들을 멘토와 함께 선발</p>
+                            </a>
+                        </li>
+                        <li class="biz4">
+                            <a href="#n">
+                                <h2>리더육성 장학사업</h2>
+                                <p>재단 출신 꿈장학생 가운데 성장이 돋보이고 학업역량 및 의지가 우수한 대학(원)생</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="gallery">
+                <div class="wrapper">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo">
+                                    <img src="images/gallery1.png" alt="">
+                                </div>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="#n">
+                                <div class="photo">
+                                    <img src="images/gallery2.png" alt="">
+                                </div>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="#n">
+                                <div class="photo">
+                                    <img src="images/gallery3.png" alt="">
+                                </div>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </section>
+            <section class="news">
+                <div class="wrapper">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo">
+                                    <img src="images/gallery1.png" alt="">
+                                </div>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="#n">
+                                <div class="photo">
+                                    <img src="images/gallery2.png" alt="">
+                                </div>
+                            </a>
+                        </li> 
+                        <li>
+                            <a href="#n">
+                                <div class="photo">
+                                    <img src="images/gallery3.png" alt="">
+                                </div>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </section>
+            <section class="popup">
+                <div class="wrapper">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide"><img src="images/popup1.png"></li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <li class="swiper-slide"><img src="images/popup2.png"></li>
+                            <li class="swiper-slide"><img src="images/popup3.png"></li>
+                        </ul>
+                    </div>
+                    <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

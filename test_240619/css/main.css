@@ -1,0 +1,220 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+}
+.biz ul li {
+    width: 297px;
+}
+.biz ul li a {
+    display: block;
+    position: relative; /* h2,p의 정렬기준 */
+    color: rgba(255,255,255,0.8);
+}
+.biz ul li a .photo {
+    overflow: hidden; /* 이미지 넘치는거 자름 */
+}
+.biz ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    /* 감싸는 photo의 넓이와 높이에 이미지를 꽉채움 */
+}
+.biz ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.biz ul li a h2 {
+    position: absolute; /* img태그 위에 올라가야 함 / a를 기준으로 */
+    top: 65px;
+    left: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+}
+.biz ul li a p {
+    position: absolute;
+    top: 98px;
+    left: 25px;
+    width: calc(100% - 50px); /* 감싸는 넓이의 100% -(빼기) 좌우 여백 합한 값 
+                                이렇게하면 페이지가 변할때에도 적응 가능*/
+}
+@media screen and (max-width:640px){
+    .biz ul {
+        flex-wrap: wrap; /* 여러줄 허용 */
+    }
+    .biz ul li {
+        width: calc(50% - 8px) /* [100% 나누기 한줄에 들어가는 li의 갯수(2) = 100% / 2 = 50% 
+                         한줄에 들어가는 여백의 합 나누기 li의 갯수 = 16px / 2 = 8px]
+
+                         만약 한줄에 3개씩 나오면 100% / 3 - 16+16(32) 32/2 = 33.33% - 10.66 */                         
+    }
+    .biz ul li a {
+        color: rgba(61,61,61,0.8)
+    }
+    .biz ul li a .photo {
+        overflow: hidden; /* 이미지 넘치는거 자름 */
+        /* height: 114px; */
+    }
+    .biz ul li a h2 {
+        position: relative; /* pc버전에서 준 absolute 해제*/
+        top: auto;
+        left: auto;
+        color: #1d1d1d;
+        font-size: 16px;
+    }
+    .biz ul li a p {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto; /* auto로 해두면 감싸는 a사이즈만하게 들어감 */                        
+    }
+} /* media */
+
+.business {
+    margin: 100px 0 0 0;
+}
+.business ul {
+    display: flex;
+    justify-content: space-between;
+}
+.business ul li {
+    width: calc(25% - 18px); /* [100% 나누기 한줄에 들어가는 li의 갯수(2) = 100% / 2 = 50% 
+                                한줄에 들어가는 여백의 합 나누기 li의 갯수 = 16px / 2 = 8px]
+                                만약 한줄에 3개씩 나오면 100% / 3 - 16+16(32) 32/2 = 33.33% - 10.66 */
+}
+.business ul li a {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgba(255,255,255,0.8);
+    display: block; /* 높이 적용을 위해 적용 */
+    height: 223px;
+    border-radius: 30px;
+    padding: 65px 25px 0 25px; /* 높이를 제한한 경우 padding 아래 여백은 안줌
+                                하단 여백까지 주면 콘텐츠가 길어질 경우 높이가 늘어남 */
+    transition: 0.5s; /* background-image는 적용이 안됨... */                               
+}
+.business ul li a:hover {
+    background-size: 120% auto; /* background의 100%는 감싸는 a의 넓이를 100%으로 봄
+                                배경 이미지사이즈가 아님.. 배경이미지는 비율에 맞게 사이즈가 리사이즈 되지 않음
+                                이미지는 넓이만 줘도 됨.. 하지만 background는 꼭 넓이를 주고 높이맞게 비율맞게 들어라고 auto를 줘야함.
+                                120%(넓이) auto(높이) */
+}
+.business ul li.biz1 a {
+    background-image: url(../images/biz1.png);
+}
+.business ul li.biz2 a {
+    background-image: url(../images/biz2.png);
+}
+.business ul li.biz3 a {
+    background-image: url(../images/biz3.png);
+}
+.business ul li.biz4 a {
+    background-image: url(../images/biz4.png);
+}
+.business ul li a h2 {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0 0 12px 0;
+}
+@media screen and (max-width:640px){
+    .business {
+        margin: 50px 0 0 0;
+    }
+    .business ul {
+        display: block;
+    }
+    .business ul li {
+        width: auto; /* 넓이 고정 해제 - 원래 속성대로 들어감
+                        li는 block태그라서 감싸는 요소 ul 넓이의 100% */
+        margin: 0 0 25px 0;                        
+    }
+    .business ul li a {
+        height: auto;
+        border-radius: 20px;
+        padding: 11px 25px 37px 25px; /* 높이를 제한한 경우 padding 아래 여백은 안줌
+                                    하단 여백까지 주면 콘텐츠가 길어질 경우 높이가 늘어남 */
+    }
+    .business ul li.biz1 a {
+        background-image: url(../images/biz1.png);
+    }
+    .business ul li.biz2 a {
+        background-image: url(../images/biz2.png);
+    }
+    .business ul li.biz3 a {
+        background-image: url(../images/biz3.png);
+    }
+    .business ul li.biz4 a {
+        background-image: url(../images/biz4.png);
+    }
+    .business ul li a h2 {
+        text-align: center;
+        font-size: 16px;
+    }
+} /* media */
+
+.gallery {
+    margin: 100px 0 0 0;
+}
+.gallery ul {
+    display: flex;
+    justify-content: space-between;
+}
+.gallery ul li {
+    width: calc(33.33% - 16px); /* 중간여백 24px이 두개 - 48 / 3 = 16px */
+
+}
+.gallery ul li a .photo {
+    overflow: hidden;
+}
+.gallery ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px){
+    .gallery ul li {
+        width: calc(33.33% - 10.66px);
+    }
+}
+
+.news {
+    margin: 100px 0 100px 0;
+}
+.news ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news ul li {
+    width: calc(33.33% - 16px);
+}
+.news ul li a .photo {
+    overflow: hidden;
+}
+.news ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:640px){
+    .news ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .news ul li {
+        width: calc(33.33% - 16px);
+    }
+}
+
+.popup {
+    margin: 100px 0 100px 0;
+}
+.popup .wrapper {
+    position: relative;
+}
+.popup .swiper { height:226px } /* 팝업의 높이가 됨 */
+.popup .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; } /* 팝업 안에 이미지를 넣었다면 이미지를 꽉차게 나타나게 하기 위해서 해당 스타일을 넣어줌
