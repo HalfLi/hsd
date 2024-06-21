@@ -3,9 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- swiper 라이브러리 연결 (CDN방식) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <!-- swiper 라이브러리 연결 (CDN방식) -->
+    <!-- !!jquery 3.7.1을 main.js보다 먼저 불러와야함!! -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
     <title>을유문화사</title>
 </head>
 <body>
-    
+    <div id="wrap">
+        <header>
+            <div class="wrapper">
+                
+            </div>
+        </header>
+        <main class="container">
+                <section class="visual">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                            <li class="swiper-slide bg1">
+                                <div class="wrapper">
+                                    <p>세계의 흐름을 함께 호흡하며 미래를 열어가는 지혜의 보고</p>
+                                    <h2>을유문화사</h2>
+                                    <h3>乙酉文化社</h3>
+                                </div> <!-- visual ul li wrapper -->
+                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <li class="swiper-slide bg2">
+                                <div class="wrapper">
+                                    <p>독자와 함께, 새 문명 창조를 위하여</p>
+                                    <h2>을유문화사</h2>
+                                    <h3>乙酉文化社</h3>
+                                </div> <!-- visual ul li wrapper -->
+                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                            <li class="swiper-slide bg3">
+                                <div class="wrapper">
+                                    <p>물질과 정신의 조화, 몸과 마음의 조화, 나와 세계의 조화</p>
+                                    <h2>을유문화사</h2>
+                                    <h3>乙酉文化社</h3>
+                                </div> <!-- visual ul li wrapper -->
+                            </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                        </ul>
+                        <button class="btn_prev">이전팝업보기</button> <!-- 이전팝업보기 -->
+                        <button class="btn_next">다음팝업보기</button> <!-- 다음팝업보기 -->
+                    </div>
+                </section>
+                <section class="book">
+                    <div class="wrapper">
+                        <div class="tit">
+                            <h2>이달의 도서</h2>
+                            <p>이달의 새로나온<br>
+                                도서를 소개합니다.</p>
+                        </div>
+                        <div class="list">
+                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book1.png" alt="책표지"></div>
+                                            <h3>인생의 짧음에 관하여</h3>
+                                            <strong>딘 리클스 ,허윤정</strong>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book2.png" alt="책표지"></div>
+                                            <h3>턴테이블․라이프.디자인</h3>
+                                            <strong>기디언 슈워츠 ,이현준</strong>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book3.png" alt="책표지"></div>
+                                            <h3>보이지 않는</h3>
+                                            <strong>그레고리 J. 그버 ,김희봉</strong>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book4.png" alt="책표지"></div>
+                                            <h3>쳇 베이커</h3>
+                                            <strong>제임스 개빈 ,김현준</strong>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book5.png" alt="책표지"></div>
+                                            <h3>위대한 수사학 고전들</h3>
+                                            <strong>한국수사학회</strong>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book6.png" alt="책표지"></div>
+                                            <h3>유현준의 인문 건축 기행</h3>
+                                            <strong>유현준</strong>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book7.png" alt="책표지"></div>
+                                            <h3>아구아 비바</h3>
+                                            <strong>클라리시 리스펙토르 ,민승남</strong>
+                                        </a>
+                                    </li>
+                                    <li class="swiper-slide">
+                                        <a href="#n">
+                                            <div class="photo"><img src="images/book8.png" alt="책표지"></div>
+                                            <h3>컬트</h3>
+                                            <strong>맥스 커틀러,케빈 콘리 ,박중서</strong>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="more"><a href="#n">더 보기</a></div> <!-- 웹 접근성 때문에 list가 나오고 더보기가 있어야함 -->
+                    </div>
+                </section>
+                <section class="interview">
+
+                </section>
+                <section class="story">
+
+                </section>
+        </main>
+        <footer></footer>
+    </div>
 </body>
 </html>

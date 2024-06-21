@@ -1,41 +1,13 @@
 @font-face {
-    font-family: 'Pretendard';
+    font-family: 'Eulyoo1945';
     font-weight: 400;
     font-display: swap;
-    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+    src: local('Eulyoo1945-Regular'), url(../fonts/Eulyoo1945-Regular.woff2) format('woff2'), url(../fonts/Eulyoo1945-Regular.woff) format('woff');
 }
 
 @font-face {
-    font-family: 'Pretendard';
-    font-weight: 500;
-    font-display: swap;
-    src: local('Pretendard Medium'), url(../fonts/Pretendard-Medium.woff2) format('woff2'), url(../fonts/Pretendard-Medium.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 600;
-    font-display: swap;
-    src: local('Pretendard SemiBold'), url(../fonts/Pretendard-SemiBold.woff2) format('woff2'), url(../fonts/Pretendard-SemiBold.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 700;
-    font-display: swap;
-    src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Pretendard';
+    font-family: 'Eulyoo1945';
     font-weight: 800;
     font-display: swap;
-    src: local('Pretendard ExtraBold'), url(../fonts/Pretendard-ExtraBold.woff2) format('woff2'), url(../fonts/Pretendard-ExtraBold.woff) format('woff');
-}
-
-@font-face {
-    font-family: 'Pretendard';
-    font-weight: 900;
-    font-display: swap;
-    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(../fonts/Pretendard-Black.woff) format('woff');
+    src: local('Eulyoo1945-SemiBold'), url(../fonts/Eulyoo1945-SemiBold.woff2) format('woff2'), url(../fonts/Eulyoo1945-SemiBold.woff) format('woff');
 }
