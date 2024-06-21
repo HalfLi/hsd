@@ -84,7 +84,7 @@
         color: #fff;
         font-size: 50px;
         font-weight: 800;
-        margin: 183px 0 0 40px;
+        margin: 183px 40px 0 40px;
     }
     .visual ul li h3 {
         color: rgba(255,255,255,0.2);
@@ -220,6 +220,57 @@
     }
 }
 
+.interview {
+    background-color: #EFE7DA;
+    margin: 168px 0 0 0;
+    padding: 115px 0 184px 0;
+}
+.interview .wrapper {
+    position: relative;
+}
+.interview .tit {
+    margin: 0 0 67px 0;
+    text-align: center;
+}
+.interview .tit h2 {
+    font-size: 70px;
+    margin: 0 0 25px 0;
+    color: #1d1d1d;
+}
+.interview .tit h2 .txtcolor {
+    color: #896447;
+}
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.interview .list ul li {
+    width: 404px;
+}
+.interview .list ul li:nth-child(2) {
+    margin: 70px 0 0 0;
+}
+.interview .list ul li a .photo img {
+    border-radius: 45px 0 45px 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 감싸는 요소 photo 영역에 이미지 꽉 채우기 */
+    transition: 0.5s;
+    filter: grayscale(100%);
+}
+.interview .list ul li a .photo.second img {
+    border-radius: 0 45px 0 45px;
+}
+.interview .more {
+    position: absolute;
+    top: 832px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+.interview .more a {
+
+}
 footer {
     margin: 100px 0 0 0;
 }
