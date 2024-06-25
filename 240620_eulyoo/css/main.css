@@ -394,7 +394,8 @@ header.fixed .tnb .mypage::before {
 .interview {
     background-color: #EFE7DA;
     margin: 168px 0 0 0;
-    padding: 115px 0 184px 0;
+    /* padding: 0; */
+    height: 961px;
 }
 .interview .wrapper {
     position: relative;
@@ -571,7 +572,8 @@ header.fixed .tnb .mypage::before {
 @media screen and (max-width:640px){
     .interview {
         margin: 50px 0 0 0;
-        padding: 47px 0 0 0;
+        /* padding: 47px 0 0 0; */
+        height: auto;
     }
     .interview .tit {
         margin: 0 0 35px 0;
@@ -723,6 +725,10 @@ header.fixed .tnb .mypage::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.5s;
+}
+.story .list ul li a:hover .photo img {
+    transform: scale3d(1.2,1.2, 1);
 }
 .story .list ul li a h2 {
     font-size: 16px;
@@ -821,5 +827,118 @@ header.fixed .tnb .mypage::before {
 }
 
 footer {
-    margin: 100px 0 0 0;
+    background-color: #896447;
+    color: #fff;
+    margin: 125px 0 0 0;
+    padding: 70px 0 70px 0;
+    font-size: 17px;
 }
+footer .wrapper {
+    position: relative; /* copyright 정렬의 기준 */
+    display: flex;
+    justify-content: space-between;
+}
+footer .slogan {
+    font-size: 20px;
+}
+footer .f_info {
+    width: 401px;
+}
+footer .f_info .item {
+    margin: 0 0 45px 0;
+}
+footer .f_info .item:nth-child(3) {
+    margin: 0;
+}
+footer .f_info .item h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+}
+footer .f_info .item .tel li {
+    display: flex;
+}
+footer .f_info .item .tel li strong {
+    width: 4.3em;
+}
+footer .f_info .item .tel li:nth-child(3) strong {
+    width: 3.3em;
+}
+footer .f_info .item .tel li span {
+    width: calc(100% - 4.3em); /* 왼쪽  strong의 넓이 빼고 전부 다 */
+}
+footer .f_info .item .tel li:nth-child(3) span {
+    width: calc(100% - 3.3em); /* 왼쪽  strong의 넓이 빼고 전부 다 */
+}
+footer .f_info .item .sns {
+    display: flex;
+    flex-wrap: wrap; /* 줄나눔 허용 */
+}
+footer .f_info .item .sns a:hover {
+    text-decoration: underline;
+}
+footer .f_info .item .sns li {
+    margin: 0 40px 0 0;
+}
+footer .copyright {
+    position: absolute; /* absolute로 빠졌기 때문에 flex 포함 x */
+    left: 0;
+    bottom: -3px;
+}
+footer .copyright .f_logo {
+    margin: 0 0 24px 0;
+}
+footer .copyright .f_logo img {
+    width: 297px;
+}
+footer .copyright .copy {
+    font-size: 20px;
+    color: rgba(255,255,255,0.6)
+}
+@media screen and (max-width:640px){
+    footer {
+        margin: 129px 0 0 0;
+        padding: 23px 0 30px 0;
+        font-size: 12px;
+    }
+    footer .wrapper {
+        position: relative; /* copyright 정렬의 기준 */
+        display: block;
+    }
+    footer .slogan {
+        font-size: 16px;
+        margin: 0 0 20px 0;
+    }
+    footer .f_info {
+        width: auto;
+    }
+    footer .f_info .item {
+        margin: 0 0 25px 0;
+    }
+    footer .f_info .item h2 {
+        font-size: 16px;
+        margin: 0 0 5px 0;
+    }
+    footer .f_info .item .tel li {
+        margin: 0 0 5px 0;
+    }
+    footer .f_info .item .sns li {
+        margin: 0 25px 0 0;
+    }
+    footer .copyright {
+        position: relative; /* 원래 코딩한 순서대로 배치 */
+        left: auto;
+        bottom: auto;
+        margin: 63px 0 0 0;
+    }
+    footer .copyright .f_logo {
+        margin: 0 0 24px 0;
+    }
+    footer .copyright .f_logo img {
+        width: 154px;
+    }
+    footer .copyright .copy {
+        font-size: 12px;
+        color: rgba(255,255,255,0.6)
+    }
+} /* media */
