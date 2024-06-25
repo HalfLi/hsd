@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <!-- 반드시 jquery를 먼저 호출해야함!! -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
     <title>청산도</title>
 </head>
 <body>
@@ -92,14 +95,14 @@
                                     <p>대봉산에서 고래지미로 지나가던 구름이 고성산으로 돌아와 옛 성터에 잠시 머무는 장면</p>
                                 </a>
                             </li>
-                            <li class="tour3">
+                            <li class="tour3 active">
                                 <a href="#n">
                                     <h3>응봉추월</h3>
                                     <p>매봉산 봉우리를 포인트로 산의 전체를 표현, 달과 구름은 움직임이고 역동적. 
                                         노송으로 허전한 곳을 채우며 부드러운 듯 쓸쓸한 분위기를 연출</p>
                                 </a>
                             </li>
-                            <li class="tour4 active">
+                            <li class="tour4">
                                 <a href="#n">
                                     <h3>호암숙무</h3>
                                     <p>배경 전체를 안개로 하고 능선보다 범바위를 낮게하여 안개에 포근히 안겼다가
@@ -201,8 +204,18 @@
                     </div> <!-- f_info -->
                     <div class="copy">ⓒ cheonsando.net All Light Reserved</div>
                 </div>  <!-- inner -->
+                <!-- family가 열리면 open클래스 추가 닫히면 open클래스 삭제-->
                 <div class="family">
-                    <button>관련사이트</button>
+                    <button class="btn_open" title="열기">관련사이트</button>
+                    <div class="list">
+                        <ul>
+                            <li><a href="https://www.instagram.com/eulyoo/" target="_blank" title="인스타그램 새창링크">인스타그램</a></li>
+                            <li><a href="https://www.facebook.com/eulyoo/" target="_blank" title="페이스북 새창링크">페이스북</a></li>
+                            <li><a href="https://m.post.naver.com/my.nhn?memberNo=20168227" target="_blank" title="블로그 새창링크">블로그</a></li>
+                            <li><a href="https://www.youtube.com/@eulyoo1945" target="_blank" title="유튜브 새창링크">유튜브</a></li>   
+                        </ul>
+                    </div>
+                    <button class="btn_close" title="닫기">관련사이트</button>
                 </div> <!-- family -->
             </div>
         </footer>

@@ -40,6 +40,11 @@ header {
 					나머지 콘텐츠들은 100아래 값 
 					감싸는 요소가 z-index가 10이면 그 하위요소들은 그 보다 높은 값 줘도 10이상으로 안들어감*/
 }
+header.fixed {
+	backdrop-filter: blur(3px) brightness(0.7);
+    position: fixed;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
 header .wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -184,6 +189,8 @@ header .gnb ul li a:hover {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	transition: 0.3s;
+	overflow: hidden; /* 내가 준 넓이보다 내부요소가 더 크면 자르기 */
 }
 .tour .list ul li.tour1 {
 	background-image: url(../images/tour_img1.png);
@@ -199,6 +206,14 @@ header .gnb ul li a:hover {
 }
 .tour .list ul li.active { /* li중 active 클래스를 갖고있는 li 선택자 */
 	width: 618px;
+}
+.tour .list ul li.active a {
+	width: 618px;
+	/* .tour .list ul li transition의 영향으로 넓이가 0.5초동안
+	190->618px로 점점 변함 
+	하지만 a에는 transition이 없기때문에
+	즉시 넓이가 618px로 고정되기때문에
+	내부 콘텐츠 넓이가 고정, p태그의 글이 여러줄로 바뀌는 현상이 사라짐 */
 }
 .tour .list ul li a {
 	display: flex;
@@ -378,6 +393,7 @@ footer {
 footer .wrapper {
 	display: flex;
 	justify-content: space-between;
+	align-items: flex-start;
 }
 footer .f_nav ul {
 	display: flex;
@@ -413,7 +429,7 @@ footer .f_info address {
 footer .copy {
 	color: rgba(255,255,255,0.5);
 }
-footer .family {
+/* footer .family {
 	color: #2D2D2D;
 	width: 190px;
 	height: 42px;
@@ -423,4 +439,64 @@ footer .family {
 	background: url(../images/family_ico.svg) no-repeat right 19px center;
 	background-size: 10%;
 	background-color: #fff;
+} */
+footer .family {
+	position: relative; /* list 정렬의 기준 */
 }
+footer .family button {
+	color: #1d1d1d;
+	width: 190px;
+	height: 42px;
+	border: 1px solid #fff;
+	border-radius: 10px;
+	padding: 7px 0 7px 18px;
+	text-align: left;
+	position: relative;
+	background-color: #fff;
+}
+footer .family button::after {
+	content: "";
+	position: absolute;
+	right: 18px;
+	top: 13px;
+	width: 15px;
+	height: 15px;
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+footer .family button.btn_open::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'%3E%3Cpath id='add_24dp_FILL0_wght100_GRAD0_opsz24' d='M259.039-700.039H252v-.921h7.039V-708h.921v7.039H267v.921h-7.039V-693h-.921Z' transform='translate(-252 708)' fill='%235f6368'/%3E%3C/svg%3E%0A");
+}
+footer .family button.btn_close::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='0.921' viewBox='0 0 15 0.921'%3E%3Cpath id='remove_24dp_FILL0_wght100_GRAD0_opsz24' d='M252-493.079V-494h15v.921H252Z' transform='translate(-252 494)' fill='%235f6368'/%3E%3C/svg%3E%0A");
+}
+footer .family button.btn_close { /* 닫혀있는 상태에선 안보임 */
+	display: none;
+}
+footer .family .list {
+	display: none; /* 닫혀있는 상태에선 안보이고 open상태일때는 보임 */
+	position: absolute; /* family 의 기준으로 정렬 */
+	bottom: 45px;
+	left: 0;
+	border-radius: 10px;
+	border: 1px solid;
+	color: #1d1d1d;
+	background-color: #fff;
+	width: 100%;
+	padding: 27px 18px 27px 18px;
+}
+footer .family .list ul li a {
+	display: block; /* 넓이 여백이 끝까지 가도록 */
+	line-height: 1.8;
+}
+/* family가 open상태일때 */
+footer .family.open button.btn_open {
+	display: none;
+}
+footer .family.open button.btn_close {
+	display: block;
+}
+/* footer .family.open .list {
+	display: block;
+} */
