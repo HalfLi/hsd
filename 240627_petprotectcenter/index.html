@@ -3,12 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/main.css">
     <title>동물보호센터</title>
 </head>
 <body>
-    할라랄라라라
-    <h2>두두두두두두</h2>
-    <p>프리텐다드</p>
+    <div id="wrap">
+        <header>
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html">동물보호센터 Pet Protect Center</a></h1>
+                <nav class="gnb">
+                    <button class="gnb_open">메뉴열기</button>
+                    <div class="gnb_wrap">
+                        <ul class="depth1"> <!-- 1차메뉴 (최상위 1depth) -->
+                            <li>
+                                <a href="#n">찾습니다</a>
+                                <ul class="depth2"> <!-- 2차메뉴 (2depth) -->
+                                    <li><a href="#n">분실신고</a></li>
+                                    <li><a href="#n">구조정보/목격담</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n">구조분양</a>
+                            </li>
+                            <li>
+                                <a href="#n">네트워크</a>
+                            </li>
+                            <li>
+                                <a href="#n">재회성공담</a>
+                            </li>
+                            <li>
+                                <a href="#n">대처방법</a>
+                                <ul class="depth2">
+                                    <li><a href="#n">실종시 대처방법</a></li>
+                                    <li><a href="#n">구조시 대처방법</a></li>
+                                    <li><a href="#n">고양이에 대해</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="gnb_close">메뉴닫기</button>
+                </nav>
+                <div class="tnb">
+                    <a href="#n" class="btn_open">검색페이지 이동</a>
+                    <div class="search">
+                        <!-- <button class="btn_open">검색열기</button> pc는 직접검색,모바일에서는 페이지이동,검색툴을 열기 -->
+                        <form> <!-- form,fieldset은 개발자가 삭제할수도 있기때문에 선택자 부여 x -->
+                            <fieldset> <!-- form,fieldset은 개발자가 삭제할수도 있기때문에 선택자 부여 x -->
+                                <div class="search_box">
+                                    <legend>검색어입력</legend>
+                                    <label for="keyword">검색어</label>
+                                    <input type="text" id="keyword" placeholder="검색">
+                                    <input type="submit">
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="link">
+                        <a href="http://www.angel.or.kr/" target="_blank" title="새창열림">전단지</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual"> <!-- section태그 안에는 h2~h6가 무조건 존재해야함 
+                                        그래서 해당 section을 대표하는 제목을 작성,디자인상 표현되지 않는다면 display:none으로 숨김처리 -->
+                <h2>비쥬얼 팝업</h2> <!-- 숨김처리 -->
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide bg1">
+                            <div class="wrapper">
+                            <p>반려동물에게 잊을 수 없는<br>
+                                사랑을 선물하세요.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg2">
+                            <div class="wrapper">
+                            <p>함께해요! 동물보호센터에서<br>
+                                당신의 관심을 기다립니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg3">
+                            <div class="wrapper">
+                            <p>반려동물 사랑으로 입양하세요.<br>
+                                여러분의 삶이 달라집니다.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg4">
+                            <div class="wrapper">
+                            <p>아픔을 달래고,<br>
+                                행복을 찾아주세요.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg5">
+                            <div class="wrapper">
+                            <p>반려동물에게 잊을 수 없는<br>
+                                사랑을 선물하세요.</p>
+                            </div>
+                        </li>
+                        <li class="swiper-slide bg6">
+                            <div class="wrapper">
+                            <p>함께해요! 동물보호센터에서<br>
+                                당신의 관심을 기다립니다.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_wrap">
+                        <button class="btn_prev">이전 팝업 보기</button>
+                        <button class="btn_next">다음 팝업 보기</button>
+                        <button class="btn_start">일시정지</button>
+                        <button class="btn_play">재생</button>
+                    </div>
+                </div> <!-- visual swiper -->
+            </section>
+            <section class="find"></section>
+            <section class="campaign"></section>
+            <section class="family"></section>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
 </body>
 </html>

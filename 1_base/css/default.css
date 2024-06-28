@@ -1,6 +1,6 @@
 /* 브라우저가 태그에 준 스타일을 모두 삭제하고 
    내가 준 스타일만 적용 */
-* { /* 와이드카드 - 모든 태그를 지칭 - 상속이 안되는 속성을 줄때 사용 */
+   * { /* 와이드카드 - 모든 태그를 지칭 - 상속이 안되는 속성을 줄때 사용 */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -34,6 +34,22 @@ button { /* 버튼태그는 글자의 스타일을 상속받지 않음 */
     line-height: inherit;
     cursor: pointer; /* 마우스포인터를 손바닥으로 */   
 }
+input, select, textarea { /* form태그가 문자스타일을 상속 받지 않기때문에 스타일을 제거*/
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    cursor: pointer;
+}
+legend {
+    display: none;
+}
+fieldset {
+    border: 0;
+}
+
 .photo { /* 사진 아래 넓이 조금 생기는거 제거 */
     font-size: 0;
 	line-height: 0;

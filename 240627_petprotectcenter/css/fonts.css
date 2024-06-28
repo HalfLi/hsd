@@ -25,3 +25,9 @@
     font-display: swap;
     src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
 }
+@font-face {
+    font-family: 'HSSaemaul-Regular';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/HSSaemaul-Regular.woff2) format('woff2'), url(../fonts/HSSaemaul-Regular.woff) format('woff');
+}
