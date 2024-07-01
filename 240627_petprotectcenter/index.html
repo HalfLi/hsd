@@ -12,7 +12,9 @@
     <title>동물보호센터</title>
 </head>
 <body>
-    <div id="wrap">
+    <div id="wrap"> <!-- 스크롤을 내려 header가 고정이 됐을때 (fixed) 
+                         pc버전 메뉴에 마우스를 오버했을때(pc에서는 menu_over라는 class 부여)
+                         모바일 버전에서 메뉴 열기를 클릭했을때 모바일에선 (mobile_open이라는 class 부여)-->               
         <header>
             <div class="wrapper">
                 <h1 class="logo"><a href="index.html">동물보호센터 Pet Protect Center</a></h1>
@@ -20,7 +22,7 @@
                     <button class="gnb_open">메뉴열기</button>
                     <div class="gnb_wrap">
                         <ul class="depth1"> <!-- 1차메뉴 (최상위 1depth) -->
-                            <li>
+                            <li> <!-- 메뉴가 열리면 li에 on class 추가 (pc,mobile 둘다)-->
                                 <a href="#n">찾습니다</a>
                                 <ul class="depth2"> <!-- 2차메뉴 (2depth) -->
                                     <li><a href="#n">분실신고</a></li>
@@ -120,7 +122,9 @@
                     </div>
                 </div> <!-- visual swiper -->
             </section>
-            <section class="find"></section>
+            <section class="find">
+
+            </section>
             <section class="campaign"></section>
             <section class="family"></section>
         </main>
