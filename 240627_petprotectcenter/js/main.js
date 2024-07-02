@@ -108,21 +108,17 @@ $(document).ready(function(){
 	//find~ swiper//
 
 	const find01_swiper = new Swiper('.find .tap .find01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
-		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
 		breakpoints: {
-			640: {    /* 640px 이상일때 적용 */
-				slidesPerView: 2,
-				spaceBetween: 16,
-			},
 			768: {    /* 768px 이상일때 적용 */
-				slidesPerView: 3,
-				spaceBetween: 24,
-			},
-			1024: {   /* 1024px 이상일때 적용 */
 				slidesPerView: 4,
 				spaceBetween: 24,
 			},
+			// 1024: {   /* 1024px 이상일때 적용 */
+			// 	slidesPerView: 4,
+			// 	spaceBetween: 24,
+			// },
 		},
 		
 		loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
@@ -133,21 +129,17 @@ $(document).ready(function(){
 	}); //find01_swiper
 
 	const find02_swiper = new Swiper('.find .tap .find02 .swiper', { /* 팝업을 감싼는 요소의 class명 */
-		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
 		breakpoints: {
-			640: {    /* 640px 이상일때 적용 */
-				slidesPerView: 2,
-				spaceBetween: 16,
-			},
 			768: {    /* 768px 이상일때 적용 */
-				slidesPerView: 3,
-				spaceBetween: 24,
-			},
-			1024: {   /* 1024px 이상일때 적용 */
 				slidesPerView: 4,
 				spaceBetween: 24,
 			},
+			// 1024: {   /* 1024px 이상일때 적용 */
+			// 	slidesPerView: 4,
+			// 	spaceBetween: 24,
+			// },
 		},
 		
 		loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
@@ -157,4 +149,16 @@ $(document).ready(function(){
 		},
 	}); //find02_swiper
 	
+	/*
+		find의 탭메뉴
+		.find .tap>ul>li를 클릭하면
+		클릭한 li에만 on클래스를 줌
+		.. 원래 html에 기본적으로 하나의 li에 on클래스가 있어야함
+			제이쿼리에서 클릭하면 on을 다른 li에게 주는것뿐
+	*/
+
+	$('.find .tap>ul>li').on('click',function(){
+		$('.find .tap>ul>li').removeClass('on')//모든 li에 있는 on클래스를 모두 지웠다가
+		$(this).addClass('on') //click한 li에만 다시 on 클래스를 줌
+	})
 })//$(document).ready

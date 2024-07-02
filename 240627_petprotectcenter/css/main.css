@@ -414,6 +414,9 @@ header.menu_over::before {
     }
 }
 @media screen and (max-width:768px){
+    .visual ul li .wrapper {
+        height: 380px;
+    }
     .visual ul li p {
         font-size: 35px;
     }
@@ -450,8 +453,188 @@ header.menu_over::before {
     background-color: #5D907D;
     border-radius: 50px;
 }
+/* 탭 메뉴 구현 하나의 li에만 on class */
+.find .tap {
+    position: relative; /* tap_menu의 포지션 기준*/
+}
+.find .tap>ul>li .tap_menu {
+    position: absolute;
+    top: 0;
+}
+.find .tap>ul>li.find01 .tap_menu {
+    right: 50%;
+}
+.find .tap>ul>li.find02 .tap_menu {
+    left: 50%;
+}
+.find .tap>ul>li .tap_detail {
+    display: none; /* 숨김처리 */
+    padding: 97px 0 0 0;
+}
+.find .tap>ul>li.on .tap_detail { /* li에 on class가 붙으면 보임 */
+    display: block;
+}
+/* 탭 메뉴 구현 하나의 li에만 on class */
+.find .tap .tap_detail ul li {
+    width: 297px;
+}
+
 .find .tap .tap_detail ul li a {
     display: block;
+}
+.find .tap .tap_detail ul li a .photo {
+    overflow: hidden;
+    border-radius: 30px;
+}
+.find .tap .tap_detail ul li a .photo img {
+    width: 100%;
+    height: 100%;
+}
+.find .tap .tap_detail ul li a .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 42px 0 30px 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+.find .tap .tap_detail ul li a .tit h3 {
+    font-family: 'Pretendard';
+    font-size: 18px;
+    font-weight: 700;
+    width: calc(100% - 5.9em); /* width 107px 나누기 글자크기 18px = 5.9em */
+    /* 1줄제한.. */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.find .tap .tap_detail ul li a .tit strong {
+    width: 3.4em; /* 글자크기 22px 넓이 76px 76 나누기 22px = 3.4em
+                     글자크기 하나가 1em */
+    height: 1.5em; /* 클자크기 22px 높이 33px  */
+    line-height: 1.5em;
+    text-align: center;
+    /* 옆에 h3태그에 정확한 넓이를 주기 위해 padding값 말고 width와 height로 줌 */
+    border-radius: 15px;
+    white-space: nowrap;
+    /* strong태그,h3태그가 나란히 있어서 넓이가 줄어들면 h3태그의 글자만 잘리도록 할것 */
+}
+.find .tap .tap_detail ul li a .tit strong.cate01 {
+    background-color: #FB6B6B;
+}
+.find .tap .tap_detail ul li a .tit strong.cate02 {
+    background-color: #747474;
+}
+.find .tap .tap_detail ul li a .tit strong.cate03 {
+    background-color: #B1C681;
+}
+.find .tap .tap_detail ul li a .tit strong.cate04 {
+    background-color: #5D907D;
+}
+
+.find .tap .tap_detail ul li a p {
+    font-family: 'Pretendard';
+    font-size: 16px;
+    /* 내용이 2줄이지만 <br>태그를 이용하여 줄바꿈을 했으면 1줄로 계산 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.find .tap .tap_detail .btn_wrap {
+    margin: 52px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+.find .tap .tap_detail .btn_wrap button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%; /* 원형 */
+    font-size: 0px;
+    line-height: 0;
+    margin-right: 9px;
+    position: relative;
+}
+.find .tap .tap_detail .btn_wrap button.prev::before {
+    content: "";
+    position: absolute; /* transform,button의 정렬 기준 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 정렬의 기준이 되는 영역의 가운데 좌우 가운데 */
+    width: 10px;
+    height: 18px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='18.214' viewBox='0 0 10 18.214'%3E%3Cpath id='chevron_left_24dp_FILL0_wght100_GRAD0_opsz24' d='M365.107-665.786,356-674.893,365.107-684l.893.893-8.215,8.214L366-666.678Z' transform='translate(-356 684)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.find .tap .tap_detail .btn_wrap button.next::before {
+    content: "";
+    position: absolute; /* transform,button의 정렬 기준 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 정렬의 기준이 되는 영역의 가운데 좌우 가운데 */
+    width: 10px;
+    height: 18px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='18.214' viewBox='0 0 10 18.214'%3E%3Cpath id='chevron_right_24dp_FILL0_wght100_GRAD0_opsz24' d='M364.215-674.893,356-683.107l.893-.893L366-674.893l-9.107,9.107-.893-.893Z' transform='translate(-356 684)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+.find .tap .tap_detail .btn_wrap .more {
+    width: 134px;
+    height: 40px;
+    line-height: 37px;
+    /* 왼쪽 좌우 버튼이랑 높이를 동일하게 코딩하기 위해 */
+    border: 2px solid #fff;
+    border-radius: 23px;
+    padding: 0 0 0 23px;
+    position: relative; /*after의 정렬 기준*/
+}
+.find .tap .tap_detail .btn_wrap .more::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 19px;
+    width: 15px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'%3E%3Cpath id='plus' d='M246.875-711.875H240v-1.25h6.875V-720h1.25v6.875H255v1.25h-6.875V-705h-1.25Z' transform='translate(-240 720)' fill='%23fff'/%3E%3C/svg%3E ");
+}
+
+@media screen and (max-width:768px){
+    .find {
+        padding: 51px 0 35px 0;
+    }
+    .find h2 {
+        font-size: 30px;
+        margin: 0 0 35px 0;
+    }
+    .find .tap>ul>li .tap_menu {
+        font-size: 14px;
+    }
+    .find .tap .tap_detail ul li {
+        width: 208px;
+    }
+    .find .tap .tap_detail ul li a .tit {
+        margin: 15px 0 9px 0;
+        font-size: 15px;
+        justify-content: space-around;
+    }
+    .find .tap .tap_detail ul li a .tit h3 {
+        font-size: 16px;
+    }
+    .find .tap .tap_detail ul li a p {
+        font-size: 14px;
+    }
+    .find .tap .tap_detail .btn_wrap button {
+        display: none;
+    }
+    .find .tap>ul>li .tap_detail {
+        padding: 80px 0 0 0;
+    }
 }
 
 footer {
