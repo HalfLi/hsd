@@ -50,7 +50,6 @@ html, body {
 }
 @media screen and (max-width:640px){ /* 640px부터 모바일 반응형 */
 	html, body {
-		/* font-family에서 사용하는 서체명은 font-face에서 사용한 이름으로 사용,sans-serif = 고딕체라는 의미 */
 		font-size: 14px; /* 글자크기 */
 	}
 } /* media */
