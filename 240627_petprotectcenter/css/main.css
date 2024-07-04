@@ -426,14 +426,22 @@ header.menu_over::before {
 .visual .slogan {
     position: absolute;
     right: 5%;
-    bottom: -57px;
-    width: 170px;
-    height: 170px;
+    bottom: 0;
+    transform: translate(0, 35%);
+    width: 10vw;
     z-index: 10;
 }
 .visual .slogan img {
     width: 100%;
-    height: 100%;
+    /* animation 호출 */
+    animation-name: slogan_rotate;
+    animation-duration: 8s;
+    animation-iteration-count: infinite; /* 무한반복 */
+    animation-timing-function: linear; /* 기본가속도 제거값 */
+}
+@keyframes slogan_rotate { /* 0%=시작 100%=끝 */
+    0% {transform: rotate(0deg);} 
+    100% {transform: rotate(360deg);} /* 반대방향은 음수값 */
 }
 @media screen and (max-width:1024px){
     .visual ul li p {
@@ -801,6 +809,7 @@ header.menu_over::before {
     background-color: #6F8AFD;
     color: #fff;
     padding: 150px 0 240px 0;
+    position: relative; /*move_txt의 정렬기준*/
 }
 .family h2 {
     font-size: 80px;
@@ -932,6 +941,32 @@ header.menu_over::before {
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'%3E%3Cpath id='plus' d='M246.875-711.875H240v-1.25h6.875V-720h1.25v6.875H255v1.25h-6.875V-705h-1.25Z' transform='translate(-240 720)' fill='%23fff'/%3E%3C/svg%3E ");
 }
+.family .move_txt {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    font-family: 'Pretendard';
+    font-size: 142px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.2);
+    white-space: nowrap;
+}
+.family .move_txt p { /* p태그는 진짜 글자가 들어간 만큼의 넓이를 가져야함 
+                         position:absolute를 줘서 실제 넓이를 갖게 해야함.*/
+    transform: translate(-25%, 0);
+    position: absolute; /* move_txt 기준으로 들어감 */
+    left: 0;
+    bottom: 0;
+    animation: move_rolling;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes move_rolling {
+    0% {transform: translate(0,0);}
+    100% {transform: translate(-25%,0);}
+}
 
 @media screen and (max-width:768px){
     .family {
@@ -962,9 +997,256 @@ header.menu_over::before {
     .family .list .btn_wrap button {
         display: none;
     }
+    .family .move_txt {
+        font-size: 100px;
+    }
+    .family .move_txt p {
+        bottom: 30px;
+    }
 }
 
-
 footer {
-    margin-top: 500px;
+    margin: 54px 0 100px 0;
+}
+footer .wrapper {
+    position: relative; /* sns,family_site 오른쪽으로 보내기 위함 */
+}
+footer .sns {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+footer .sns ul {
+    display: flex;
+}
+footer .sns ul li {
+    margin: 0 5px 0 0;
+}
+footer .sns ul li:last-child {
+    margin: 0;
+}
+footer .sns ul li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #4E4E4E;
+    border-radius: 9px;
+    font-size: 0px;
+    line-height: 0;
+    position: relative;
+}
+footer .sns ul li a::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* 중앙정렬 */
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+footer .sns ul li.facebook a::before {
+    width: 15px;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.986' height='28' viewBox='0 0 14.986 28'%3E%3Cpath id='패스_236' data-name='패스 236' d='M768.682,111.689l.778-5.069H764.6v-3.285a2.53,2.53,0,0,1,2.853-2.735h2.208V96.286a26.65,26.65,0,0,0-3.921-.346c-4,0-6.617,2.428-6.617,6.821v3.859H754.67v5.069h4.448V123.94H764.6V111.689Z' transform='translate(-754.67 -95.94)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+footer .sns ul li.twitter a::before {
+    width: 34px;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34.025' height='28' viewBox='0 0 34.025 28'%3E%3Cpath id='패스_235' data-name='패스 235' d='M776.462,209.238a14.045,14.045,0,0,1-3.443.983c.55-.094,1.368-1.093,1.69-1.5a6.275,6.275,0,0,0,1.14-2.083c.031-.063.055-.134,0-.181a.181.181,0,0,0-.181.016,17.713,17.713,0,0,1-4.079,1.564.281.281,0,0,1-.283-.071,3.086,3.086,0,0,0-.354-.362,7.413,7.413,0,0,0-1.973-1.21,6.8,6.8,0,0,0-3.034-.487,7.238,7.238,0,0,0-2.877.81,7.407,7.407,0,0,0-2.319,1.894,7.1,7.1,0,0,0-1.383,2.775,7.505,7.505,0,0,0-.071,2.932c.023.165,0,.189-.142.165-5.6-.833-10.25-2.838-14.015-7.137-.165-.189-.252-.189-.385.016-1.651,2.476-.849,6.445,1.21,8.395a11.412,11.412,0,0,0,.865.755,7.148,7.148,0,0,1-2.7-.755c-.165-.1-.244-.047-.26.141a3.513,3.513,0,0,0,.047.8,7.178,7.178,0,0,0,4.433,5.73,4.534,4.534,0,0,0,.9.275,7.941,7.941,0,0,1-2.649.079c-.2-.039-.267.063-.2.244,1.171,3.183,3.686,4.127,5.573,4.669.252.047.5.047.763.1-.016.024-.032.024-.047.047-.628.951-2.8,1.666-3.8,2.02a13.628,13.628,0,0,1-5.777.739c-.314-.047-.377-.039-.464,0-.086.055-.008.126.086.2.393.259.794.487,1.2.715a19.588,19.588,0,0,0,3.867,1.548c6.948,1.918,14.769.511,19.981-4.669,4.1-4.072,5.534-9.684,5.534-15.3,0-.22.259-.338.416-.456a13.457,13.457,0,0,0,2.72-2.83.855.855,0,0,0,.181-.542v-.031c0-.086,0-.063-.141,0Z' transform='translate(-742.603 -205.89)' fill='%23fff'/%3E%3C/svg%3E ");
+}
+footer .sns ul li.naver a::before {
+    width: 30px;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30.448' height='28' viewBox='0 0 30.448 28'%3E%3Cpath id='패스_237' data-name='패스 237' d='M975.188,113.56v28H964.971l-10.014-14.1v14.1H944.74v-28h10.217l10.014,14.663V113.56Z' transform='translate(-944.74 -113.56)' fill='%23fff'/%3E%3C/svg%3E ");
+}
+footer .sns ul li.daum a::before {
+    width: 27px;
+    height: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27.152' height='28' viewBox='0 0 27.152 28'%3E%3Cpath id='패스_238' data-name='패스 238' d='M935.792,383.484H922.64v28h13.152a14,14,0,0,0,14-14h0a14,14,0,0,0-14-14Zm.274,19.029h-4.725V392.451h4.725a5.029,5.029,0,0,1,0,10.058Z' transform='translate(-922.64 -383.48)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+footer .f_nav ul {
+    display: flex;
+    margin: 0 0 14px 0;   
+}
+footer .f_nav ul li {
+    margin: 0 35px 0 0;
+    position: relative;
+    font-size: 14px;
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 7px;
+    width: 1px;
+    height: 9px;
+    background-color: rgba(112,112,112,0.3);
+}
+footer .family_site {
+    position: absolute; /* wrapper기준 */
+    right: 0;
+    top: 0;
+}
+footer .family_site button { /* pc버전에서는 안보임, 모바일에서 나타남 */
+    display: none;
+}
+footer .family_site .list ul li a {
+    display: block;
+    text-align: right;
+    margin: 0 0 10px 0;
+}
+footer .family_site .list ul li a span {
+    padding-right: 22px; /* 아이콘이 들어갈 자리 */
+    position: relative; /* sapn::after 정렬의 기준 */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+footer .family_site .list ul li a span::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath id='open_in_new_24dp_FILL0_wght200_GRAD0_opsz24' d='M161.212-788a1.17,1.17,0,0,1-.865-.348,1.17,1.17,0,0,1-.347-.863v-9.578a1.171,1.171,0,0,1,.347-.863,1.174,1.174,0,0,1,.865-.348h4.211v.75h-4.211a.443.443,0,0,0-.317.145.443.443,0,0,0-.144.316v9.578a.44.44,0,0,0,.144.316.439.439,0,0,0,.317.145h9.577a.44.44,0,0,0,.318-.145.44.44,0,0,0,.144-.316v-4.211H172v4.211a1.17,1.17,0,0,1-.347.863,1.17,1.17,0,0,1-.865.348Zm3.092-3.772-.531-.531,6.946-6.946H167.5V-800H172v4.5h-.75v-3.219Z' transform='translate(-160 800)' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+}
+footer .copy {
+    color: rgba(61,61,61,0.8);
+    font-size: 14px;
+    margin: 195px 0 0 0;
+}
+@media screen and (max-width:768px){
+    footer {
+        margin: 50px 0 100px 0;
+    }
+    footer .sns {
+        position: relative;
+        right: auto; /* 포지션 해제 값 auto */
+        bottom: auto;
+    }
+    footer .sns ul {
+        justify-content: center;
+        margin: 0 0 52px 0;
+    }
+    footer .sns ul li a {
+        width: 36px;
+        height: 36px;
+    }
+    footer .sns ul li.facebook a::before {
+        width: 11px;
+        height: 20px;
+    }
+    footer .sns ul li.twitter a::before {
+        width: 24px;
+        height: 20px;
+    }
+    footer .sns ul li.naver a::before {
+        width: 22px;
+        height: 20px;
+    }
+    footer .sns ul li.daum a::before {
+        width: 19px;
+        height: 20px;
+    }
+    footer .f_nav {
+        margin: 0 0 42px 0;
+    }
+    footer .f_nav ul {
+        display: flex;
+        margin: 0 0 14px 0;
+        flex-wrap: wrap; /* 여러줄 허용 */
+        justify-content: center;
+    }
+    footer .f_nav ul li {
+        margin: 0 35px 0 0;
+        position: relative;
+        font-size: 14px;
+    }
+    footer .f_nav ul li:last-child::after {
+        display: none;
+    }
+    footer .f_nav ul li::after {
+        content: "";
+        position: absolute;
+        right: -15px;
+        top: 7px;
+        width: 1px;
+        height: 9px;
+        background-color: rgba(112,112,112,0.3);
+    }
+    footer .family_site {
+        position: relative;
+        right: auto;
+        top: auto;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    footer .family_site button.open {
+        display: block;
+    }
+    footer .family_site button { /* pc버전에서는 안보임, 모바일에서 나타남 */
+        width: 100%;
+        height: 25px;
+        background-color: #707070;
+        text-align: left;
+        padding: 0 0 0 8px;
+        position: relative; /* after의 기준*/
+        color: #fff;
+    }
+    footer .family_site button::after {
+        content: "";
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        width: 10px;
+        height: 10px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    footer .family_site button.open::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath id='add_24dp_FILL0_wght200_GRAD0_opsz24' d='M244.583-714.583H240v-.834h4.583V-720h.833v4.583H250v.834h-4.583V-710h-.833Z' transform='translate(-240 720)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    }
+    footer .family_site button.close::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='1' viewBox='0 0 10 1'%3E%3Cpath id='remove_24dp_FILL0_wght200_GRAD0_opsz24' d='M240-499v-1h10v1Z' transform='translate(-239.999 500)' fill='%23fff'/%3E%3C/svg%3E ");
+    }
+    footer .family_site .list { /* footer .family_site의 기준으로 들어감 */
+        display: none; /* 열기 전까지는 안보임 */
+        position: absolute;
+        left: 0;
+        bottom: 25px;
+        width: 100%;
+        background-color: #4E4E4E;
+        padding: 20px 31px 20px 0;
+        color: #fff;
+    }
+    footer .family_site .list ul li a span::after {
+        width: 11px;
+        height: 11px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 11 11'%3E%3Cpath id='open_in_new_24dp_FILL0_wght200_GRAD0_opsz24' d='M161.111-789a1.073,1.073,0,0,1-.793-.318,1.071,1.071,0,0,1-.318-.791v-8.78a1.072,1.072,0,0,1,.318-.791,1.077,1.077,0,0,1,.793-.319h3.86v.688h-3.86a.405.405,0,0,0-.291.133.407.407,0,0,0-.132.29v8.78a.4.4,0,0,0,.132.29.4.4,0,0,0,.291.132h8.779a.4.4,0,0,0,.291-.132.4.4,0,0,0,.132-.29v-3.86H171v3.86a1.071,1.071,0,0,1-.318.791,1.073,1.073,0,0,1-.793.318Zm2.835-3.457-.487-.487,6.367-6.368h-2.951V-800H171v4.125h-.687v-2.95Z' transform='translate(-160 800)' fill='%23fff'/%3E%3C/svg%3E ");
+    }
+    /* family_site가 열렸을때 */
+    footer .family_site.on {
+        
+    }
+    footer .family_site.on button.open {
+        display: none;
+    }
+    footer .family_site.on button.close {
+        display: block;
+    }
+    footer .family_site.on .list {
+        display: block; /* family_site 클릭하면 on class추가되며 열리며 보임 */
+    }
+    footer .copy {
+        text-align: center;
+        margin: 50px 0 0 0;
+    }
 }
