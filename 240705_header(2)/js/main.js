@@ -50,4 +50,31 @@ $(document).ready(function(){
             $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on')
         }//if
     })
+    /*
+        모바일에서 1차 메뉴를 클릭하면...
+            -1차메뉴에 걸려있는 naver 링크가 작동하면 안됨.
+            -하위메뉴가 열려야함. (li에 open class추가)
+             닫힌 1차메뉴를 클릭하면 열림, 열린 1차메뉴를 클릭하면 닫힘
+             (동시에 여러개의 1차메뉴가 열림)
+    */
+    $('header .gnb .gnb_wrap ul.depth1 > li > a').on("click", function(e){
+        if(pc_mobile == 'mobile'){
+          e.preventDefault(); /* a태그 무효화 */ 
+          $(this).parent().toggleClass('open')
+        }//if
+    });
+    /*
+        메뉴 열기를 클릭하면 header에 menu_open class 추가됨.
+        메뉴 닫기를 클릭하면 header에 menu_open class 제거.
+        header .gnb button.gnb_open -- 메뉴열기
+        header .gnb button.gnb_close -- 메뉴닫기
+    */
+   $('header .gnb button.gnb_open').on('click', function(){
+        $('header').addClass('menu_open')
+        $("html, body").css({overflow : "hidden", height : $(window).height()}).bind("scroll touchmove mousewheel", function(e){e.preventDefault();e.stopPropagation();return false;},function(){passive:false});
+    })
+   $('header .gnb button.gnb_close').on('click', function(){
+        $('header').removeClass('menu_open')
+        $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+    })
 })
