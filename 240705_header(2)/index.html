@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>반응형 메뉴 테스트</title>
+</head>
+<body>
+    <div id="wrap">
+        <!--
+            pc상태에서 메뉴에 마우스를 오버하면 menu_over 클래스 추가
+            모바일 상태에서 메뉴열기를 클릭하면 menu_open 클래스 추가
+        -->
+        <header class="">
+            <div class="inner">
+                <h1 class="logo"><a href="index.html">로고</a></h1>
+                <nav class="gnb">
+                    <button class="gnb_open">메뉴열기</button>
+                    <div class="gnb_wrap">
+                        <ul class="depth1">
+                            <!-- 
+                                pc에서 메뉴에 오버하면 jquery에서 오버한 li에 on클래스 줌 
+                                모바일에서 1차메뉴를 클릭하면 li에 open클래스를 추가
+                            -->
+                            <li class="">
+                                <a href="#n"><span>Business</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">Business</a></li>
+                                    <li><a href="#n">스마트홈</a></li>
+                                    <li><a href="#n">스마트 보안</a></li>
+                                    <li><a href="#n">서비스 사업</a></li>
+                                    <li><a href="#n">주요 공사실적</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n"><span>Brand</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">브랜드 스토리</a></li>
+                                    <li><a href="#n">브랜드 컨셉</a></li>
+                                    <li><a href="#n">브랜드 마크</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n"><span>Investors</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">공시정보</a></li>
+                                    <li><a href="#n">결산공고</a></li>
+                                    <li><a href="#n">재무정보</a></li>
+                                    <li><a href="#n">내부정보관리규정</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n"><span>Media Center</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">언론보도</a></li>
+                                    <li><a href="#n">홍보영상</a></li>
+                                    <li><a href="#n">사회공헌</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#n"><span>Company</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">회사개요</a></li>
+                                    <li><a href="#n">경영철학</a></li>
+                                    <li><a href="#n">회사연혁</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="gnb_close">메뉴닫기</button>
+                </nav>
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2>비쥬얼</h2>
+            </section>
+        </main>
+    </div>
+</body> 
+</html>
