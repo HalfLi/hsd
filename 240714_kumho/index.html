@@ -14,7 +14,82 @@
 </head>
 <body>
     <div id="wrap">
-        <header></header>
+        <!--
+            하단으로 스크롤 오버시 fixed고정 (fixed)
+            header 마우스 오버 - (fixed)
+            메뉴 마우스 오버,하위 메뉴 - (menu_over)
+            모바일에서 메뉴 열면 - (menu_open)
+        -->
+        <header class="fixed menu_over"> 
+            <h1 class="logo"><a href="index.html">금호건설</a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <!-- 1차메뉴에 마우스 오버시 on 클래스 추가 -->
+                        <li class="on">
+                            <a href="#n"><span>회사소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>기업정보</span></a></li>
+                                <li><a href="#n"><span>CEO인사말</span></a></li>
+                                <li><a href="#n"><span>연혁</span></a></li>
+                                <li><a href="#n"><span>조직도</span></a></li>
+                                <li><a href="#n"><span>기술혁신</span></a></li>
+                                <li><a href="#n"><span>찾아오시는길</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>ESG</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>윤리경영</span></a></li>
+                                <li><a href="#n"><span>품질경영</span></a></li>
+                                <li><a href="#n"><span>안전경영</span></a></li>
+                                <li><a href="#n"><span>환경경영</span></a></li>
+                                <li><a href="#n"><span>상생경영</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>사업분야</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>건축사업</span></a></li>
+                                <li><a href="#n"><span>토목사업</span></a></li>
+                                <li><a href="#n"><span>주택사업</span></a></li>
+                                <li><a href="#n"><span>플랜트/환경사업</span></a></li>
+                                <li><a href="#n"><span>사업실적검색</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>IR</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>기업지배구조</span></a></li>
+                                <li><a href="#n"><span>경영정보</span></a></li>
+                                <li><a href="#n"><span>재무정보</span></a></li>
+                                <li><a href="#n"><span>주가정보</span></a></li>
+                                <li><a href="#n"><span>IR Contact</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>홍보센터</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>금호뉴스</span></a></li>
+                                <li><a href="#n"><span>분양뉴스</span></a></li>
+                                <li><a href="#n"><span>CI/BI</span></a></li>
+                                <li><a href="#n"><span>PR갤러리</span></a></li>
+                                <li><a href="#n"><span>금호역사관</span></a></li>
+                                <li><a href="#n"><span>직무가이드</span></a></li>
+                                <li><a href="#n"><span>채용/면접 Tip</span></a></li>
+                                <li><a href="https://kumhoenc.recruiter.co.kr/appsite/company/index" target="_blank" title="새창열림"><span>인재채용</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+            <div class="tnb">
+                <a href="#n" class="lang">ENG</a>
+                <a href="#n" class="aretera">ARETERA</a>
+            </div>
+        </header>
         <main class="container">
             <section class="visual">
                 <h2>홍보팝업</h2> <!--해당 section 전체를 설명하는 제목 (모바일에서 숨김)-->

@@ -6,7 +6,7 @@
 영문,순자,특수문자는 영문 폰트가 적용, 나머지 한글은 한글 폰트 적용
 */
 html, body {
-    font-family: "Oswald", "Pretendard", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Helvetica, "Apple SD Gothic Neo", "애플 SD 산돌고딕 Neo", sans-serif;
+    font-family: "Oswald", "Pretendard",sans-serif;
     font-weight: 300;
     font-size: 20px;
     letter-spacing: 0; /* 자간 */
@@ -39,11 +39,11 @@ html, body {
 }/* media */
 @media screen and (max-width:1024px){
     html, body {
-        font-size: 14px;
+        font-size: 15px;
     }
 }
 @media screen and (max-width:640px){ /* 모바일 반응형 */
     html, body {
-        font-size: 13px;
+        font-size: 15px;
     }
 }/* media */

@@ -1,6 +1,7 @@
 @import url(default.css);
 @import url(fonts.css);
 @import url(common.css);
+@import url(layout.css);
 
 .visual h2 {
     display: none; /* 숨김 */
@@ -31,4 +32,108 @@
     font-weight: 500;
     line-height: 1.2;
     margin: 40vh 0 0 0;
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: 50%; /*화면 중앙*/
+    transform: translate(-50%,0); /* 화면정렬의 기준 (swiper)넓이의 왼쪽 50%부터 [left 50%]
+                                     btn_warp 넓이의 절반을 왼쪽으로 이동 (transform) 그래서 가운데 정렬이 됨 */
+    bottom: 20%;
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.visual .btn_wrap .paging {
+    width: auto; /* swiper가 준 width:100%값 해제*/
+    display: flex;
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet { /* 현재 선택되지 않은 불렛*/
+    width: 190px;
+    height: 10px;
+    border-radius: 0;
+    background-color: rgba(217,217,217,0.2);
+    opacity: 1;
+    position: relative;
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet-active::before { /* 현재 선택된 불렛 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #d9d9d9;
+    animation-name: visual_count;
+    animation-duration: 5s;
+    animation-iteration-count: 1; /* 1번만 실행 */
+    animation-fill-mode: forwards; /* 애니메이션 종료 후 마지막 상태 유지 (반복이 아닐때) */
+    animation-timing-function: linear; /* 가속도 제거 */
+}
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 0 0 24px;
+}
+@keyframes visual_count {
+    0% {width: 0;}
+    100% {width: 100%;}
+}
+.visual .btn_wrap button {
+    width: 10px;
+    height: 17px;
+    font-size: 0;
+    line-height: 0;
+    position: relative; /*icon을 넣기위해*/
+    margin: 0 0 0 25px;
+}
+.visual .btn_wrap button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.visual .btn_wrap .btn_play {
+    display: none;
+}
+.visual .btn_wrap button.btn_prev::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.82346 17.8234L0 8.99997L8.82346 0.176514L10 1.35306L2.35309 8.99997L10 16.6469L8.82346 17.8234Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_stop::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='11' height='11' viewBox='0 0 11 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.327393 10.7682V0.76825H10.3274V10.7682H0.327393ZM1.32739 9.76825H9.32739V1.76825H1.32739V9.76825Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .btn_wrap button.btn_play::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='14' viewBox='0 0 10 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 13.3405V0.604614L10 6.97254L0 13.3405ZM1.22643 11.0811L7.7124 6.97254L1.22643 2.864V11.0811Z' fill='white'/%3E%3C/svg%3E ");
+}
+.visual .btn_wrap button.btn_next::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.64691 8.99997L0 1.35306L1.17654 0.176514L10 8.99997L1.17654 17.8234L0 16.6469L7.64691 8.99997Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1300px){
+
+}
+@media screen and (max-width:1024px){
+
+}
+@media screen and (max-width:880px){ /* 모바일 */
+    .visual ul li {
+        height: 480px; /* 브라우저 높이만큼 */
+        min-height: auto; /* 최소 높이 */
+    }
+    .visual ul li h3 {
+        font-size: 24px;
+        margin: 185px 0 0 0;
+    }
+    .visual .btn_wrap .btn_prev,
+    .visual .btn_wrap .btn_next {
+        display: none;
+    }
+    .visual .btn_wrap .paging .swiper-pagination-bullet { /* 현재 선택되지 않은 불렛*/
+        width: 45px;
+        height: 5px;
+    }
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 0 0 12px;
+    }
 }

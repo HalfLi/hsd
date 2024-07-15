@@ -25,4 +25,25 @@ $(document).ready(function(){
     });
     visual_swiper.autoplay.stop();  /* 일시정지 기능 */
     visual_swiper.autoplay.start();  /* 재생 기능 */
+
+    /*
+
+    btn_stop(.visual .btn_wrap button.btn_stop)버튼을 누르면
+    1.팝업 일시정지
+    2.일시정지 버튼은 숨겨짐, 재생버튼 나타남
+    btn_play(.visual .btn_wrap button.btn_play)버튼을 누르면
+    1.팝업 재생
+    2.재생버튼은 숨겨짐, 일시정지버튼 나타남
+    
+    */
+    $('.visual .btn_wrap button.btn_stop').on('click',function(){
+        visual_swiper.autoplay.stop();
+        $(this).hide()
+        $('.visual .btn_wrap button.btn_play').show()
+    })
+    $('.visual .btn_wrap button.btn_play').on('click',function(){
+        visual_swiper.autoplay.start();
+        $(this).hide()
+        $('.visual .btn_wrap button.btn_stop').show()
+    })
 })
