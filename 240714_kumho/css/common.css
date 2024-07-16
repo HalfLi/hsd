@@ -37,12 +37,12 @@ html, body {
         margin: 0 20px; /* 좌우에 20px */
     }
 }/* media */
-@media screen and (max-width:1024px){
+/* @media screen and (max-width:1024px){
     html, body {
         font-size: 15px;
     }
-}
-@media screen and (max-width:640px){ /* 모바일 반응형 */
+} */
+@media screen and (max-width:880px){ /* 모바일 반응형 */
     html, body {
         font-size: 15px;
     }

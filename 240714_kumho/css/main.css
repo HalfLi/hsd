@@ -114,11 +114,11 @@
 
 }
 @media screen and (max-width:1024px){
-
+    
 }
 @media screen and (max-width:880px){ /* 모바일 */
     .visual ul li {
-        height: 480px; /* 브라우저 높이만큼 */
+        height: 800px; /* 브라우저 높이만큼 */
         min-height: auto; /* 최소 높이 */
     }
     .visual ul li h3 {
