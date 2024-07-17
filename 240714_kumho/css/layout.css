@@ -196,9 +196,14 @@ header .logo a::before {
     }
 } /* 881px 이상 pc media */
 
-/* @media screen and (min-width:881px) and (max-width:1279px) {
-
-} */
+@media screen and (min-width:881px) and (max-width:1279px) {
+    header .gnb .gnb_wrap ul.depth1>li {
+        width: 90px;
+    }
+    header .gnb .gnb_wrap ul.depth1>li>a {
+        font-size: 20px;
+    }
+}
 
 @media screen and (max-width:880px){
     header {

@@ -16,7 +16,7 @@ $(document).ready(function(){
 
    function resize_chk(){
     window_w = $(window).width()
-    if(window_w > 881){
+    if(window_w >= 881){
         pc_mobile = 'pc'
     }else{
         pc_mobile = 'mobile'

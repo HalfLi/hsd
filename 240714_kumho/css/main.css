@@ -16,16 +16,16 @@
     text-align: center;
 }
 .visual ul li.bg1 {
-    background-image: url(../images/visual_bg1.png);
+    background-image: url(../images/main/visual_bg1.png);
 }
 .visual ul li.bg2 {
-    background-image: url(../images/visual_bg2.png);
+    background-image: url(../images/main/visual_bg2.png);
 }
 .visual ul li.bg3 {
-    background-image: url(../images/visual_bg3.png);
+    background-image: url(../images/main/visual_bg3.png);
 }
 .visual ul li.bg4 {
-    background-image: url(../images/visual_bg4.png);
+    background-image: url(../images/main/visual_bg4.png);
 }
 .visual ul li h3 {
     font-size: 55px;
@@ -110,15 +110,9 @@
 .visual .btn_wrap button.btn_next::before {
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.64691 8.99997L0 1.35306L1.17654 0.176514L10 8.99997L1.17654 17.8234L0 16.6469L7.64691 8.99997Z' fill='white'/%3E%3C/svg%3E%0A");
 }
-@media screen and (max-width:1300px){
-
-}
-@media screen and (max-width:1024px){
-    
-}
 @media screen and (max-width:880px){ /* 모바일 */
     .visual ul li {
-        height: 800px; /* 브라우저 높이만큼 */
+        height: 600px; /* 브라우저 높이만큼 */
         min-height: auto; /* 최소 높이 */
     }
     .visual ul li h3 {
@@ -135,5 +129,204 @@
     }
     .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0 0 0 12px;
+    }
+}
+.biz .tit h2 {
+    font-size: 32px;
+    font-weight: 500;
+    margin: 96px 0 8px 0;
+}
+.biz .tit h2 span {
+    position: relative; /* after 정렬의 기준 */
+}
+.biz .tit h2 span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 15px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='16' viewBox='0 0 15 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.02128C0 6.23176 0.0295412 6.44594 0.114475 6.64535C0.483751 7.55377 1.41064 8.11138 2.59232 7.63871C2.87666 7.52423 10.7053 4.37061 10.7053 4.37061C10.7053 4.37061 7.62186 12.1882 7.50739 12.4799C7.05687 13.5988 7.59601 14.6143 8.51551 14.9578C8.71861 15.0316 8.9291 15.0685 9.13959 15.0649C9.88553 15.0612 10.5465 14.618 10.8678 13.7392C10.9195 13.6062 14.7747 3.01906 14.8597 2.76057C14.9077 2.61286 15 2.25835 15 2.01094C15 1.48656 14.8043 0.991733 14.4313 0.618764C14.062 0.249488 13.5783 0.0611572 13.0576 0.0611572C12.8102 0.0611572 12.6034 0.10547 12.2932 0.205175C12.1086 0.264259 2.16765 3.96441 1.31832 4.28198C0.465291 4.59956 0 5.27534 0 6.02128Z' fill='%23ED1C24'/%3E%3C/svg%3E%0A");
+}
+.biz .tit p {
+    margin: 0 0 40px 0;
+}
+.biz .list ul {
+    display: flex;
+}
+.biz .list ul li {
+    width: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    position: relative;
+    transition: 0.3s;
+}
+.biz .list ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.2;
+}
+.biz .list ul li.biz1 {
+    background-image: url(../images/main/biz01.png);
+}
+.biz .list ul li.biz2 {
+    background-image: url(../images/main/biz02.png);
+}
+.biz .list ul li.biz3 {
+    background-image: url(../images/main/biz03.png);
+}
+.biz .list ul li.biz4 {
+    background-image: url(../images/main/biz04.png);
+}
+.biz .list ul li a {
+    display: block;
+    height: 750px;
+    position: relative;
+    z-index: 10;
+    /*
+        <li>
+            ::before (position값이 있음)
+            <a></a>
+        </li>
+        --li의 before가 position값이 있으면 a보다 더 위에 배치됨.
+        a를 before위에 배치하려면 a에 position[position: relative]값을 주고 (z-index를 줌)
+    
+    
+    */
+}
+.biz .list ul li a .inner {
+    position: absolute; /* .biz .list ul li a를 기준으로 정렬,absolute인 이유는 hover 애니메이션을 부드럽게 하려고 */
+    bottom: 40px;
+    left: 0;
+    margin: 0 10%;
+    transition: 0.3s;
+}
+.biz .list ul li a .inner strong {
+    display: block;
+    font-size: 20px;
+}
+.biz .list ul li a .inner h3 {
+    font-weight: 500;
+    font-size: 28px;
+    margin: 10px 0 12px 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+.biz .list ul li a .inner p {
+    font-size: 16px;
+    transition: 0.3s;
+    opacity: 0;
+}
+/* 하나의 li에 오버(on) 했을때*/
+.biz .list ul li.on {
+    width: 80%
+}
+.biz .list ul li.on::before {
+    opacity: 0;
+}
+.biz .list ul li.on a .inner {
+    bottom: 40px;
+}
+.biz .list ul li.on a .inner strong {
+    font-size: 24px;
+}
+.biz .list ul li.on a .inner h3 {
+    font-size: 32px;
+}
+.biz .list ul li.on a .inner p {
+    font-size: 20px;
+    opacity: 1;
+}
+.biz .list ul li.off::before {
+    opacity: 0.4;
+}
+.biz .list ul li.off a {
+    opacity: 0.6;
+}
+.biz .list ul li.off p {
+    display: none;
+}
+@media screen and (min-width:881px) and (max-width:1279px) {
+    /* .biz .list {
+        overflow-x: auto;
+    }
+    .biz .list ul {
+        gap: 16px;
+        width: 1648px;
+    }
+    .biz .list ul li {
+        width: 400px;
+    }
+    .biz .list ul li a {
+        height: 500px;
+    } */
+    .visual ul li h3 {
+        font-size: 48px;
+        margin: 40vh 0 0 0;
+    }
+    .biz .tit h2 {
+        font-size: 28px;
+        margin: 96px 0 8px 0;
+    }
+    .biz .tit p {
+        font-size: 16px;
+    }
+    .biz .list ul li a .inner strong {
+        font-size: 18px;
+    }
+    .biz .list ul li a .inner h3 {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width:880px){
+    .biz .tit h2 {
+        font-size: 20px;
+    }
+    .biz .tit p {
+        display: none;
+    }
+    .biz .list ul {
+        display: block;
+    }
+    .biz .list ul li {
+        width: auto;
+        margin-bottom: 10px;
+    }
+    .biz .list ul li a {
+        height: 150px;
+    }
+    .biz .list ul li a .inner {
+        bottom: 5px;
+        left: 0;
+        margin: 0 5%;
+        width: calc(100% - 10%);
+    }
+    .biz .list ul li a .inner strong {
+        font-size: 18px;
+    }
+    .biz .list ul li a .inner h3 {
+        font-size: 22px;
+        margin: 10px 0 5px 0;
+        transition: 0.3s;
+    }
+    .biz .list ul li a .inner p {
+        display: none;
+    }
+    .biz .list ul li.on {
+        width: 80%
+    }
+    .biz .list ul li.off a {
+        opacity: 1;
     }
 }
