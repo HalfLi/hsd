@@ -401,7 +401,7 @@ section .tit p {
     line-height: 0;
     position: relative;
 }
-.news .swiper_bar .btn_wrap {
+.news .swiper_bar .btn_wrap { /* 그냥 abslolute로 빼기 */
     margin: 0 0 0 125px;
 }
 .news .swiper_bar .btn_wrap button::after {
