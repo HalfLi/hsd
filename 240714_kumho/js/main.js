@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+    const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싸는 요소의 class명 */
 
         //effect: "fade", /* fade 효과 */
 
@@ -64,4 +64,24 @@ $(document).ready(function(){
         $('.biz .list ul li').addClass('off')
     })
 
+    const news_swiper = new Swiper('.news .swiper', {
+        slidesPerView: 'auto', /* li의 넓이 비율로 안함 - css에서 준 넓이대로 함(고정사이드) */
+        spaceBetween: 16,
+        breakpoints: {
+            880: {  /* 880px 이상이 되면 적용 */
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+        navigation: {
+            nextEl: '.news .next',
+            prevEl: '.news .prev',
+        },
+        scrollbar: {
+            el: ".news .swiper-scrollbar",
+            draggable: true,
+            hide: false,
+        },
+    });
+    
 })//document.ready

@@ -130,16 +130,16 @@
     .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0 0 0 12px;
     }
-}
-.biz .tit h2 {
+} /* visual media */
+section .tit h2 {
     font-size: 32px;
     font-weight: 500;
     margin: 96px 0 8px 0;
 }
-.biz .tit h2 span {
+section .tit h2 span {
     position: relative; /* after 정렬의 기준 */
 }
-.biz .tit h2 span::after {
+section .tit h2 span::after {
     content: "";
     position: absolute;
     top: 0;
@@ -151,7 +151,7 @@
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg width='15' height='16' viewBox='0 0 15 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.02128C0 6.23176 0.0295412 6.44594 0.114475 6.64535C0.483751 7.55377 1.41064 8.11138 2.59232 7.63871C2.87666 7.52423 10.7053 4.37061 10.7053 4.37061C10.7053 4.37061 7.62186 12.1882 7.50739 12.4799C7.05687 13.5988 7.59601 14.6143 8.51551 14.9578C8.71861 15.0316 8.9291 15.0685 9.13959 15.0649C9.88553 15.0612 10.5465 14.618 10.8678 13.7392C10.9195 13.6062 14.7747 3.01906 14.8597 2.76057C14.9077 2.61286 15 2.25835 15 2.01094C15 1.48656 14.8043 0.991733 14.4313 0.618764C14.062 0.249488 13.5783 0.0611572 13.0576 0.0611572C12.8102 0.0611572 12.6034 0.10547 12.2932 0.205175C12.1086 0.264259 2.16765 3.96441 1.31832 4.28198C0.465291 4.59956 0 5.27534 0 6.02128Z' fill='%23ED1C24'/%3E%3C/svg%3E%0A");
 }
-.biz .tit p {
+section .tit p {
     margin: 0 0 40px 0;
 }
 .biz .list ul {
@@ -274,11 +274,11 @@
         font-size: 48px;
         margin: 40vh 0 0 0;
     }
-    .biz .tit h2 {
+    section .tit h2 {
         font-size: 28px;
         margin: 96px 0 8px 0;
     }
-    .biz .tit p {
+    section .tit p {
         font-size: 16px;
     }
     .biz .list ul li a .inner strong {
@@ -290,10 +290,10 @@
 }
 
 @media screen and (max-width:880px){
-    .biz .tit h2 {
+    section .tit h2 {
         font-size: 20px;
     }
-    .biz .tit p {
+    section .tit p {
         display: none;
     }
     .biz .list ul {
@@ -329,4 +329,179 @@
     .biz .list ul li.off a {
         opacity: 1;
     }
+} /* biz media */
+
+.news .list ul li a {
+    display: block;
+    border-top: 3px solid #ED1C24;
+}
+.news .list ul li a:hover {
+    position: relative;
+}
+.news .list ul li a:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid #ED1C24;
+}
+.news .list ul li a .date {
+    display: block;
+    font-weight: 500;
+    font-size: 62px;
+    margin: 17px 0 17px 0;
+    text-align: center;
+    color: #1d1d1d;
+}
+.news .list ul li a h3 {
+    color: #2d2d2d;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.3;
+    height: 2.6em;
+    margin: 0 0 17px 0; 
+    overflow: hidden;
+}
+.news .list ul li a p {
+    color: #2d2d2d;
+    line-height: 1.4;
+    height: 5.6em;
+    overflow: hidden;
+}
+.news .swiper_bar {
+    display: flex;
+    margin: 60px 0 0 0;
+    justify-content: center;
+    align-items: baseline;
+}
+.news .swiper_bar .swiper-scrollbar {
+    border-radius: 0;
+    background: rgba(29,29,29,0.5);
+}
+.news .swiper_bar .swiper-scrollbar-drag {
+    border-radius: 0;
+    background: rgba(237,28,36,0.8);
+    cursor: grab;
+}
+.news .swiper_bar .scroll {
+    position: relative; /* swiper-scrollbar 정렬의 기준*/
+    width: calc(100% - 388px);
+}
+/* .news .swiper_bar .btn_wrap {
+    display: flex;
+    gap: 10px;
+} */
+.news .swiper_bar .btn_wrap button {
+    display: none;
+    width: 10px;
+    height: 20px;
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+}
+.news .swiper_bar .btn_wrap {
+    margin: 0 0 0 125px;
+}
+.news .swiper_bar .btn_wrap button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.64691 8.99997L0 1.35306L1.17654 0.176514L10 8.99997L1.17654 17.8234L0 16.6469L7.64691 8.99997Z' fill='%23D9D9D9'/%3E%3C/svg%3E ");
+}
+.news .swiper_bar .btn_wrap button.next::after {
+    transform: rotate(180deg)   
+}
+.news .swiper_bar .btn_wrap a:hover {
+    color: #ED1C24;
+}
+@media screen and (min-width:881px) and (max-width:1279px) {
+    .news .list ul li a .date {
+        font-size: 54px;
+    }
+    .news .list ul li a h3 {
+        font-size: 26px;
+        line-height: 1.4;
+        height: 2.8em;
+    }
+    .news .list ul li a p {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:880px) {
+    .news .list ul li {
+        width: 265px;
+    }
+    .news .list ul li a .date {
+        font-size: 40px;
+        text-align: left;
+    }
+    .news .list ul li a h3 {
+        font-size: 24px;
+    }
+    .news .list ul li a p {
+        font-size: 16px;
+        line-height: 1.2;
+        height: 6.0em;
+    }
+    .news .swiper_bar {
+        display: block;
+        margin: 50px 0 0 0;
+    }
+    .news .swiper_bar .swiper-scrollbar {
+        left: 0;
+    }
+    .news .swiper_bar .btn_wrap {
+        display: block;
+        text-align: center;
+        margin: 0;
+    }
+    .news .swiper_bar .btn_wrap a {
+        display: inline-block;
+        margin: 55px 0 40px 0;
+    }
+    .news .swiper_bar .scroll {
+        width: 100%;
+    }
+} /* news media */
+
+.service {
+    padding: 30px 0 115px 0; /* 브라우저 사이즈가 줄어들어서 글자가 여러줄이 되면 높이가 변경됨
+                                아예 높이를 안주고 위아래 여백을 줌 */
+    background: url(../images/main/service_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+section.service .tit h2 {
+    margin: 0 0 15px 0;
+    font-size: 64px;
+}
+section.service .tit p {
+    font-weight: 500;
+    font-size: 32px;
+}
+.service .list ul {
+    display: flex;
+    justify-content: space-between;
+    color: #1d1d1d;
+}
+.service .list ul li {
+    width: calc(33.33% - 16px); /* 100*li의 갯수 , 중간여백 총합 24*2 = 48 / li의 갯수 (3) = 16 */
+}
+.service .list ul li a {
+    display: block;
+    height: 91px;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.service .list ul li:hover a { /* 오버시 이동하는 애니메이션을 주면 오버 범위가 변경되기 때문에 오류가 발생함
+                                  a가 이동하고 a를 감싸는 이동하지 않는 li에게 hover애니메이션을 줌 */
+    transform: translate(-10px, -10px);
+    box-shadow: 5px 5px 4px rgba(0,0,0,0.4);
 }
