@@ -386,5 +386,161 @@ header .logo a::before {
 } /* 880px 이하 mobile media */
 
 footer {
-    height: 200vh;
+    color: #666666;
+    padding: 45px 0;
+    font-size: 15px;
+    font-family: 'pretendard';
+}
+footer .wrapper {
+    position: relative; /* familysite,youtube의 정렬기준*/
+}
+footer .youtube {
+    position: absolute;
+    color: #2d2d2d;
+    right: 14px;
+    top: 35px;
+}
+footer .youtube::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 3px;
+    width: 20px;
+    height: 14px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 4.38974C20 1.96923 18.0308 0 15.6103 0H4.38974C1.96923 0 0 1.96923 0 4.38974V9.61025C0 12.0308 1.95897 14 4.38974 14H15.6103C18.0308 14 20 12.041 20 9.61025V4.38974ZM13.4051 7.3846L8.3795 9.87693C8.18463 9.97949 7.5077 9.8359 7.5077 9.62052V4.51281C7.5077 4.28717 8.18463 4.14358 8.3795 4.2564L13.1898 6.87178C13.3949 6.9846 13.6 7.28203 13.3949 7.3846H13.4051Z' fill='%23FF0000'/%3E%3C/svg%3E ");
+}
+footer .youtube::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.33987 8.33341C2.14807 8.33341 1.98793 8.26918 1.85946 8.14071C1.73098 8.01223 1.66675 7.8521 1.66675 7.66029V2.33987C1.66675 2.14807 1.73098 1.98793 1.85946 1.85946C1.98793 1.73098 2.14807 1.66675 2.33987 1.66675H4.67956V2.08341H2.33987C2.27571 2.08341 2.21692 2.11012 2.16352 2.16352C2.11012 2.21692 2.08341 2.27571 2.08341 2.33987V7.66029C2.08341 7.72446 2.11012 7.78324 2.16352 7.83664C2.21692 7.89005 2.27571 7.91675 2.33987 7.91675H7.66029C7.72446 7.91675 7.78324 7.89005 7.83664 7.83664C7.89005 7.78324 7.91675 7.72446 7.91675 7.66029V5.3206H8.33341V7.66029C8.33341 7.8521 8.26918 8.01223 8.14071 8.14071C8.01223 8.26918 7.8521 8.33341 7.66029 8.33341H2.33987ZM4.05779 6.23727L3.76289 5.94237L7.62185 2.08341H5.83341V1.66675H8.33341V4.16675H7.91675V2.37831L4.05779 6.23727Z' fill='%232D2D2D'/%3E%3C/svg%3E ");
+}
+footer .familysite {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 142px;
+}
+footer .familysite ul {
+    display: none;
+    position: absolute; /* familysite를 기준으로 정렬 */
+    left: 0;
+    bottom: 27px;
+    width: 100%;
+    background-color: #2D2D2D;
+    color: #fff;
+    padding: 14px 19px;
+}
+footer .familysite ul li a {
+    display: block;
+    line-height: 1.8;
+}
+footer .familysite button {
+    position: relative;
+    /* border-bottom: 1px solid #2d2d2d; */
+    width: 100%;
+    height: 22px;
+    /* text-align: left; */
+}
+footer .familysite button:hover {
+    color: #ED1C24;
+}
+footer .familysite button:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.41173 1.17654L0.588272 5L-2.57142e-08 4.41173L4.41173 -1.92843e-07L8.82346 4.41173L8.23518 5L4.41173 1.17654Z' fill='%23ED1C24'/%3E%3C/svg%3E ");
+}
+footer .familysite button::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 10px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.41173 1.17654L0.588272 5L-2.57142e-08 4.41173L4.41173 -1.92843e-07L8.82346 4.41173L8.23518 5L4.41173 1.17654Z' fill='%232D2D2D'/%3E%3C/svg%3E ");
+}
+footer .familysite .family_close {
+    display: none;
+}
+footer .familysite .family_close::after {
+    content: "";
+    transform: rotate(180deg);
+}
+/* footer .familysite.open ul {
+    display: block; 
+} */
+footer .familysite.open .family_close {
+    display: block;
+}
+footer .familysite.open .family_open {
+    display: none;
+}
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li {
+    margin-right: 3em;
+    position: relative; /* after의 정렬 기준 */
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -21px;
+    top: 8px;
+    width: 1px;
+    height: 8px;
+    background-color: rgba(0,0,0,0.2);
+}
+footer .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .copyright {
+    margin: 87px 0 0 0;
+    color: rgba(102,102,102,0.8);
+}
+@media screen and (min-width:881px) and (max-width:1279px) {
+    
+}
+@media screen and (max-width:880px){
+    footer {
+        padding: 20px 0;
+    }
+    footer .wrapper {
+        position: relative; /* familysite,youtube의 정렬기준*/
+    }
+    footer .youtube {
+        position: relative;
+        color: #2d2d2d;
+        text-align: center;
+        right: auto;
+        top: auto;
+    }
+    footer .familysite {
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 119px;
+        margin: 40px auto 55px auto;
+    }
+    footer .familysite button::after {
+        right: -10px;
+    }
+    footer .f_nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    footer .copyright {
+        margin: 45px 0 0 0;
+        color: rgba(102,102,102,0.8);
+    }
 }
