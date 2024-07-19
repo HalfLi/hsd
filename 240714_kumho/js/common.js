@@ -109,12 +109,12 @@ $(document).ready(function(){
     */
 
     $('footer .familysite .family_open').on('click',function(){
-        $('.footer .familysite').addClass('open')
-        $('.footer .familysite ul').slideDown()
+        $('footer .familysite').addClass('open')
+        $('footer .familysite ul').slideDown()
     })
     $('footer .familysite .family_close').on('click',function(){
-        $('.footer .familysite').removeClass('open')
-        $('.footer .familysite ul').slideup()
+        $('footer .familysite').removeClass('open')
+        $('footer .familysite ul').slideup()
     })
 
 })//document.ready
