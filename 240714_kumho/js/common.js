@@ -114,7 +114,7 @@ $(document).ready(function(){
     })
     $('footer .familysite .family_close').on('click',function(){
         $('footer .familysite').removeClass('open')
-        $('footer .familysite ul').slideup()
+        $('footer .familysite ul').slideUp()
     })
 
 })//document.ready
