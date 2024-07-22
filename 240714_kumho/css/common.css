@@ -43,3 +43,9 @@ html, body {
         font-size: 15px;
     }
 }/* media */
+
+/* 클릭하는 요소 a button */
+a:focus,
+button:focus {
+    outline: 3px dashed #ED1C24;
+}
