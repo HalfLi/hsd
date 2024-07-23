@@ -73,7 +73,6 @@ header .logo a::before {
         width: 115px;
         position: relative; /* depth2 정렬기준 */
     }
-    header .gnb .gnb_wrap ul.depth1>li:last-child>ul.depth2>li:last-child>a {}
     header .gnb .gnb_wrap ul.depth1>li>a {
         display: block; /* li 사이즈와 동일해짐 */
         font-size: 24px;
@@ -569,7 +568,6 @@ footer .copyright {
         color: rgba(102,102,102,0.8);
     }
 }
-
 /* 서브페이지 레이아웃 [Sub Layout] */
 
 .sub_visual {
@@ -629,19 +627,19 @@ footer .copyright {
     padding: 0 25px;
     line-height: 50px;
 }
-.sub_menu .lnb ul li.active a,
-.sub_menu .lnb ul li a:hover {
+.sub_menu .lnb ul li.active a span,
+.sub_menu .lnb ul li a:hover span {
     position: relative;
     font-weight: 700;
 }
-.sub_menu .lnb ul li.active a::after,
-.sub_menu .lnb ul li a:hover::after {
+.sub_menu .lnb ul li.active a span::after,
+.sub_menu .lnb ul li a:hover span::after {
     border-bottom: 3px solid #ED1C24;
     content: "";
     position: absolute;
-    bottom: 9px;
-    left: 25px;
-    width: 74px;
+    bottom: -5px;
+    left: 0px;
+    width: 100%;
     height: 3px;
 }
 .sub_menu .lnb ul li:first-child a {
@@ -657,8 +655,8 @@ footer .copyright {
 .sub_menu .breadcrumb ol li::after {
     content: "";
     position: absolute;
-    left: 0;
-    top: 0;
+    right: -20px;
+    top: 17px;
     width: 15px;
     height: 15px;
     background-position: center center;
@@ -675,7 +673,6 @@ footer .copyright {
 .sub_menu .breadcrumb ol li a {
     display: block;
     line-height: 50px;
-    font-weight: 500;
 }
 .sub_menu .breadcrumb ol li.home a {
     font-size: 0;
