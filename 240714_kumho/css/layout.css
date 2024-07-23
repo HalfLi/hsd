@@ -569,3 +569,146 @@ footer .copyright {
         color: rgba(102,102,102,0.8);
     }
 }
+
+/* 서브페이지 레이아웃 [Sub Layout] */
+
+.sub_visual {
+    height: 400px;
+    background: url(../images/common/sub_visual01.png) no-repeat center center / cover; 
+    color: #fff;
+}
+/* 1차메뉴마다 배경이 다른이미지 적용
+    bg1 = 회사소개
+    bg2 = esg
+    bg3 = 사업분야
+    bg4 = ir
+    bg5 = 홍보센터
+    기본적으로 하나의 이미지는 미리 적용 */
+.sub_visual.bg1 {
+    background-image: url(../images/common/sub_visual01.png);    
+}
+.sub_visual.bg2 {
+    background-image: url(../images/common/sub_visual02.png);    
+}
+.sub_visual.bg3 {
+    background-image: url(../images/common/sub_visual03.png);    
+}
+.sub_visual.bg4 {
+    background-image: url(../images/common/sub_visual04.png);    
+}
+.sub_visual.bg5 {
+    background-image: url(); /* 넣어야됨 */
+}
+.sub_visual strong {
+    display: block;
+    font-size: 40px;
+    font-weight: 500;
+    padding: 150px 0 0 0;
+}
+.sub_visual p {
+    font-size: 24px;
+    padding: 0 0 140px 0;
+}
+.sub_menu {
+    background-color: #D9D9D9;
+    color: #1d1d1d;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Pretendard';
+}
+.sub_menu .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.sub_menu .lnb ul {
+    display: flex;
+}
+.sub_menu .lnb ul li a {
+    display: block;
+    padding: 0 25px;
+    line-height: 50px;
+}
+.sub_menu .lnb ul li.active a,
+.sub_menu .lnb ul li a:hover {
+    position: relative;
+    font-weight: 700;
+}
+.sub_menu .lnb ul li.active a::after,
+.sub_menu .lnb ul li a:hover::after {
+    border-bottom: 3px solid #ED1C24;
+    content: "";
+    position: absolute;
+    bottom: 9px;
+    left: 25px;
+    width: 74px;
+    height: 3px;
+}
+.sub_menu .lnb ul li:first-child a {
+    padding-left: 0;
+}
+.sub_menu .breadcrumb ol {
+    display: flex;
+}
+.sub_menu .breadcrumb ol li {
+    margin-right: 23px;
+    position: relative;
+}
+.sub_menu .breadcrumb ol li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='18' viewBox='0 0 10 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.64691 8.82346L0 1.17654L1.17654 0L10 8.82346L1.17654 17.6469L0 16.4704L7.64691 8.82346Z' fill='%231D1D1D'/%3E%3C/svg%3E ");
+}
+.sub_menu .breadcrumb ol li:last-child {
+    margin-right: 0;
+}
+.sub_menu .breadcrumb ol li:last-child::after {
+    display: none;  
+}
+.sub_menu .breadcrumb ol li a {
+    display: block;
+    line-height: 50px;
+    font-weight: 500;
+}
+.sub_menu .breadcrumb ol li.home a {
+    font-size: 0;
+    line-height: 0;
+    width: 24px;
+    height: 50px;
+    position: relative;
+}
+.sub_menu .breadcrumb ol li.home a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 20V9.49999L12 4.21149L19 9.49999V20H13.8077V13.6155H10.1923V20H5Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+}
+.sub_menu .breadcrumb ol li.now a {
+    font-weight: 700;
+}
+
+.sub_contents .sub_title h2 {
+    font-size: 32px;
+    font-family: 500;
+    font-family: 'Pretendard';
+    color: #ED1C24;
+    margin: 67px 0 0 0;
+}
+.sub_contents .sub_title p {
+    font-family: 'Pretendard';
+    font-size: 20px;
+    margin-top: 8px;
+}
