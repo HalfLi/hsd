@@ -45,7 +45,7 @@ html, body {
 }/* media */
 
 /* 클릭하는 요소 a button */
-a:focus,
+/* a:focus,
 button:focus {
     outline: 3px dashed #ED1C24;
-}
+} */
