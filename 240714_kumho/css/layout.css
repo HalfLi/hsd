@@ -78,6 +78,21 @@ header .logo a::before {
         font-size: 24px;
         line-height: 100px; /* header의 높이와 동일하게 */
     }
+    header .gnb .gnb_wrap ul.depth1>li.active>a>span {
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1>li.active>a>span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 3px;
+        border-bottom: 3px solid #ED1C24;
+    }
+    header.menu_over .gnb .gnb_wrap ul.depth1>li.active>a>span::before {
+        display: none;
+    }
     header .gnb .gnb_wrap ul.depth2 {
         display: none; /* 오버 했을때만 보이게 */
         position: absolute;
@@ -328,6 +343,7 @@ header .logo a::before {
     }
     header .gnb .gnb_wrap ul.depth1>li.open>a {
         color: #ED1C24;
+        font-weight: 700;
     }
     header .gnb .gnb_wrap ul.depth1>li.open>a::after {
         background-image: url("data:image/svg+xml,%3Csvg width='15' height='8' viewBox='0 0 15 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.05877 1.88247L0.941235 8L1.12241e-08 7.05876L7.05877 8.41749e-08L14.1175 7.05877L13.1763 8L7.05877 1.88247Z' fill='%23ED1C24'/%3E%3C/svg%3E ");
@@ -344,6 +360,10 @@ header .logo a::before {
         display: block;
         line-height: 2.3;
         font-size: 15px;
+    }
+    header .gnb .gnb_wrap ul.depth2>li.active>a {
+        color: #ED1C24;
+        font-weight: 700;
     }
     header .tnb {
         display: none;
@@ -696,16 +716,97 @@ footer .copyright {
 .sub_menu .breadcrumb ol li.now a {
     font-weight: 700;
 }
-
+.sub_contents {
+    min-height: 800px /* 컨텐츠 최소높이 [아직 컨텐츠를 코딩하지 않았을때 여백을 줘서 디자인 예상] */
+}
 .sub_contents .sub_title h2 {
     font-size: 32px;
-    font-family: 500;
+    font-weight: 500;
     font-family: 'Pretendard';
     color: #ED1C24;
     margin: 67px 0 0 0;
+    position: relative;
+}
+.sub_contents .sub_title h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 3px;
+    border-bottom: 3px solid #ED1C24;
 }
 .sub_contents .sub_title p {
     font-family: 'Pretendard';
     font-size: 20px;
     margin-top: 8px;
 }
+@media screen and (min-width:881px) and (max-width:1279px) {
+    .sub_visual strong {
+        font-size: 32px;
+    }
+    .sub_visual p {
+        font-size: 20px;
+    }
+    .sub_contents .sub_title h2 {
+        font-size: 28px;
+    }
+    .sub_contents .sub_title h2::after {
+        width: 200px;
+    }
+    .sub_contents .sub_title p {
+        font-size: 16px;
+    }
+} /* sub_contents pc */
+@media screen and (max-width:880px) {
+    .sub_visual {
+        height: 220px;
+    }
+    .sub_visual strong {
+        font-size: 30px;
+        padding: 126px 0 0 0 ;
+    }
+    .sub_visual p {
+        font-size: 16px;
+        padding: 0;
+    }
+    .sub_menu {
+        font-size: 14px;
+        position: relative; /* 오른쪽 끝에 after로 그라데이션 주려함 */        
+    }
+    .sub_menu::after {
+        content: "";
+        position: absolute;
+        width: 130px;
+        height: 50px;
+        right: 20px; /* wrapper 20px의 여백 */
+        top: 0;
+        background-image: linear-gradient(90deg, rgba(217,217,217,0),rgba(217,217,217,1));
+    }
+    .sub_menu .lnb {
+        margin-right: 130px; /* 오른쪽 그라데이션에 함몰된 만큼 여백을 더 줘서 튀어나오게 함 */
+    }
+    .sub_menu .wrapper { /* mobile에서 메뉴의 수가 많아 한번에 표현되지 않으면 스크롤바 생성
+                            메뉴를 감싸는 요소에 줌 */
+        overflow-x: auto; /* 내부요소가 감싸는 요소보다 더 넓어지면 가로스크롤 생성 */
+    }
+    .sub_menu .wrapper::-webkit-scrollbar {
+        height: 0;
+        background-color: transparent;
+    }
+    .sub_menu .wrapper::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+    .sub_menu .wrapper::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    .sub_menu .breadcrumb {
+        display: none;
+    }
+    .sub_contents .sub_title h2 {
+        display: none;
+    }
+    .sub_contents .sub_title p {
+        display: none;
+    }
+} /* sub_contents mobile */
