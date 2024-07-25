@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 100;
+    font-display: swap;
+    src: local('Pretendard Thin'), url(../fonts/Pretendard-Thin.woff2) format('woff2'), url(../fonts/Pretendard-Thin.woff) format('woff');
+}
 @font-face {
     font-family: 'Pretendard';
     font-weight: 300;
