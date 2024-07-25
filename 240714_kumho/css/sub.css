@@ -10,6 +10,9 @@
 /* 회사소개/CEO 인사말 */
 .cts_ceo {
     margin: 134px 0 285px 0;    
+}
+.cts_ceo .photo_wrap {
+    width: 42%;
 } 
 .cts_ceo .photo_wrap .photo {
     overflow: hidden;
@@ -39,23 +42,24 @@
     display: flex;
     justify-content: space-between;
 }
-.cts_ceo .text {
+.cts_ceo .text_wrap {
     width: 52%;
     font-size: 16px;
     font-weight: 500;
     line-height: 2.0;
+    font-family: 'Pretendard';
 }
-.cts_ceo .text strong {
+.cts_ceo .text_wrap strong {
     color: #1d1d1d;
     font-weight: 700;
     box-shadow: inset 0 -13px 0 rgba(237,28,36,0.6);
 }
-.cts_ceo .text span {
+.cts_ceo .text_wrap .sign {
     color: #1d1d1d;
     font-weight: 700;
     position: relative;
 }
-.cts_ceo .text span::after {
+.cts_ceo .text_wrap .sign::after {
     content: "";
     position: absolute;
     right: -148px;
@@ -68,3 +72,59 @@
     background-image: url(../images/contents/ceo_sign.png);
 }
 /* 회사소개/CEO 인사말 */
+
+@media screen and (min-width:881px) and (max-width:1279px) {
+    .cts_ceo .introtext {
+        font-size: 18px;
+    }
+    .cts_ceo .introtext strong {
+        font-size: 20px;
+    }
+    .cts_ceo .introtext span {
+        font-size: 20px;
+    }
+    .cts_ceo .text_wrap {
+        line-height: 1.6;
+    }
+}
+@media screen and (max-width:880px){
+    .cts_ceo {
+        margin: 50px 0 150px 0;
+    }
+    .cts_ceo .wrapper {
+        display: block;
+    }
+    .cts_ceo .photo_wrap {
+        width: auto;
+    }
+    .cts_ceo .photo_wrap .photo {
+        max-width: 219px;
+        margin: 0 auto;
+    }
+    .cts_ceo .introtext strong {
+        font-size: 15px;
+    }
+    .cts_ceo .introtext span {
+        font-size: 15px;
+    }
+    .cts_ceo .introtext {
+        text-align: center;
+        font-weight: 500;
+    }
+    .cts_ceo .text_wrap {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 50px 0 0 0;
+        width: auto;
+    }
+    .cts_ceo .text_wrap .sign::after {
+        right: -110px;
+        bottom: -20px;
+        width: 85px;
+        height: 39px;
+    }
+} /* 회사소개/CEO인사말 모바일 */
+.cts_history {
+    
+}
+/* 회사소개/연혁 */
