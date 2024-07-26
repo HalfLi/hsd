@@ -86,7 +86,7 @@
                 <a href="#n" class="aretera">ARETERA</a>
             </div>
         </header>
-        <main class="container"> <!-- skip 내비에기연에서 본문 바로가기 부분 -->
+        <main class="container"> <!-- skip navigation에서 본문 바로가기 부분 -->
             <div class="sub_visual bg1">
                 <div class="wrapper">
                     <!-- 만약 subvisual에 1차메뉴명이나, 현재 메뉴명을 사용했다면 h1~ 태그를 사용 
@@ -126,15 +126,244 @@
                 <div class="cts_history"> <!-- cts_[각 html페이지 명] -->
                     <div class="wrapper">
                         <div class="tab_area">
-                            <div class="tap_btn">
+                            <div class="tab_btn">
                                 <ul role="tablist">
-                                    <li id="tab_01" aria-selected="true" aria-controls="panel_01" class="active"><button><span>현재 ~ 2011</span></button></li>
-			                        <li id="tab_02" aria-selected="false" aria-controls="panel_02"><button><span>2010 ~ 2001</span></button></li>
+                                    <li id="tab_01" aria-selected="false" aria-controls="panel_01" role="tab"><button><span>현재 ~ 2011</span></button></li>
+			                        <li id="tab_02" aria-selected="true" aria-controls="panel_02" role="tab" class="active"><button><span>2010 ~ 2001</span></button></li>
+                                    <li id="tab_03" aria-selected="false" aria-controls="panel_03" role="tab"><button><span>2000 ~ 1991</span></button></li>
+                                    <li id="tab_04" aria-selected="false" aria-controls="panel_04" role="tab"><button><span>1990 ~ 1960</span></button></li>
                                 </ul>
                             </div>
                             <div class="tap_contents">
                                 <div id="panel_01" role="tabpanel" aria-labelledby="tab_01">
-
+                                    <div class="history_tit bg1">
+                                        <strong>HISTORY of <br>KUMHO E&C</strong>
+                                        <h3>현재 ~ 2011</h3>
+                                    </div>
+                                    <div class="history_list">
+                                        <div class="year_warp right">
+                                            <h4>2010 ~ 2009</h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>2010. 11.</strong>
+                                                    <span>도심 최대규모 오피스빌딩 센터원(CENTER1) 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2010. 10.</strong>
+                                                    <span>UAE 아부다비 공합 관제탑 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 09.</strong>
+                                                    <span>베트남 금호아시아나플라자 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 08.</strong>
+                                                    <span>상반기 공공부문 수주실적 1조원 돌파, 업계 최다 실적</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 04.</strong>
+                                                    <span>전남 고흥군과 5,000억 규모 풍력발전사업 MOU 체결</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03.</strong>
+                                                    <span>아로마 향기 도어폰, 레드닷 디자인 어워드 수상</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03</strong>
+                                                    <span>전력산업기술기준(KEPIC:Korea Electric Power Industry Code) 자격 인증서 취득</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="panel_02" role="tabpanel" aria-labelledby="tab_02" class="active">
+                                    <div class="history_tit bg2">
+                                        <strong>HISTORY of <br>KUMHO E&C</strong>
+                                        <h3>2010 ~ 2009</h3>
+                                    </div>
+                                    <div class="history_list">
+                                        <div class="year_warp right">
+                                            <h4>2010 ~ 2009</h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>2010. 11.</strong>
+                                                    <span>도심 최대규모 오피스빌딩 센터원(CENTER1) 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2010. 10.</strong>
+                                                    <span>UAE 아부다비 공합 관제탑 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 09.</strong>
+                                                    <span>베트남 금호아시아나플라자 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 08.</strong>
+                                                    <span>상반기 공공부문 수주실적 1조원 돌파, 업계 최다 실적</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 04.</strong>
+                                                    <span>전남 고흥군과 5,000억 규모 풍력발전사업 MOU 체결</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03.</strong>
+                                                    <span>아로마 향기 도어폰, 레드닷 디자인 어워드 수상</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03</strong>
+                                                    <span>전력산업기술기준(KEPIC:Korea Electric Power Industry Code) 자격 인증서 취득</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="year_warp left">
+                                            <h4>2008 ~ 2005</h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>2008. 10.</strong>
+                                                    <span>여수시 신재생에너지 사업 참여 MOU 체결</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2008. 07.</strong>
+                                                    <span>건설업계 최저 재해율 1위 달성</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2008. 06.</strong>
+                                                    <span>2008년 상반기 건설업계 최다 GD마크 획득</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2008. 06.</strong>
+                                                    <span>베트남 사랑의 집 9호</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2007. 03.</strong>
+                                                    <span>하노이 지사 설립</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2006. 12.</strong>
+                                                    <span>두바이 지사 설립</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2005. 09.</strong>
+                                                    <span>베트남 금호아시아나플라자 착공, 해외사업 재개</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="year_warp right">
+                                            <h4>2004 ~ 2001</h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>2004.12.</strong>
+                                                    <span>질소,인을 활용한 하수고도처리시스템 K-MBR 日 도레이사, KIST와 공동 개발 완료</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2004.</strong>
+                                                    <span>'사랑의 집 어울림家' 1호 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2003.06.</strong>
+                                                    <span>아파트 브랜드 '어울림' 도입 _ 남양주 평내 어울림 첫 적용</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2003.05.</strong>
+                                                    <span>아파트 브랜드 "어울림" 런칭</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2003.</strong>
+                                                    <span>'1산ㆍ1하천ㆍ1거리 가꾸기' 환경정화활동 시행</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2001.11.</strong>
+                                                    <span>광화문 "용비어천가"로 오피스텔 브랜드 첫 선</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03</strong>
+                                                    <span>전력산업기술기준(KEPIC:Korea Electric Power Industry Code) 자격 인증서 취득</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="panel_03" role="tabpanel" aria-labelledby="tab_03">
+                                    <div class="history_tit bg3">
+                                        <strong>HISTORY of <br>KUMHO E&C</strong>
+                                        <h3>2000 ~ 1991</h3>
+                                    </div>
+                                    <div class="history_list">
+                                        <div class="year_warp right">
+                                            <h4>2010 ~ 2009</h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>2010. 11.</strong>
+                                                    <span>도심 최대규모 오피스빌딩 센터원(CENTER1) 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2010. 10.</strong>
+                                                    <span>UAE 아부다비 공합 관제탑 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 09.</strong>
+                                                    <span>베트남 금호아시아나플라자 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 08.</strong>
+                                                    <span>상반기 공공부문 수주실적 1조원 돌파, 업계 최다 실적</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 04.</strong>
+                                                    <span>전남 고흥군과 5,000억 규모 풍력발전사업 MOU 체결</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03.</strong>
+                                                    <span>아로마 향기 도어폰, 레드닷 디자인 어워드 수상</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03</strong>
+                                                    <span>전력산업기술기준(KEPIC:Korea Electric Power Industry Code) 자격 인증서 취득</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="panel_04" role="tabpanel" aria-labelledby="tab_04">
+                                    <div class="history_tit bg4">
+                                        <strong>HISTORY of <br>KUMHO E&C</strong>
+                                        <h3>1990 ~ 1960</h3>
+                                    </div>
+                                    <div class="history_list">
+                                        <div class="year_warp right">
+                                            <h4>2010 ~ 2009</h4>
+                                            <ul>
+                                                <li>
+                                                    <strong>2010. 11.</strong>
+                                                    <span>도심 최대규모 오피스빌딩 센터원(CENTER1) 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2010. 10.</strong>
+                                                    <span>UAE 아부다비 공합 관제탑 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 09.</strong>
+                                                    <span>베트남 금호아시아나플라자 준공</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 08.</strong>
+                                                    <span>상반기 공공부문 수주실적 1조원 돌파, 업계 최다 실적</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 04.</strong>
+                                                    <span>전남 고흥군과 5,000억 규모 풍력발전사업 MOU 체결</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03.</strong>
+                                                    <span>아로마 향기 도어폰, 레드닷 디자인 어워드 수상</span>
+                                                </li>
+                                                <li>
+                                                    <strong>2009. 03</strong>
+                                                    <span>전력산업기술기준(KEPIC:Korea Electric Power Industry Code) 자격 인증서 취득</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

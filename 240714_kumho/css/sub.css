@@ -124,7 +124,210 @@
         height: 39px;
     }
 } /* 회사소개/CEO인사말 모바일 */
+
 .cts_history {
-    
+    margin: 50px 0 200px 0;    
+}
+.cts_history .tab_area .tab_btn {
+    overflow-x: auto; /* ul의 넓이가 tab_btn보다 넓어지면 스크롤바 생성 */
+    overflow-y: hidden; /* 세로스크롤바 숨김 */  
+}
+.cts_history .tab_area .tab_btn ul {
+    display: flex;
+}
+.cts_history .tab_area .tab_btn ul li {
+    margin-right: 24px;
+}
+.cts_history .tab_area .tab_btn ul li:last-child {
+    margin-right: 0;
+}
+.cts_history .tab_area .tab_btn ul li.active button,
+.cts_history .tab_area .tab_btn ul li button:hover {
+    background-color: #ED1C24;
+    font-weight: 700;
+    color: #fff;
+}
+.cts_history .tab_area .tab_btn ul li.active button span,
+.cts_history .tab_area .tab_btn ul li button:hover span {
+    border-bottom: 3px solid #fff;
+}
+.cts_history .tab_area .tab_btn ul li button {
+    padding: 23px 89px;
+    background-color: #EDEDED;
+    border-radius: 20px;
+    color: #1d1d1d;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Pretendard';
+    white-space: nowrap; /* 한줄고정 */
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] {
+    margin: 50px 0 0 0;
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit {
+    height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/contents/history_tit_bg2.png);
+    color: #fff;
+    text-align: center;
+    font-family: 'Pretendard';
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit.bg1 {
+    background-image: url(../images/contents/history_tit_bg1.png);
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit.bg2 {
+    background-image: url(../images/contents/history_tit_bg2.png);
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit.bg3 {
+    background-image: url(../images/contents/history_tit_bg3.png);
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit.bg4 {
+    background-image: url(../images/contents/history_tit_bg4.png);
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit strong {
+    display: block;
+    font-weight: 100;
+    font-size: 48px;
+    padding-top: 38px;
+}
+.cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit h3 {
+    font-weight: 500;
+    font-size: 40px;
+    padding-top: 34px;
+}
+.cts_history .tab_area .tap_contents .history_list {
+    margin: 100px 0 0 0;
+    position: relative; /*before,after*/
+}
+.cts_history .tab_area .tap_contents .history_list::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 14px;
+    width: 2px;
+    height: calc(100% - 14px);
+    background-color: #b1b1b1;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp {
+    margin-bottom: 50px;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp:last-child {
+    margin-bottom: 0;
+    position: relative;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp:last-child::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 14px;
+    width: 2px;
+    height: calc(100% - 14px);
+    background-color: #fff;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp h4 {
+    color: #ED1C24;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    position: relative; /* before 가운데 기둥 점 */
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp h4::before {
+    content: "";
+    position: absolute;
+    left: -44px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ED1C24;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp.left h4::before {
+    left: auto;
+    right: -46px;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp ul li {
+    display: flex;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 15px 0;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp ul li strong {
+    width: 5em;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp ul li span {
+    width: calc(100% - 5em);
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp.right {
+    padding-left: calc(50% + 40px);
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp.left {
+    padding-right: calc(50% + 40px);
+    text-align: right;
+}
+.cts_history .tab_area .tap_contents .history_list .year_warp.left ul li {
+    flex-direction: row-reverse;
 }
 /* 회사소개/연혁 */
+@media screen and (min-width:881px) and (max-width:1279px) {
+    .cts_history .tab_area .tab_btn ul li button {
+        padding: 23px 35px;
+        font-size: 18px;
+    }
+    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit strong {
+        font-size: 40px;
+    }
+    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit h3 {
+        font-size: 36px;
+    }
+}
+@media screen and (max-width:880px) {
+    .cts_history .tab_area .tab_btn ul li {
+        margin-right: 16px;
+    }
+    .cts_history .tab_area .tab_btn ul li button {
+        padding: 9px 35px;
+        font-size: 16px;
+    }
+    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit strong {
+        font-size: 24px;
+    }
+    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit h3 {
+        font-size: 18px;
+        padding-top: 7px;
+    }
+    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit {
+        height: 157px;
+    }
+    .cts_history .tab_area .tap_contents .history_list::before {
+        left: 20px;
+        top: 20px;
+        height: calc(100% - 20px);
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp:last-child::before {
+        left: 20px;
+        top: 20px;
+        height: calc(100% - 20px);
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp.left {
+        padding-left: 40px;
+        text-align: left;
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp.right {
+        padding-left: 40px;
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp.left {
+        padding-right: 0;
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp.left ul li {
+        flex-direction: row;
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp h4::before {
+        left: -24px;
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp.left h4::before {
+        left: -24px;
+    }
+}
+/* 회사소개/연혁 모바일 */
