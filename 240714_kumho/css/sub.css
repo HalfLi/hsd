@@ -290,15 +290,15 @@
         padding: 9px 35px;
         font-size: 16px;
     }
-    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit strong {
-        font-size: 24px;
+    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit {
+        height: 157px;
     }
     .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit h3 {
         font-size: 18px;
         padding-top: 7px;
     }
-    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit {
-        height: 157px;
+    .cts_history .tab_area .tap_contents div[role="tabpanel"] .history_tit strong {
+        font-size: 24px;
     }
     .cts_history .tab_area .tap_contents .history_list::before {
         left: 20px;
@@ -310,24 +310,247 @@
         top: 20px;
         height: calc(100% - 20px);
     }
+    .cts_history .tab_area .tap_contents .history_list .year_warp h4::before {
+        left: -24px;
+    }
     .cts_history .tab_area .tap_contents .history_list .year_warp.left {
         padding-left: 40px;
         text-align: left;
-    }
-    .cts_history .tab_area .tap_contents .history_list .year_warp.right {
-        padding-left: 40px;
-    }
-    .cts_history .tab_area .tap_contents .history_list .year_warp.left {
         padding-right: 0;
-    }
-    .cts_history .tab_area .tap_contents .history_list .year_warp.left ul li {
-        flex-direction: row;
-    }
-    .cts_history .tab_area .tap_contents .history_list .year_warp h4::before {
-        left: -24px;
     }
     .cts_history .tab_area .tap_contents .history_list .year_warp.left h4::before {
         left: -24px;
     }
+    .cts_history .tab_area .tap_contents .history_list .year_warp.left ul li {
+        flex-direction: row;
+    }
+    .cts_history .tab_area .tap_contents .history_list .year_warp.right {
+        padding-left: 40px;
+    }
 }
 /* 회사소개/연혁 모바일 */
+
+.cts_map .map {
+    margin: 126px 0 0 0;
+}
+.cts_map .map iframe {
+    width: 100%;
+    height: 503px;
+    border: 0;
+    margin-bottom: 46px;
+}
+.cts_map .map_contents {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Pretendard';
+}
+.cts_map .map_contents h3 {
+    font-size: 32px;
+    color: #ED1C24;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.cts_map .map_contents strong {
+    font-size: 24px;
+    font-weight: 500;
+    color: #3d3d3d;
+}
+.cts_map .map_contents p {
+    color: #3d3d3d;
+}
+.cts_map .map_contents .map_adress .adress_txt {
+    display: flex;
+    width: 475px;
+}
+.cts_map .map_contents .map_adress .adress_txt>strong {
+    margin-right: 42px;
+}
+.cts_map .map_contents .map_public {
+    margin: 45px 0 0 0;
+}
+.cts_map .map_contents .map_public .public_txt.rail  {
+    display: flex;
+    width: 475px;
+    margin-bottom: 25px;
+}
+.cts_map .map_contents .map_public .public_txt.rail>strong {
+    margin-right: 24px;
+}
+.cts_map .map_contents .map_public .public_txt.bus {
+    display: flex;
+    width: 475px;
+    flex-wrap: wrap;
+}
+.cts_map .map_contents .map_public .public_txt.bus>strong {
+    margin-right: 42px;
+}
+.cts_map .map_contents .map_public .public_txt.bus .bus_txt {
+    margin-left: 83px;
+}
+.cts_map .map_contents .map_public .public_txt.bus .bus_txt>strong {
+    font-size: 20px;
+}
+.cts_map .map_contents .map_public .public_txt.bus .bus_txt>p {
+    font-weight: 300;
+}
+.cts_map .map_contents .map_contents_right {
+    width: 630px;
+}
+.cts_map .map_contents .map_contents_right .as {
+    margin-bottom: 25px;
+}
+.cts_map .map_contents .map_contents_right .as .as_build {
+    display: flex;
+    margin: 15px 0;
+}
+.cts_map .map_contents .map_contents_right .as .as_build>h4 {
+    margin-right: 70px;
+}
+.cts_map .map_contents .map_contents_right .as .as_civil {
+    display: flex;
+}
+.cts_map .map_contents .map_contents_right .as .as_civil>h4 {
+    margin-right: 70px;
+}
+.cts_map .map_contents .map_contents_right .field {
+    display: flex;
+    margin-bottom: 15px;
+}
+.cts_map .map_contents .map_contents_right .field>strong {
+    margin-right: 62px;
+}
+.cts_map .map_contents .map_contents_right .etc {
+    display: flex;
+}
+.cts_map .map_contents .map_contents_right .etc>strong {
+    margin-right: 21px;
+}
+.cts_map .map_contents .map_contents_right .map_aretera {
+    margin: 60px 0 0 0;
+    position: relative;
+}
+.cts_map .map_contents .map_contents_right .map_aretera::before {
+    content: "";
+    position: absolute;
+    width: 480px;
+    height: 1px;
+    top: -20px;
+    left: 0;
+    background-color: rgba(102,102,102,0.4);
+}
+.cts_map .map_contents .map_contents_right .map_aretera>p {
+    color: rgba(102,102,102,0.6);
+    margin-bottom: 35px;
+}
+.cts_map .map_contents .map_contents_right .map_aretera>a {
+    display: block;
+    width: 150px;
+    height: 30px;
+    background-color: #ED1C24;
+    padding: 3px 45px 3px 35px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+}
+.cts_map .map_contents .map_contents_right .map_aretera>a::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.6155 16C1.15517 16 0.770833 15.8458 0.4625 15.5375C0.154167 15.2292 0 14.8448 0 14.3845V1.6155C0 1.15517 0.154167 0.770833 0.4625 0.4625C0.770833 0.154167 1.15517 0 1.6155 0H7.23075V1H1.6155C1.4615 1 1.32042 1.06408 1.19225 1.19225C1.06408 1.32042 1 1.4615 1 1.6155V14.3845C1 14.5385 1.06408 14.6796 1.19225 14.8078C1.32042 14.9359 1.4615 15 1.6155 15H14.3845C14.5385 15 14.6796 14.9359 14.8078 14.8078C14.9359 14.6796 15 14.5385 15 14.3845V8.76925H16V14.3845C16 14.8448 15.8458 15.2292 15.5375 15.5375C15.2292 15.8458 14.8448 16 14.3845 16H1.6155ZM5.7385 10.9692L5.03075 10.2615L14.2923 1H10V0H16V6H15V1.70775L5.7385 10.9692Z' fill='white'/%3E%3C/svg%3E%0A");
+    top: 7px;
+    right: 20px;
+}
+@media screen and (min-width:881px) and (max-width:1279px) {
+    .cts_map .map_contents h3 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .cts_map .map_contents strong {
+        font-size: 18px;
+
+    }
+    .cts_map .map_contents p {
+        font-size: 16px;
+    }
+    .cts_map .map_contents .map_public .public_txt.bus .bus_txt {
+        margin-left: 74px;
+    }
+    .cts_map .map_contents .map_public .public_txt.bus .bus_txt>strong {
+        font-size: 18px;
+    }
+    .cts_map .map_contents .map_contents_right .etc>strong {
+        margin-right: 42px;
+    }
+    .cts_map .map_contents .map_contents_right .field>strong {
+        margin-right: 73px;
+    }
+}
+@media screen and (max-width:880px) {
+    .cts_map .map {
+        margin: 35px 0 0 0;
+    }
+    .cts_map .map iframe {
+        height: 50vh;
+    }
+    .cts_map .map_contents {
+        display: block;
+        width: auto;
+        margin-bottom: 80px;
+    }
+    .cts_map .map_contents h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .cts_map .map_contents strong {
+        font-size: 16px;
+    }
+    .cts_map .map_contents p {
+        font-size: 14px;
+    }
+    .cts_map .map_contents .map_public {
+        margin: 25px 0 0 0;
+    }
+    .cts_map .map_contents .map_adress .adress_txt {
+        display: block;
+    }
+    .cts_map .map_contents .map_public .public_txt.rail {
+        display: block;
+    }
+    .cts_map .map_contents .map_public .public_txt.bus {
+        display: block;
+        width:auto;
+    }
+    .cts_map .map_contents .map_public .public_txt.bus>p {
+        margin-bottom: 10px;
+    }
+    .cts_map .map_contents .map_public .public_txt.bus .bus_txt {
+        margin: 0 0 25px 0;
+    }
+    .cts_map .map_contents .map_public .public_txt.bus .bus_txt>strong {
+        font-size: 14px;
+    }
+    .cts_map .map_contents .map_contents_right .as .as_build {
+        display: block;
+    }
+    .cts_map .map_contents .map_contents_right .as .as_civil {
+        display: block;
+    }
+    .cts_map .map_contents .map_contents_right .field {
+        display: block;
+    }
+    .cts_map .map_contents .map_contents_right .etc {
+        display: block;
+    }
+    .cts_map .map_contents .map_contents_right .map_aretera {
+        margin: 30px 0 0 0;
+    }
+    .cts_map .map_contents .map_contents_right .map_aretera>p {
+        font-size: 12px;
+    }
+}
