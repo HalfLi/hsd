@@ -342,6 +342,7 @@
 .cts_map .map_contents {
     display: flex;
     justify-content: space-between;
+    gap: 50px;
     font-family: 'Pretendard';
 }
 .cts_map .map_contents h3 {
