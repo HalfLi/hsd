@@ -553,4 +553,13 @@
     .cts_map .map_contents .map_contents_right .map_aretera>p {
         font-size: 12px;
     }
+    .cts_map .map_contents .map_contents_right .map_aretera>a {
+        width: 140px;
+    }
+    .cts_map .map_contents .map_contents_right .map_aretera>a::after {
+        width: 10px;
+        height: 10px;
+        top: 10px;
+        right: 25px;
+    }
 }
