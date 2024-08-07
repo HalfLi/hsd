@@ -1,0 +1,9 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+/* 각자의 서브페이지 콘텐츠 요소
+   !!절대로 class명이 겹치면 안됨!!
+   그래서 cts_(페이지명)으로 감싸서 겹침을 방지함  */
+
