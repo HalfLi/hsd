@@ -101,6 +101,11 @@ header {
         width: 100%;
         display: block;
     }
+    header .header_sub .gnb ul.depth2 li a {
+        font-size: 16px;
+        font-family: 'SUIT';
+        font-weight: 400;
+    }
 }
 @media screen and (max-width:880px){ /*모바일*/
     header .header_top {
