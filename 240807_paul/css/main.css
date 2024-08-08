@@ -3,3 +3,61 @@
 @import url(common.css);
 @import url(layout.css);
 
+.visual_popup .popup .popup_slick {
+    height: 930px;
+    overflow: hidden;
+}
+.visual_popup .popup .popup_slick img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual_popup .popup .popup_slick img.mobile {
+    display: none;
+}
+.visual_popup .popup .slick-dots { /*popup기준 정렬*/
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50% , 0); /* 좌우 가운데 */
+    display: flex;
+}
+.visual_popup .popup .slick-dots li button {
+    margin-right: 5px;
+    font-size: 0;
+    line-height: 0;
+    width: 25px;
+    height: 7px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.4)
+}
+.visual_popup .popup .slick-dots li.slick-active button {
+    width: 50px;
+    background-color: #fff;
+}
+@media screen and (max-width:1300px){
+    .visual_popup .popup .popup_slick {
+        height: 700px;
+    }
+}
+@media screen and (max-width:1000px){
+    .visual_popup .popup .popup_slick {
+        height: 500px;
+    }
+}
+@media screen and (max-width:880px){ /* 모바일 */
+    .visual_popup .popup .popup_slick {
+        height: 600px;
+    }
+    .visual_popup .popup .popup_slick img.pc {
+        display: none;
+    }
+    .visual_popup .popup .popup_slick img.mobile {
+        display: block;
+    }
+}
+@media screen and (max-width:580px){
+    .visual_popup .popup .popup_slick {
+        height: 480px;
+    }
+}

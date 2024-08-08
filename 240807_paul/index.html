@@ -4,6 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Slick 플러그인 작동 값 -->
+    <script src="js/slick.min.js"></script>
+    <link rel="stylesheet" href="css/slick.css">
     <title>Paul Bassett</title>
 </head>
 <body>
@@ -12,24 +17,118 @@
         <a href="#skip_menu">대메뉴 바로가기</a>
     </div>
     <div id="wrap">
-        <header>
-            <div class="wrapper"></div>
+        <header> <!-- pc버전에서 menu에 마우스 올렸을때 menu_over 클래스
+                      mobile버전에서 menu를 클릭했을때 menu_open 클래스
+                      상단에 메뉴가 고정될때 fixed 클래스 -->
+            <div class="wrapper">
+                <div class="header_top">
+                    <div class="tnb">
+                        <ul>
+                            <li><a href="#n">신규입점제의</a></li>
+                            <li><a href="#n">납품문의</a></li>
+                        </ul>
+                    </div>
+                    <div class="tnb">
+                        <ul>
+                            <li><a href="#n">로그인</a></li>
+                            <li><a href="#n">문의하기</a></li>
+                            <li><a href="#n">고객센터</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header_sub">
+                    <h1 class="logo"><a href="index.html">폴바셋</a></h1>
+                    <nav class="gnb">
+                        <ul class="depth1"> <!-- 1차메뉴 -->
+                            <li>
+                                <a href="#n"><span>ABOUT US</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n"><span>Brand</span></a></li>
+                                    <li><a href="#n"><span>회사소개</span></a></li>
+                                    <li><a href="#n"><span>CSR</span></a></li>
+                                </ul>    
+                            </li>
+                            <li>
+                                <a href="#n"><span>MENU</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n"><span>NEW</span></a></li>
+                                    <li><a href="#n"><span>COFFEE</span></a></li>
+                                    <li><a href="#n"><span>BEVERAGE</span></a></li>
+                                    <li><a href="#n"><span>ICE-CREAM</span></a></li>
+                                    <li><a href="#n"><span>FOOD</span></a></li>
+                                    <li><a href="#n"><span>PRODUCT</span></a></li>
+                                </ul>    
+                            </li>
+                            <li>
+                                <a href="#n"><span>STORE</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n"><span>매장찾기 </span></a></li>                                    
+                                </ul>    
+                            </li>
+                            <li>
+                                <a href="#n"><span>SOCIETY</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n"><span>Paul Bassett Society</span></a></li>
+                                    <li><a href="#n"><span>회원 등급 혜택</span></a></li>
+                                    <li><a href="#n"><span>e-Card 선물</span></a></li>
+                                    <li><a href="#n"><span>모바일 App 안내</span></a></li>
+                                    <li><a href="#n"><span>제휴혜택 안내</span></a></li>
+                                </ul>    
+                            </li>
+                            <li>
+                                <a href="#n"><span>WHAT'S NEW</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n"><span>Event / News</span></a></li>
+                                    <li><a href="#n"><span>Notice</span></a></li>
+                                </ul>    
+                            </li>
+                            <li>
+                                <a href="#n"><span>E-SHOP</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n"><span>E-SHOP 소개</span></a></li>
+                                </ul>    
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </header>
         <main class="container" id="skip_contents">
             <section class="visual_popup">
-                <div class="wrapper"></div>
+                <div class="popup">
+                    <div class="popup_slick"> <!--poupitem -->
+                        <img src="images/main/popup1.png" class="pc" alt="모든혜택 배달데이 팝업">
+                        <img src="images/main/m_popup1.png" class="mobile" alt="모든혜택 배달데이 팝업">
+                    </div>
+                    <!--<div class="popup_slick">
+                        <img src="" class="pc" alt="">
+                        <img src="" class="mobile" alt="">
+                    </div>-->
+                    <div class="popup_slick">
+                        <img src="images/main/popup3.png" class="pc" alt="푸시,수신동의 팝업">
+                        <img src="images/main/m_popup3.png" class="mobile" alt="푸시,수신동의 팝업">
+                    </div>
+                </div>
             </section>
             <section class="menu">
-                <div class="wrapper"></div>
+                <div class="wrapper">
+
+                </div>
             </section>
             <section class="brand">
-                <div class="wrapper"></div>
+                <div class="wrapper">
+
+                </div>
             </section>
             <section class="md">
-                <div class="wrapper"></div>
+                <div class="wrapper">
+
+                </div>
             </section>
             <section class="event">
-                <div class="wrapper"></div>
+                <div class="wrapper">
+
+                </div>
             </section>
         </main>
         <aside class="quick">
@@ -47,7 +146,9 @@
             <button title="퀵메뉴 닫기" class="close">닫기</button>
         </aside>
         <footer>
-            <div class="wrapper"></div>
+            <div class="wrapper">
+
+            </div>
         </footer>
     </div>
 </body>

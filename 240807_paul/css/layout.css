@@ -21,3 +21,92 @@
 .skip_nav a:focus {
     top: 100px; /* a가 focus되면 올라간 만큼 다시 내려옴 */
 }
+
+header {
+    position: relative;
+    z-index: 100; /* z-index주기 위해선 position값이 있어야함 */
+}
+@media screen and (min-width:880px){ /*880px까지는...*/
+    header .header_top {
+        height: 87px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0px 66px 0 51px;
+    }
+    header .header_top .tnb ul {
+        display: flex;
+    }
+    header .header_top .tnb ul li a {
+        display: block;
+        padding: 1.25rem 0.438rem;
+        font-size: 0.875rem;
+        color: var(--txt-color-gray);
+        font-weight: 300;
+    }
+    header .header_top .tnb ul li a:hover {
+        font-weight: 500;
+        color: var(--txt-color-tit);
+    }
+    header .header_sub {
+        height: 60px;
+        position: relative;
+    }
+    header .header_sub .logo {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50% , 0); /* 좌우 가운데 */
+        top: -80px;
+    }
+    header .header_sub .logo a {
+        display: block;
+        width: 125px;
+        height: 60px;
+        font-size: 0;
+        line-height: 0;
+        position: relative;
+    }
+
+    header .header_sub .logo a::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        background-image: url(../images/common/logo.svg);
+    }
+    header .header_sub .gnb ul.depth1 {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+    }
+    header .header_sub .gnb ul.depth1>li {
+        width: 16.66%;
+        position: relative;
+    }
+    header .header_sub .gnb ul.depth1>li a {
+        display: block;
+        font-size: 1.5rem;
+        font-family: 'Gupter';
+        font-weight: 800;
+        line-height: 60px;
+    }
+    header .header_sub .gnb ul.depth2 {
+        position: absolute; /* header밖에 존재하는 요소 */
+        left: 0;
+        top: 60px; /* li의 a의 행간값 */
+        width: 100%;
+        display: block;
+    }
+}
+@media screen and (max-width:880px){ /*모바일*/
+    header .header_top {
+        display: none;
+    }
+    header .header_sub .gnb {
+        display: none;
+    }
+}
