@@ -40,7 +40,7 @@ html, body {
 
 @media screen and (max-width:880px){ /* 모바일 반응형 */
     html, body {
-        font-size: 13px;
+        font-size: 14px;
     }
 }/* media */
 
