@@ -135,6 +135,10 @@ header .header_sub .logo a::before {
         /* 한줄강제 */
         white-space: nowrap;
     }
+    header .header_sub .gnb ul.depth2>li>a:hover>span {
+        color: var(--color-main1);
+        font-weight: 500;
+    }
     header.menu_over .header_sub .gnb ul.depth2 {
         display: block;
     }
@@ -190,9 +194,6 @@ header .header_sub .logo a::before {
     header.fixed .header_sub .logo a::before {
         top: 5px;
         height: 80%;
-    }
-    header.fixed .header_sub .gnb ul.depth2 {
-        padding-top: 10px;
     }
 }
 @media screen and (min-width:880px) and (max-width:1120px){

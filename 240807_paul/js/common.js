@@ -40,7 +40,7 @@ $(document).ready(function(){
         console.log(pc_mobile)
    }
     resize_chk() //해당 common을 로딩했을때 1번
-    $(window).reszie(function(){
+    $(window).resize(function(){
         resize_chk()
     })
     scroll_chk() // 해당 common을 로딩했을때 1번
