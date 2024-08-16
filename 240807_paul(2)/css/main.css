@@ -1,0 +1,316 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+
+.visual_popup .popup .popup_item img {
+    width: 100%;
+}
+.visual_popup .popup .popup_item img.mo {
+    display: none;
+}
+.visual_popup .popup .slick-dots {
+    position: absolute; /* popup을 기준으로 정렬 */
+    bottom: 15px;
+    left: 50%;
+    transform: translate(-50, 0);
+    /* 좌우에 가운데 */
+    display: flex;
+    gap: 5px;
+}
+.visual_popup .popup .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    width: 26px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.5);
+}
+.visual_popup .popup .slick-dots li.slick-active button {
+    width: 48px;
+    background-color: #fff;
+}
+@media screen and (max-width:768px){
+    .visual_popup .popup .popup_item img.pc {
+        display: none;
+    }
+    .visual_popup .popup .popup_item img.mo {
+        display: block;
+    }
+}
+
+.menu .tit {
+    text-align: center;
+    margin: var(--margin-tit);
+}
+.menu .tit h2 {
+    font-family: 'rene';
+    font-size: var(--txt-size-tit);
+    color: var(--txt-color-tit);
+    line-height: 1;
+}
+.menu .list .popup .popup_item {
+    margin: 0 12px;
+    position: relative; /* before 정렬의 기준 */
+    text-align: center;
+    padding-bottom: 28px;
+    width: 297px;
+}
+.menu .list .popup .popup_item::before {
+    position: absolute;
+    left: 0;
+    top: 86px;
+    z-index: -1;
+    width: 100%;
+    height: calc(100% - 92px); /* top값 + border 두배 */
+    border: 3px solid #3d3d3d;
+    content: "";
+}
+.menu .list .popup .popup_item .photo {
+    overflow: hidden;
+    margin: 0 10px;
+}
+.menu .list .popup .popup_item .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지를 자르지 않고 모두 보이도록 */
+}
+.menu .list .popup .popup_item h3 {
+    color: var(--txt-color-tit);
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.1;
+    padding: 0 10px;
+    /* 제목 무조건 2줄 */
+    height: 2.2em; /* 행간 X 2 */
+    overflow: hidden;
+    margin: 24px 0 12px 0;
+}
+.menu .list .popup .popup_item strong {
+    display: block;
+    padding: 0 10px;
+    /* 무조건 1줄 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+@media screen and (max-width:1600px){
+    .menu .list .popup .popup_item {
+        width: 260px;
+    }
+}
+@media screen and (max-width:1300px){
+    .menu .list .popup .popup_item {
+        width: 230px;
+    }
+}
+@media screen and (max-width:1024px){
+    .menu .list .popup .popup_item {
+        width: 208px;
+        margin: 0 8px;
+    }
+}
+.brand {
+    margin: 155px 0 0 0;
+}
+.brand .inner {
+    height: 639px;
+    padding: 414px 0 0 70px;
+    background: url(../images/main/brand_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.brand .inner h2 {
+    font-family: 'rene';
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+.brand .inner h2 span {
+    display: inline-block;
+    padding: 0 10px 3px 10px;
+    background-color: #fff;
+    color: var(--txt-color-tit);
+}
+/* loop 애니메이션을 줄때
+    <div> --감싸는요소
+        <span></span> -- 움직일 요소 
+    </div>
+    움직일 요소는 white-space: nowrap;으로 한줄
+    넓이가 온전하게 인식 되어야함.. 
+    브라우저크기를 초과하는 넓이가 온전히 인식되어야함..
+    --- 넓이가 온전히 인식되지 않는 경우 position:absolute;를 줘야함.
+*/
+
+.brand .loop {
+    height: 8rem;
+    background-color: var(--txt-color-tit);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 800;
+    position: relative; /* span 정렬의 기준 */
+}
+.brand .loop span {
+    white-space: nowrap; /* 줄바꿈 금지 */
+    position: absolute;
+    left: 0;
+    top: 2.2rem;
+    animation-name: brand_loop;
+    animation-duration: 10s;
+    animation-iteration-count: infinite; /* 무한반복 */
+    animation-timing-function: linear; /* 가속도 삭제 */
+}
+@keyframes brand_loop {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(-50.12%, 0);}/* 첫글자가 다시 맨 앞으로 도달한 값 */
+}
+@media screen and (max-width:1300px){
+    .brand {
+        margin: 130px 0 0 0;
+    }
+    .brand .inner {
+        height: 550px;
+        padding: 350px 0 0 50px;
+    }
+}
+@media screen and (max-width:1024px){
+    .brand {
+        margin: 70px 0 0 0;
+    }
+    .brand .inner {
+        height: auto;
+        padding: 150px 0 40px 20px;
+    }
+    .brand .inner h2 span {
+        background-color: transparent;
+        color: #fff;
+    }
+    .brand .loop {
+        height: 4rem;
+        font-size: 1.25rem;
+    }
+    .brand .loop span {
+        top: 1.1rem;
+    }
+}
+@media screen and (max-width:768px){
+    .brand .inner .mo_skip {
+        display: none;
+    }
+}
+.md .tit {
+    text-align: center;
+    margin: var(--margin-tit);
+}
+.md .tit h2 {
+    font-family: 'rene';
+    line-height: 1;
+    font-size: var(--txt-size-tit);
+    color: var(--txt-color-tit);
+}
+.md .list .popup .popup_item {
+    margin: 0 12px;
+    width: 297px;
+    text-align: center;
+}
+.md .list .popup .popup_item .photo {
+    overflow: hidden;
+    margin: 0 2%;
+}
+.md .list .popup .popup_item .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 이미지가 하나도 안짤리고 모두 나오기 */
+}
+.md .list .popup .popup_item h3 {
+    color: var(--txt-color-tit);
+}
+@media screen and (max-width:1024px){
+    .md .list .popup .popup_item {
+        width: 208px;
+        margin: 0 8px;
+    }
+}
+
+.event .tit {
+    margin: 150px 0 35px 0;
+}
+.event .tit h2 {
+    display: none;
+}
+.event .tit ul {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 */
+    position: relative; /* before 정렬의 기준 */
+}
+.event .tit ul::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: calc(100% - 110px);
+    height: 1px;
+    background-color: #ededed;
+    content: "";
+}
+.event .tit ul li a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 35px;
+    height: 35px;
+    position: relative; /* before 정렬의기준 */
+}
+
+.event .tit ul li a::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+.event .tit ul li.facebook a::before {
+    width: 27px;
+    height: 27px;
+    background-image: url(../images/main/sns_facebook.png);
+}
+.event .tit ul li.insta a::before {
+    width: 27px;
+    height: 27px;
+    background-image: url(../images/main/sns_insta.png);
+}
+.event .tit ul li.youtube a::before {
+    width: 27px;
+    height: 19px;
+    background-image: url(../images/main/sns_youtube.png);
+}
+.event .list .popup .popup_item {
+    margin: 0 6px;
+}
+.event .list .popup .popup_item .photo {
+    overflow: hidden;
+}
+.event .list .popup .popup_item .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.event .list .popup .popup_item a strong {
+    display: block;
+    color: var(--txt-color-tit);
+    margin: 15px 0 0 0;
+}
+
+@media screen and (max-width:1300px){
+    .event .tit {
+        margin: 100px 0 20px 0;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .event .tit {
+        margin: 70px 0 15px 0;
+    }
+}

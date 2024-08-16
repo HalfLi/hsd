@@ -1,0 +1,747 @@
+/* header와 footer 처럼 페이지에 공통으로 배치되는 요소의 css */
+
+.skip_nav {
+    position: absolute;
+    left: 0;
+    top: -100px; /* focus가 될때만 나타나야함- 상단에 숨겨져 있어야함 */
+    z-index: 99999999999999; /* 꼭 맨 상단에 배치 */
+    width: 100%;
+}
+.skip_nav a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #EA141D;
+    color: #fff;
+    text-align: center;
+}
+.skip_nav a:focus {
+    top: 100px; /* a가 포커스되면 올라간 만큼 다시 내려옴 */
+}
+
+header {
+    position: relative;
+    z-index: 100; 
+    /* z-index를 적용하려면 position이 있어야함 */
+}
+header .header_sub .logo a {
+    display: block;
+    width: 79px;
+    height: 56px;
+    font-size: 0;
+    line-height: 0;
+    position: relative; /* before 정렬기준 */
+}
+header .header_sub .logo a::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/common/logo.svg) no-repeat center center / contain;
+    content: "";
+}
+
+/*  1025px 이상 - pc버전  */
+@media screen and (min-width:1025px){
+    header .header_top {
+        height: 82px;
+        display: flex;
+        justify-content: space-between;
+    }
+    header .header_top .tnb ul {
+        display: flex;
+    }
+    header .header_top .tnb ul li a {
+        display: block;
+        padding: 19px 18px;
+        font-size: 0.938rem;
+        color: var(--txt-color-gray);
+        position: relative; /* before 정렬의 기준 */
+    }
+    header .header_top .tnb ul li:first-child a {
+        padding-left: 0;
+    }
+    header .header_top .tnb ul li:last-child a {
+        padding-right: 0;
+    }
+    header .header_top .tnb ul li a:hover {
+        color: var(--txt-color-tit);
+        font-weight: 800;
+    }
+    header .header_top .tnb ul li a::before {
+        position: absolute;
+        left: 0;
+        top: calc(50% - 2px);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: #ccc;
+        content: "";
+    }
+    header .header_top .tnb ul li:first-child a::before {
+        display: none;
+    }
+
+    header .header_sub {
+        height: 68px;
+        position: relative; /* logo 정렬의 기준 */
+    }
+    header .header_sub .logo {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        /* 좌우에 가운데 */
+        top: -61px;
+    }
+    
+    header .header_sub .gnb .gnb_open,
+    header .header_sub .gnb .gnb_close {
+        display: none; /* 숨김 */
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth1 {
+        display: flex;
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth1 > li {
+        width: 16.66%;
+        min-width: 160px;
+        /* ul 넓이의 16%정도의 넓이를 갖음 - 단 최소 180px는 줌 */
+        text-align: center;
+        position: relative; /* depth2 정렬의 기준 */
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--txt-color-tit);
+        line-height: 68px;
+        display: block;
+        /* 1차메뉴는 한줄로 */
+        white-space: nowrap;
+    }
+    
+    header .header_sub .gnb .gnb_wrap ul.depth1 > li.over > a {
+        color: var(--color-main1);
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+        position: relative; /* after 정렬의 기준 */
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth1 > li.over > a > span::after {
+        position: absolute;
+        left: -5px;
+        bottom: -24px;
+        z-index: 10;
+        width: calc(100% + 10px);
+        height: 2px;
+        background-color: var(--color-main1);
+        content: "";
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth2 {
+        /* header밖에 존재하는 요소 position:absolute */
+        position: absolute;
+        left: 0;
+        top: 68px;
+        width: 100%;
+        display: none; /* 숨김 */
+        padding-top: 20px;
+        /* 1차메뉴 a와 ul 사이의 여백은 반드시 padding으로 주기  */
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth2 > li > a {
+        display: block;
+        line-height: 2.5;
+        /* 2차메뉴는 한줄로 */
+        white-space: nowrap;
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth2 > li > a:hover {
+        color: var(--color-main1);
+        font-weight: 800;
+        letter-spacing: -0.3px;
+    }
+
+    /* 메뉴가 오버되었을때 */
+    header.menu_over .header_sub .gnb .gnb_wrap ul.depth2 {
+        display: block; /* 나타남 */
+    }
+    header.menu_over::before {
+        position: absolute; /* header를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 450px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        content: "";
+    }
+    header.menu_over::after {
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
+        height: 1px;
+        background-color: #ededed;
+        content: "";
+    }
+
+    /* header가 고정되었을때 */
+    header.fixed {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    header.menu_over.fixed::after {
+        top: 68px;
+    }
+    header.fixed + .container {
+        margin-top: 68px;
+    }
+    header.fixed .wrapper {
+        width: auto;
+        margin: 0 20px;
+    }
+    header.fixed .header_top {
+        display: none;
+    }
+    header.fixed .header_sub {
+        height: 68px;
+        display: flex;
+        justify-content: space-between;
+    }
+    header.fixed .header_sub .logo {
+        position: relative; /* absolute 해제 */
+        left: auto;
+        transform: translate(0, 0); /* 기존값 삭제 */
+        top: auto;
+        margin: 5px 0 0 0;
+    }
+    header.fixed .header_sub .gnb .gnb_wrap ul.depth1 > li > a {
+        line-height: 68px;
+    }
+    header.fixed .header_sub .gnb .gnb_wrap ul.depth1 > li.over > a > span::after {
+        bottom: -23px;
+    }
+    header.fixed .header_sub .gnb .gnb_wrap ul.depth2 {
+        top: 68px;
+    }
+}/* media */
+@media screen and (max-width:1300px) and (min-width:1025px){
+    /* 1300 ~ 1025 사이.. */
+    header .header_sub .gnb .gnb_wrap ul.depth1 > li > a {
+        font-size: 1.10rem;
+    }
+    header .header_top .tnb ul li a {
+        font-size: 0.85rem;
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth1 > li {
+        min-width: 140px;
+    }
+    header.fixed .header_sub .gnb .gnb_wrap ul.depth1 > li.over > a > span::after {
+        bottom: -42px;
+    }
+    header .header_sub .gnb .gnb_wrap ul.depth2 > li > a {
+        font-size: 0.9rem;
+    }
+}/* media */
+/* 1024이하 - 모바일 */
+@media screen and (max-width:1024px){
+    header {
+        height: 50px;
+    }
+    header .header_top {
+        display: none;
+    }
+    header .header_sub .logo {
+        padding-top: 5px;
+    }
+    header .header_sub .logo a {
+        width: 50px;
+        height: 36px;
+    }
+    header .header_sub .gnb .gnb_wrap {
+        display: none;
+        position: absolute; /* header를 기준으로 정렬 */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh; /* 브라우저 높이 */
+        background-color: #fff;
+    }
+    header .header_sub .gnb .gnb_wrap .depth1 {
+        margin-top: 50px;
+        height: calc(100% - 50px);
+        overflow-y: auto;
+    }
+    header .header_sub .gnb .gnb_wrap .depth1 > li > a {
+        display: block;
+        padding: 0 20px;
+        white-space: nowrap; /* 메뉴 한줄로 구현 */
+        line-height: 2.5;
+        font-size: 1.429rem;
+        font-weight: 800;
+        color: var(--txt-color-tit);
+    }
+    header .header_sub .gnb .gnb_wrap .depth1 > li > a > span {
+        position: relative; /* after 정렬의 기준 */
+    }
+    header .header_sub .gnb .gnb_wrap .depth1 > li > a > span::after {
+        position: absolute;
+        right: -23px;
+        top: 5px;
+        width: 16px;
+        height: 10px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%231d1d1d'%3E%3Cpath d='m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z'/%3E%3C/svg%3E");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(90deg);
+        content: "";
+    }
+    header .header_sub .gnb .gnb_wrap .depth1 > li.open > a {
+        color: var(--color-main1);
+    }
+    header .header_sub .gnb .gnb_wrap .depth1 > li.open > a > span::after {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23d04040'%3E%3Cpath d='m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z'/%3E%3C/svg%3E");
+        transform: rotate(270deg);
+    }
+    header .header_sub .gnb .gnb_wrap .depth2 {
+        display: none;
+        margin: 5px 20px 10px 20px;
+        padding: 10px 20px;
+        background-color: var(--color-main1);
+        color: #fff;
+    }
+    header .header_sub .gnb .gnb_wrap .depth1 > li.open .depth2 {
+        display: block;
+    }
+    header .header_sub .gnb .gnb_wrap .depth2 > li > a {
+        display: block;
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+    header .header_sub .gnb .gnb_open,
+    header .header_sub .gnb .gnb_close {
+        position: absolute; /* header 기준으로 정렬 */
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 100%;
+        font-size: 0;
+        line-height: 0;
+    }
+    header .header_sub .gnb .gnb_open::before,
+    header .header_sub .gnb .gnb_close::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+    }
+    header .header_sub .gnb .gnb_open::before {
+        width: 30px;
+        height: 19px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30px' height='19px'%3E%3Cpath fill-rule='evenodd' fill='rgb(29, 29, 29)' d='M-0.000,10.1000 L-0.000,7.1000 L29.1000,7.1000 L29.1000,10.1000 L-0.000,10.1000 ZM-0.000,-0.000 L23.1000,-0.000 L23.1000,2.1000 L-0.000,2.1000 L-0.000,-0.000 ZM15.1000,18.1000 L-0.000,18.1000 L-0.000,15.1000 L15.1000,15.1000 L15.1000,18.1000 Z'/%3E%3C/svg%3E");
+    }
+    header .header_sub .gnb .gnb_close::before {
+        width: 21px;
+        height: 21px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%235f6368'%3E%3Cpath d='m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z'/%3E%3C/svg%3E");
+    }
+    header .header_sub .gnb .gnb_close {
+        display: none; 
+    }
+
+    /* 메뉴고정 */
+    header.fixed {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    header.fixed + .container {
+        margin-top: 50px;
+    }
+
+    /* 메뉴가 열렸을때 */
+    header.menu_open .header_sub .gnb .gnb_wrap {
+        display: block;
+    }
+    header.menu_open .header_sub .gnb .gnb_open {
+        display: none;
+    }
+    header.menu_open .header_sub .gnb .gnb_close {
+        display: block;
+    }
+}/* media */
+
+.quick {
+    position: fixed;
+    right: 1%;
+    bottom: 100px;
+    z-index: 90;
+    /* header가 100 - 메뉴가 위에 배치되어야 하므로 그보다 작은수  */
+}
+.quick .open, 
+.quick .close {
+    display: none; /* 숨김 */
+}
+
+/* .quick .quick_cont {
+    background-color: #1d1d1d;
+    color: #fff;
+    font-size: 0.938rem;
+    text-align: center;
+    border-radius: 40px;
+    width: 80px;
+}
+.quick .quick_cont h2 {    
+    background-color: var(--color-main1);
+    padding: 15px 0 10px 0;
+    border-radius: 40px 40px 0 0;
+}
+.quick .quick_cont ul li {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.quick .quick_cont ul li:last-child {
+    border-bottom: 0;
+}
+.quick .quick_cont ul li a {
+    display: block;
+    padding: 10px 0;
+}
+.quick .quick_cont ul li button {
+    padding: 40px 0 30px 0;
+    width: 100%;
+    position: relative;
+}
+.quick .quick_cont ul li a:hover,
+.quick .quick_cont ul li button:hover {
+    color: var(--color-main1);
+    font-weight: 800;
+}
+.quick .quick_cont ul li button::before {
+    position: absolute;
+    left: 33px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23fff'%3E%3Cpath d='M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z'/%3E%3C/svg%3E");    
+    content: "";
+}
+.quick .quick_cont ul li button:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23d04040'%3E%3Cpath d='M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z'/%3E%3C/svg%3E");    
+} */
+.quick .quick_cont h2 {
+    display: none;
+}
+.quick .quick_cont ul li a,
+.quick .quick_cont ul li button {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1d1d1d;
+    color: #fff;
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 5px;
+    padding-top: 40px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    position: relative; 
+}
+.quick .quick_cont ul li a:hover,
+.quick .quick_cont ul li button:hover {
+    background-color: var(--color-main1);
+}
+.quick .quick_cont ul li.q03 a {
+    padding-top: 45px;
+}
+.quick .quick_cont ul li.q04 button {
+    padding-top: 30px;
+}
+.quick .quick_cont ul li a::before,
+.quick .quick_cont ul li button::before {
+    position: absolute;
+    left: 50%;
+    top: 13px;
+    transform: translate(-50%, 0);
+    width: 52px;
+    height: 25px;
+    opacity: 0.5;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+.quick .quick_cont ul li.q01 a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23fff'%3E%3Cpath d='M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-200v120h400v-120H280Zm200 100q17 0 28.5-11.5T520-180q0-17-11.5-28.5T480-220q-17 0-28.5 11.5T440-180q0 17 11.5 28.5T480-140ZM280-320h400v-400H280v400Zm0-480h400v-40H280v40Zm0 560v120-120Zm0-560v-40 40Z'/%3E%3C/svg%3E");
+}
+.quick .quick_cont ul li.q02 a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23fff'%3E%3Cpath d='M160-120v-80h640v80H160Zm160-160q-66 0-113-47t-47-113v-400h640q33 0 56.5 23.5T880-760v120q0 33-23.5 56.5T800-560h-80v120q0 66-47 113t-113 47H320Zm0-80h240q33 0 56.5-23.5T640-440v-320H240v320q0 33 23.5 56.5T320-360Zm400-280h80v-120h-80v120ZM320-360h-80 400-320Z'/%3E%3C/svg%3E");
+}
+.quick .quick_cont ul li.q03 a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23fff'%3E%3Cpath d='M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z'/%3E%3C/svg%3E");
+}
+.quick .quick_cont ul li.q04 button::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23fff'%3E%3Cpath d='M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z'/%3E%3C/svg%3E");    
+}
+
+@media screen and (max-width:1300px){
+    .quick .open {
+        display: block;
+        width: 80px;
+        height: 80px;
+        background-color: #1d1d1d;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-align: center;
+        padding-top: 10px;
+        position: relative;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    }
+    .quick .open::before {
+        position: absolute;
+        left: 50%;
+        top: 28px;
+        transform: translate(-50%, 0);
+        width: 31px;
+        height: 5px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='31px' height='5px'%3E%3Cpath fill-rule='evenodd' fill='rgb(255, 255, 255)' d='M28.500,4.1000 C27.119,4.1000 25.1000,3.881 25.1000,2.500 C25.1000,1.119 27.119,-0.000 28.500,-0.000 C29.881,-0.000 30.1000,1.119 30.1000,2.500 C30.1000,3.881 29.881,4.1000 28.500,4.1000 ZM15.500,4.1000 C14.119,4.1000 12.1000,3.881 12.1000,2.500 C12.1000,1.119 14.119,-0.000 15.500,-0.000 C16.881,-0.000 17.1000,1.119 17.1000,2.500 C17.1000,3.881 16.881,4.1000 15.500,4.1000 ZM2.500,4.1000 C1.119,4.1000 -0.000,3.881 -0.000,2.500 C-0.000,1.119 1.119,-0.000 2.500,-0.000 C3.881,-0.000 4.1000,1.119 4.1000,2.500 C4.1000,3.881 3.881,4.1000 2.500,4.1000 Z'/%3E%3C/svg%3E");
+        content: "";
+    }
+    .quick .close {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--color-main1);
+        position: relative;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        font-size: 0;
+        line-height: 0;
+    }
+    .quick .close::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 -960 960 960' width='24px' fill='%23fff'%3E%3Cpath d='m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z'/%3E%3C/svg%3E");
+        content: "";
+    }
+    .quick .quick_cont {
+        display: none;
+    }
+
+    .quick.open .open {
+        display: none;
+    }
+    .quick.open .close {
+        display: block;
+    }
+    .quick.open .quick_cont {
+        display: block;
+    }
+}
+@media screen and (max-width:1024px){
+    .quick {
+        bottom: 10px;
+    }
+    .quick .quick_cont ul li a,
+    .quick .quick_cont ul li button {
+        width: 60px;
+        height: 60px;
+        font-size: 0.9rem;
+        padding-top: 29px;
+    }
+    .quick .quick_cont ul li.q03 a {
+        padding-top: 35px;
+    }
+    .quick .quick_cont ul li.q04 button {
+        padding-top: 22px;
+    }
+    .quick .quick_cont ul li a::before, 
+    .quick .quick_cont ul li button::before {
+        top: 7px;
+        height: 20px;
+    }
+    .quick .quick_cont ul li.q03 a::before {
+        top: 13px;
+    }
+    .quick .quick_cont ul li.q04 button::before {
+        top: 13px;
+    }
+    .quick .open {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8rem;
+    }
+    .quick .open::before {
+        top: 20px;
+    }
+    .quick .close {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+footer {
+    margin: 115px 0 0 0;
+    background-color: #f8f5ee;
+    padding: 30px 0 70px 0;
+}
+footer .footer_sub {
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+footer .f_sns ul {
+    display: flex;
+    justify-content: center;
+}
+footer .f_sns ul li {
+    margin: 0 3px;
+}
+footer .f_sns ul li a {
+    display: block;
+    padding: 10px 15px 10px 40px;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 30px;
+}
+footer .f_sns ul li a::before {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    content: "";
+}
+
+footer .f_sns ul li.facebook a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='37' height='37' viewBox='0 0 37 37' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.94 36.07H20.83L18.04 35.15L15.27 36.07H9.13C4.09 36.07 0 31.98 0 26.94V9.13C0 4.09 4.09 0 9.13 0H26.94C31.98 0 36.07 4.09 36.07 9.13V26.94C36.07 31.98 31.98 36.07 26.94 36.07Z' fill='%23337FFF'/%3E%3Cpath d='M15.25 14.1097V18.0297H10.73V23.1797H15.25V36.0597H20.82V23.1797H24.97L25.76 18.0297H20.82V14.6897C20.82 13.2797 21.51 11.9097 23.72 11.9097H25.97V7.52969C25.97 7.52969 23.93 7.17969 21.98 7.17969C17.91 7.17969 15.25 9.64969 15.25 14.1097Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+footer .f_sns ul li.insta a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M27.2399 6.34961C26.0899 6.34961 25.1499 7.28961 25.1499 8.43961C25.1499 9.58961 26.0899 10.5296 27.2399 10.5296C28.3899 10.5296 29.3299 9.58961 29.3299 8.43961C29.3299 7.28961 28.3899 6.34961 27.2399 6.34961Z' fill='url(%23paint0_linear_257_235)'/%3E%3Cpath d='M17.95 9.03027C13.11 9.03027 9.17993 12.9703 9.17993 17.8003C9.17993 22.6303 13.12 26.5703 17.95 26.5703C22.78 26.5703 26.7199 22.6303 26.7199 17.8003C26.7199 12.9703 22.78 9.03027 17.95 9.03027ZM17.95 23.4303C14.85 23.4303 12.3299 20.9103 12.3299 17.8103C12.3299 14.7103 14.85 12.1903 17.95 12.1903C21.05 12.1903 23.5699 14.7103 23.5699 17.8103C23.5699 20.9103 21.05 23.4303 17.95 23.4303Z' fill='url(%23paint1_linear_257_235)'/%3E%3Cpath d='M24.92 35.62H10.7C4.80001 35.62 0 30.82 0 24.92V10.7C0 4.8 4.80001 0 10.7 0H24.92C30.82 0 35.62 4.8 35.62 10.7V24.92C35.62 30.82 30.82 35.62 24.92 35.62ZM10.69 3.34C6.64 3.34 3.34 6.64 3.34 10.69V24.91C3.34 28.96 6.64 32.26 10.69 32.26H24.91C28.96 32.26 32.26 28.96 32.26 24.91V10.69C32.26 6.64 28.96 3.34 24.91 3.34H10.69Z' fill='url(%23paint2_linear_257_235)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_257_235' x1='10.9199' y1='-7.18037' x2='43.2299' y2='23.7496' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FBE18A'/%3E%3Cstop offset='0.21' stop-color='%23FCBB45'/%3E%3Cstop offset='0.38' stop-color='%23F75274'/%3E%3Cstop offset='0.52' stop-color='%23D53692'/%3E%3Cstop offset='0.74' stop-color='%238F39CE'/%3E%3Cstop offset='1' stop-color='%235B4FE9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_257_235' x1='1.79993' y1='2.35027' x2='34.1099' y2='33.2703' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FBE18A'/%3E%3Cstop offset='0.21' stop-color='%23FCBB45'/%3E%3Cstop offset='0.38' stop-color='%23F75274'/%3E%3Cstop offset='0.52' stop-color='%23D53692'/%3E%3Cstop offset='0.74' stop-color='%238F39CE'/%3E%3Cstop offset='1' stop-color='%235B4FE9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint2_linear_257_235' x1='1.73' y1='2.42' x2='34.04' y2='33.34' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FBE18A'/%3E%3Cstop offset='0.21' stop-color='%23FCBB45'/%3E%3Cstop offset='0.38' stop-color='%23F75274'/%3E%3Cstop offset='0.52' stop-color='%23D53692'/%3E%3Cstop offset='0.74' stop-color='%238F39CE'/%3E%3Cstop offset='1' stop-color='%235B4FE9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+footer .f_sns ul li.youtube a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='38' height='27' viewBox='0 0 38 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M37.16 8.85989C37.16 4.46989 33.6 0.919922 29.22 0.919922H8.90997C4.51997 0.919922 0.969971 4.47989 0.969971 8.85989V18.3099C0.969971 22.6999 4.52997 26.2499 8.90997 26.2499H29.22C33.61 26.2499 37.16 22.6899 37.16 18.3099V8.85989ZM25.21 14.2899L16.1 18.7999C15.74 18.9899 14.53 18.7299 14.53 18.3299V9.0799C14.53 8.6699 15.75 8.40989 16.11 8.60989L24.83 13.3499C25.2 13.5599 25.58 14.0899 25.21 14.2899Z' fill='%23FF0000'/%3E%3C/svg%3E%0A");
+}
+footer .f_nav {
+    margin: 18px 0 25px 0;
+}
+footer .f_nav ul {
+    display: flex;
+    justify-content: center;
+}
+footer .f_nav ul li {
+    margin: 0 20px;
+    position: relative;
+    text-align: center;
+}
+footer .f_nav ul li::after {
+    position: absolute;
+    top: 10px;
+    right: -21px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.2);
+    content: "";
+}
+footer .f_nav ul li:last-child::after {
+    display: none; /* 숨김 */
+}
+footer .f_info {
+    margin: 50px 0 30px 0;
+    text-align: center;
+}
+footer .f_info span, 
+footer .f_info address {
+    display: inline-block;
+    margin: 0 11px 5px 11px;
+}
+footer .copyright {
+    text-align: center;
+    color: #666;
+}
+
+@media screen and (max-width:1300px){
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:1024px){
+    footer {
+        margin: 50px 0 0 0;
+        padding: 30px 0 50px 0;
+    }
+    footer .footer_sub {
+        border: 0;
+    }
+    footer .f_sns ul li a {
+        font-size: 0;
+        line-height: 0;
+        padding: 0;
+        border: 0;
+        width: 30px;
+        height: 30px;
+    }
+    footer .f_sns ul li a::before {
+        left: 0;
+        top: 0;
+    }
+    footer .f_nav {
+        margin: 20px 0 40px 0;
+    }
+    footer .f_nav ul {
+        flex-wrap: wrap; /* 2줄 허용 */
+        border-width: 1px 0 0 1px;
+        border-color: rgba(0,0,0,0.1);
+        border-style: solid;
+    }
+    footer .f_nav ul li {
+        margin: 0;
+        width: 25%;
+        border-width: 0 1px 1px 0;
+        border-color: rgba(0,0,0,0.1);
+        border-style: solid;
+    }
+    footer .f_nav ul li a {
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+    }
+    footer .f_nav ul li::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width:640px){
+    footer .f_nav ul li {
+        width: 50%;
+    }
+}
