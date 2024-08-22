@@ -1,0 +1,67 @@
+@import url(default.css);
+@import url(fonts.css);
+@import url(common.css);
+@import url(layout.css);
+
+/* 플러그인을 사용할때 이미 적용되어있는 CSS를 변경하려면
+    1.동일한 선택자의 앞에 body 선택자 추가 하는방법
+    2.!important를 사용하여 최우선순위로 변경
+*/
+
+body #fp-nav.fp-left{
+    left: 4%;
+}
+body #fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin-bottom: 30px;
+}
+body #fp-nav ul li .fp-tooltip {
+    display: none;
+}
+body #fp-nav ul li a {
+    width: auto;
+    height: auto;
+}
+body#fp-nav ul li a.active span,
+body#fp-nav ul li a span {
+    height: auto;
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+}
+body #fp-nav ul li a span {
+    position: relative;
+    z-index: 1;
+    border: 0;
+    background: transparent;
+    left: auto;
+    top: auto;
+    margin: 0;
+}
+body #fp-nav.fp-sr-only {
+    padding: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+}
+.section {
+    text-align: center;
+    font-size: 40px;
+}
+.visual {
+    background-color: #5f5f5f;
+}
+.tree {
+    background-color: var(--color-main2);
+}
+.relife {
+    background-color: var(--color-main1);
+}
+.story {
+    background-color: #4BA4FE;
+}
+footer {
+    background-color: #ededed;
+    height: 500px;
+}

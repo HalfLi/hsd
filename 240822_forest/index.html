@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/fullpage.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>생명의 숲</title>
+</head>
+<body>
+    <div class="skip_nav">
+        <a href="#skip_contents">본문 바로가기</a>
+        <a href="#skip_menu">대메뉴 바로가기</a>
+    </div>
+    <header> <!-- header는 기본 흰색, dark 클래스 추가되면 검은색-->
+        <h1 class="logo"><a href="index.html">생명의숲</a></h1>
+        <nav class="gnb">
+            <button class="gnb_open">메뉴열기</button>
+            <div class="gnb_wrap">
+                <ul class="depth1">
+                    <li><a href="#n"><span>소개</span></a></li>
+                    <li><a href="#n"><span>활동</span></a></li>
+                    <li><a href="#n"><span>참여와후원</span></a></li>
+                    <li><a href="#n"><span>자료실</span></a></li>
+                    <li><a href="#n"><span>나의후원</span></a></li>
+                </ul>
+            </div>
+            <button class="gnb_close">메뉴닫기</button>
+        </nav>
+        <div class="tnb">
+            <a href="#n" class="global">EN</a>
+            <a href="#n" class="search">검색페이지 이동</a>
+        </div>
+    </header>
+    <div id="fullpage">
+        <section class="section visual fp-auto-height-responsive">
+            테스트1
+        </section>
+        <section class="section tree fp-auto-height-responsive">
+            TEST2
+        </section>
+        <section class="section relife fp-auto-height-responsive">
+            테스트3
+        </section>
+        <section class="section story fp-auto-height-responsive">
+            TEST4
+        </section>
+        <footer class="section fp-auto-height fp-auto-height-responsive">
+            Footer
+        </footer>
+    </div>
+</body>
+</html>
