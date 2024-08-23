@@ -8,59 +8,250 @@
     2.!important를 사용하여 최우선순위로 변경
 */
 
-body #fp-nav.fp-left{
-    left: 4%;
+.side_nav {
+    position: fixed;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    line-height: 2.6;
+    font-size: 16px;
 }
-body #fp-nav ul li {
-    width: auto;
-    height: auto;
-    margin-bottom: 30px;
-}
-body #fp-nav ul li .fp-tooltip {
-    display: none;
-}
-body #fp-nav ul li a {
-    width: auto;
-    height: auto;
-}
-body#fp-nav ul li a.active span,
-body#fp-nav ul li a span {
-    height: auto;
-    width: auto;
-    margin: 0;
-    border-radius: 0;
-}
-body #fp-nav ul li a span {
+.side_nav li a {
+    display: block;
+    padding-left: 10px;
     position: relative;
-    z-index: 1;
-    border: 0;
-    background: transparent;
-    left: auto;
-    top: auto;
-    margin: 0;
-}
-body #fp-nav.fp-sr-only {
-    padding: 0;
-    overflow: visible;
-    clip: auto;
+    color: rgba(255,255,255,0.1);
     white-space: nowrap;
 }
-.section {
-    text-align: center;
-    font-size: 40px;
+.side_nav li a::before {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    left: -10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='4.5' stroke='white' stroke-opacity='0.3'/%3E%3C/svg%3E%0A");
 }
-.visual {
-    background-color: #5f5f5f;
+.side_nav li.active a,
+.side_nav li a:hover{
+    color: #fff;
+    font-weight: 700;
+}
+.side_nav.dark li a {
+    color: #936037;
+}
+.side_nav.dark li.active a,
+.side_nav.dark li a:hover {
+    color: #936037;
+}
+.side_nav.dark li a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='4.5' stroke='%23936037' stroke-opacity='0.3'/%3E%3C/svg%3E ");
+}
+.side_nav li.active a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='5' fill='%23D9D9D9'/%3E%3C/svg%3E ");
+}
+.side_nav.dark li.active a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='5' fill='%23936037'/%3E%3Ccircle cx='5' cy='5' r='4.5' stroke='%23936037' stroke-opacity='0.3'/%3E%3C/svg%3E ");
+}
+/* .side_nav li a::after {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    left: -6px;
+    top: 0;
+    background-color: rgba(255,255,255,0.3);
+    content: "";
+}
+.side_nav li:first-child a::after {
+    top: 18px;
+    height: calc(100% - 18px);
+}
+.side_nav li:last-child a::after {
+    height: 18px
+} ------------ aside 선 */
+
+.side_quick {
+    position: fixed;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+    font-size: 14px;
+    color: #fff;
+}
+.side_quick ul li {
+    margin-bottom: 17px;
+}
+.side_quick ul li a {
+    display: block;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: #91AD9E;
+    padding-top: 54px;
+    text-align: center;
+    position: relative;
+}
+.side_quick ul li button {
+    display: block;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-color: #4D7058;
+    padding-top: 50px;
+    text-align: center;
+    position: relative;
+}
+.side_quick ul li a::before,
+.side_quick ul li button::before {
+    position: absolute;
+    left: 0;
+    top: 13px;
+    width: 100%;
+    height: 35px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+}
+.side_quick ul li.mytree a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='34' viewBox='0 0 30 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.25 33.3333H11.75V26.6667H0L6.66667 16.6667H3.33333L15 0L26.6667 16.6667H23.3333L30 26.6667H18.25V33.3333ZM6.25 23.3333H12.9167H9.75H20.25H17.0833H23.75H6.25ZM6.25 23.3333H23.75L17.0833 13.3333H20.25L15 5.83333L9.75 13.3333H12.9167L6.25 23.3333Z' fill='white'/%3E%3C/svg%3E ");
+}
+.side_quick ul li.with a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='34' viewBox='0 0 27 34' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.8125 30.375V23.625H8.4375C6.10313 23.625 4.11328 22.8023 2.46797 21.157C0.822656 19.5117 0 17.5219 0 15.1875C0 13.5 0.464063 11.9461 1.39219 10.5258C2.32031 9.10547 3.57188 8.07188 5.14687 7.425C5.4 5.31563 6.32109 3.55078 7.91016 2.13047C9.49922 0.710156 11.3625 0 13.5 0C15.6375 0 17.5008 0.710156 19.0898 2.13047C20.6789 3.55078 21.6 5.31563 21.8531 7.425C23.4281 8.07188 24.6797 9.10547 25.6078 10.5258C26.5359 11.9461 27 13.5 27 15.1875C27 17.5219 26.1773 19.5117 24.532 21.157C22.8867 22.8023 20.8969 23.625 18.5625 23.625H15.1875V30.375H23.625C24.1031 30.375 24.5039 30.5367 24.8273 30.8602C25.1508 31.1836 25.3125 31.5844 25.3125 32.0625C25.3125 32.5406 25.1508 32.9414 24.8273 33.2648C24.5039 33.5883 24.1031 33.75 23.625 33.75H3.375C2.89688 33.75 2.49609 33.5883 2.17266 33.2648C1.84922 32.9414 1.6875 32.5406 1.6875 32.0625C1.6875 31.5844 1.84922 31.1836 2.17266 30.8602C2.49609 30.5367 2.89688 30.375 3.375 30.375H11.8125ZM8.4375 20.25H18.5625C19.9688 20.25 21.1641 19.7578 22.1484 18.7734C23.1328 17.7891 23.625 16.5938 23.625 15.1875C23.625 14.175 23.3367 13.2469 22.7602 12.4031C22.1836 11.5594 21.4312 10.9406 20.5031 10.5469L18.7313 9.7875L18.4781 7.84688C18.3094 6.58125 17.7539 5.51953 16.8117 4.66172C15.8695 3.80391 14.7656 3.375 13.5 3.375C12.2344 3.375 11.1305 3.80391 10.1883 4.66172C9.24609 5.51953 8.69063 6.58125 8.52188 7.84688L8.26875 9.7875L6.49688 10.5469C5.56875 10.9406 4.81641 11.5594 4.23984 12.4031C3.66328 13.2469 3.375 14.175 3.375 15.1875C3.375 16.5938 3.86719 17.7891 4.85156 18.7734C5.83594 19.7578 7.03125 20.25 8.4375 20.25Z' fill='white'/%3E%3C/svg%3E ");
+}
+.side_quick ul li.done a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.5 26.2857L27 23.6429C26.881 23.4286 26.7083 23.244 26.4821 23.0893C26.256 22.9345 26 22.8571 25.7143 22.8571H18.5C17.8571 22.8571 17.3452 22.8333 16.9643 22.7857C16.5833 22.7381 16.1905 22.6429 15.7857 22.5L13.75 21.8214C13.369 21.7024 13.0952 21.4643 12.9286 21.1071C12.7619 20.75 12.7381 20.381 12.8571 20C12.9762 19.619 13.2083 19.3393 13.5536 19.1607C13.8988 18.9821 14.2619 18.9524 14.6429 19.0714L16.1429 19.5714C16.5476 19.6905 17.006 19.7857 17.5179 19.8571C18.0298 19.9286 18.7262 19.9762 19.6071 20H20C20 19.7381 19.9226 19.4881 19.7679 19.25C19.6131 19.0119 19.4286 18.8571 19.2143 18.7857L10.8571 15.7143H8.57143V23.5714L18.5 26.2857ZM17.75 29.0714L8.57143 26.5C8.38095 27.119 8.00595 27.619 7.44643 28C6.88691 28.381 6.30952 28.5714 5.71429 28.5714H2.85714C2.07143 28.5714 1.39881 28.2917 0.839286 27.7321C0.279762 27.1726 0 26.5 0 25.7143V15.7143C0 14.9286 0.279762 14.256 0.839286 13.6964C1.39881 13.1369 2.07143 12.8571 2.85714 12.8571H10.8571C11.0238 12.8571 11.1905 12.875 11.3571 12.9107C11.5238 12.9464 11.6786 12.9881 11.8214 13.0357L20.2143 16.1429C21 16.4286 21.6369 16.9286 22.125 17.6429C22.6131 18.3571 22.8571 19.1429 22.8571 20H25.7143C26.9048 20 27.9167 20.3929 28.75 21.1786C29.5833 21.9643 30 23 30 24.2857C30 24.8095 29.8631 25.2202 29.5893 25.5179C29.3155 25.8155 28.8929 26.0595 28.3214 26.25L19.3929 29.0357C19.131 29.131 18.8571 29.1786 18.5714 29.1786C18.2857 29.1786 18.0119 29.1429 17.75 29.0714ZM2.85714 25.7143H5.71429V15.7143H2.85714V25.7143ZM21.4286 14.5714C21.0714 14.5714 20.7202 14.506 20.375 14.375C20.0298 14.244 19.7143 14.0476 19.4286 13.7857L15.5 9.92857C14.7619 9.21429 14.1369 8.42262 13.625 7.55357C13.1131 6.68452 12.8571 5.7381 12.8571 4.71429C12.8571 3.40476 13.3155 2.29167 14.2321 1.375C15.1488 0.458333 16.2619 0 17.5714 0C18.3333 0 19.0476 0.160714 19.7143 0.482143C20.381 0.803571 20.9524 1.2381 21.4286 1.78571C21.9048 1.2381 22.4762 0.803571 23.1429 0.482143C23.8095 0.160714 24.5238 0 25.2857 0C26.5952 0 27.7083 0.458333 28.625 1.375C29.5417 2.29167 30 3.40476 30 4.71429C30 5.7381 29.75 6.68452 29.25 7.55357C28.75 8.42262 28.131 9.21429 27.3929 9.92857L23.4286 13.7857C23.1429 14.0476 22.8274 14.244 22.4821 14.375C22.1369 14.506 21.7857 14.5714 21.4286 14.5714ZM21.4286 11.7143L25.3214 7.89286C25.7738 7.44048 26.1905 6.95833 26.5714 6.44643C26.9524 5.93452 27.1429 5.35714 27.1429 4.71429C27.1429 4.19048 26.9643 3.75 26.6071 3.39286C26.25 3.03571 25.8095 2.85714 25.2857 2.85714C24.9524 2.85714 24.6369 2.92262 24.3393 3.05357C24.0417 3.18452 23.7857 3.38095 23.5714 3.64286L22.5357 4.89286C22.25 5.22619 21.881 5.39286 21.4286 5.39286C20.9762 5.39286 20.6071 5.22619 20.3214 4.89286L19.2857 3.64286C19.0714 3.38095 18.8155 3.18452 18.5179 3.05357C18.2202 2.92262 17.9048 2.85714 17.5714 2.85714C17.0476 2.85714 16.6071 3.03571 16.25 3.39286C15.8929 3.75 15.7143 4.19048 15.7143 4.71429C15.7143 5.35714 15.9048 5.93452 16.2857 6.44643C16.6667 6.95833 17.0833 7.44048 17.5357 7.89286L21.4286 11.7143Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.side_quick ul li.treeworld a::before {
+    left: 30%;
+    width: 34px;
+    background-image: url("data:image/svg+xml,%3Csvg width='34' height='24' viewBox='0 0 34 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 18.5455C9.71061 18.5455 10.889 18.6807 12.0352 18.9511C13.1814 19.2216 14.3212 19.6273 15.4545 20.1682V4.94546C14.3985 4.32727 13.278 3.86364 12.0932 3.55455C10.9083 3.24545 9.71061 3.09091 8.5 3.09091C7.57273 3.09091 6.65189 3.18106 5.7375 3.36136C4.82311 3.54167 3.94091 3.81212 3.09091 4.17273V19.4727C3.99242 19.1636 4.8875 18.9318 5.77614 18.7773C6.66477 18.6227 7.57273 18.5455 8.5 18.5455ZM18.5455 20.1682C19.6788 19.6273 20.8186 19.2216 21.9648 18.9511C23.111 18.6807 24.2894 18.5455 25.5 18.5455C26.4273 18.5455 27.3352 18.6227 28.2239 18.7773C29.1125 18.9318 30.0076 19.1636 30.9091 19.4727V4.17273C30.0591 3.81212 29.1769 3.54167 28.2625 3.36136C27.3481 3.18106 26.4273 3.09091 25.5 3.09091C24.2894 3.09091 23.0917 3.24545 21.9068 3.55455C20.722 3.86364 19.6015 4.32727 18.5455 4.94546V20.1682ZM17 23.9159C16.6394 23.9159 16.2981 23.8708 15.9761 23.7807C15.6542 23.6905 15.3515 23.5682 15.0682 23.4136C14.0636 22.8212 13.0076 22.3769 11.9 22.0807C10.7924 21.7845 9.65909 21.6364 8.5 21.6364C7.41818 21.6364 6.35568 21.778 5.3125 22.0614C4.26932 22.3447 3.27121 22.7439 2.31818 23.2591C1.77727 23.5424 1.25568 23.5295 0.753409 23.2205C0.251136 22.9114 0 22.4606 0 21.8682V3.24545C0 2.96212 0.0708333 2.69167 0.2125 2.43409C0.354167 2.17652 0.566667 1.98333 0.85 1.85455C2.03485 1.23636 3.27121 0.772727 4.55909 0.463636C5.84697 0.154545 7.16061 0 8.5 0C9.99394 0 11.4557 0.193182 12.8852 0.579545C14.3148 0.965909 15.6864 1.54545 17 2.31818C18.3136 1.54545 19.6852 0.965909 21.1148 0.579545C22.5443 0.193182 24.0061 0 25.5 0C26.8394 0 28.153 0.154545 29.4409 0.463636C30.7288 0.772727 31.9652 1.23636 33.15 1.85455C33.4333 1.98333 33.6458 2.17652 33.7875 2.43409C33.9292 2.69167 34 2.96212 34 3.24545V21.8682C34 22.4606 33.7489 22.9114 33.2466 23.2205C32.7443 23.5295 32.2227 23.5424 31.6818 23.2591C30.7288 22.7439 29.7307 22.3447 28.6875 22.0614C27.6443 21.778 26.5818 21.6364 25.5 21.6364C24.3409 21.6364 23.2076 21.7845 22.1 22.0807C20.9924 22.3769 19.9364 22.8212 18.9318 23.4136C18.6485 23.5682 18.3458 23.6905 18.0239 23.7807C17.7019 23.8708 17.3606 23.9159 17 23.9159ZM20.0909 7.37955C20.0909 7.14773 20.1746 6.90947 20.342 6.66477C20.5095 6.42008 20.6962 6.25909 20.9023 6.18182C21.6492 5.92424 22.3962 5.73106 23.1432 5.60227C23.8902 5.47349 24.6758 5.40909 25.5 5.40909C26.0152 5.40909 26.5239 5.44129 27.0261 5.50568C27.5284 5.57008 28.0242 5.65379 28.5136 5.75682C28.7455 5.80833 28.9451 5.93712 29.1125 6.14318C29.2799 6.34924 29.3636 6.58106 29.3636 6.83864C29.3636 7.27652 29.222 7.59849 28.9386 7.80455C28.6553 8.01061 28.2947 8.06212 27.8568 7.95909C27.4962 7.88182 27.1163 7.82386 26.717 7.78523C26.3178 7.74659 25.9121 7.72727 25.5 7.72727C24.8303 7.72727 24.1735 7.79167 23.5295 7.92046C22.8856 8.04924 22.2674 8.21667 21.675 8.42273C21.2114 8.60303 20.8314 8.59015 20.5352 8.38409C20.239 8.17803 20.0909 7.84318 20.0909 7.37955ZM20.0909 15.8795C20.0909 15.6477 20.1746 15.4095 20.342 15.1648C20.5095 14.9201 20.6962 14.7591 20.9023 14.6818C21.6492 14.4242 22.3962 14.2311 23.1432 14.1023C23.8902 13.9735 24.6758 13.9091 25.5 13.9091C26.0152 13.9091 26.5239 13.9413 27.0261 14.0057C27.5284 14.0701 28.0242 14.1538 28.5136 14.2568C28.7455 14.3083 28.9451 14.4371 29.1125 14.6432C29.2799 14.8492 29.3636 15.0811 29.3636 15.3386C29.3636 15.7765 29.222 16.0985 28.9386 16.3045C28.6553 16.5106 28.2947 16.5621 27.8568 16.4591C27.4962 16.3818 27.1163 16.3239 26.717 16.2852C26.3178 16.2466 25.9121 16.2273 25.5 16.2273C24.8303 16.2273 24.1735 16.2852 23.5295 16.4011C22.8856 16.517 22.2674 16.678 21.675 16.8841C21.2114 17.0644 20.8314 17.058 20.5352 16.8648C20.239 16.6716 20.0909 16.3432 20.0909 15.8795ZM20.0909 11.6295C20.0909 11.3977 20.1746 11.1595 20.342 10.9148C20.5095 10.6701 20.6962 10.5091 20.9023 10.4318C21.6492 10.1742 22.3962 9.98106 23.1432 9.85227C23.8902 9.72349 24.6758 9.65909 25.5 9.65909C26.0152 9.65909 26.5239 9.69129 27.0261 9.75568C27.5284 9.82008 28.0242 9.90379 28.5136 10.0068C28.7455 10.0583 28.9451 10.1871 29.1125 10.3932C29.2799 10.5992 29.3636 10.8311 29.3636 11.0886C29.3636 11.5265 29.222 11.8485 28.9386 12.0545C28.6553 12.2606 28.2947 12.3121 27.8568 12.2091C27.4962 12.1318 27.1163 12.0739 26.717 12.0352C26.3178 11.9966 25.9121 11.9773 25.5 11.9773C24.8303 11.9773 24.1735 12.0417 23.5295 12.1705C22.8856 12.2992 22.2674 12.4667 21.675 12.6727C21.2114 12.853 20.8314 12.8402 20.5352 12.6341C20.239 12.428 20.0909 12.0932 20.0909 11.6295Z' fill='white'/%3E%3C/svg%3E ");
+}
+.side_quick ul li button::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='31' viewBox='0 0 27 31' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 3.375V0H27V3.375H0ZM11.8125 30.375V13.1625L7.425 17.55L5.0625 15.1875L13.5 6.75L21.9375 15.1875L19.575 17.55L15.1875 13.1625V30.375H11.8125Z' fill='white'/%3E%3C/svg%3E ");
+}
+
+.visual h2 {
+    display: none;
+}
+.visual .swiper {
+    width: 100vw;
+    height: 100vh;
+}
+.visual .swiper .swiper-slide {
+    height: 100vh;
+    background: url(../images/main/visual_popup1.png) no-repeat center center / cover;
+    text-align: center;
+    color: #fff;
+}
+.visual .swiper .swiper-slide.popup1 {
+    background-image: url(../images/main/visual_popup1.png);
+}
+.visual .swiper .swiper-slide.popup2 {
+    background-image: url(../images/main/visual_popup2.png);
+}
+.visual .swiper .swiper-slide.popup3 {
+    background-image: url(../images/main/visual_popup3.png);
+}
+.visual .swiper .swiper-slide .inner {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.visual .swiper .swiper-slide .inner h3 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+.visual .swiper .swiper-slide .inner p {
+    font-size: 20px;
+}
+.visual .swiper .paging {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+}
+.visual .swiper .paging .item {
+    width: 33.3%;
+    height: 55px;
+    color: #fff;
+    line-height: 1.8;
+    font-size: 20px;
+    margin: 0;
+    display: block;
+    border-radius: 0;
+    background-color: transparent;
+    opacity: 1;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+.visual .swiper .paging .item.swiper-pagination-bullets-active,
+.visual .swiper .paging .item:hover {
+    background-color: #80B156;
+}
+.visual .swiper .paging .item .text1::before {
+    content: "생명의 숲";
+}
+.visual .swiper .paging .item .text2::before {
+    content: "그린짐 프로그램";
+}
+.visual .swiper .paging .item .text3::before {
+    content: "내 나무 갖기";
 }
 .tree {
-    background-color: var(--color-main2);
+
 }
 .relife {
-    background-color: var(--color-main1);
+
 }
 .story {
-    background-color: #4BA4FE;
+
 }
+@media screen and (max-width:1000px){
+    .side_nav {
+        display: none;
+    }
+    .side_quick {
+        display: none;
+    }
+    .visual .swiper {
+        height: 600px;
+    }
+    .visual .swiper .swiper-slide .inner h3 {
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+    .visual .swiper .swiper-slide .inner p {
+        font-size: 13px;
+    }
+    .visual .swiper .paging {
+        bottom: 24px;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .visual .swiper .paging .item {
+        width: 20px;
+        height: 8px;
+        border-radius: 30px;
+        background-color: rgba(255,255,255,0.4);
+        margin: 0 , 5px;
+    }
+    .visual .swiper .paging .item.swiper-pagination-bullets-active,
+    .visual .swiper .paging .item:hover {
+        background-color: #80B156;
+    }
+}
+    
+
 footer {
     background-color: #ededed;
     height: 500px;

@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/fullpage.min.js"></script>
-    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/fullpage.css">
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <title>생명의 숲</title>
 </head>
@@ -35,9 +37,50 @@
             <a href="#n" class="search">검색페이지 이동</a>
         </div>
     </header>
+    <aside class="side_nav"> <!-- header dark클래스 되는 부분처럼 dark 추가 -->
+        <ul> <!-- 현재 선택된 section은 active 클래스 -->
+            <li class="active"><a href="#visual">Main</a></li>
+            <li><a href="#tree">심은 나무</a></li>
+            <li><a href="#relife">활동소개</a></li>
+            <li><a href="#story">활동이야기</a></li>
+        </ul>
+    </aside>
+    <aside class="side_quick">
+        <ul>
+            <li class="mytree"><a href="#n"><span>마이트리</span></a></li>
+            <li class="with"><a href="#n"><span>같이가치</span></a></li>
+            <li class="done"><a href="#n"><span>후원하기</span></a></li>
+            <li class="treeworld"><a href="#n"><span>나무세상</span></a></li>
+            <li class="top"><button><span>TOP</span></button></li>
+        </ul>
+    </aside>
     <div id="fullpage">
         <section class="section visual fp-auto-height-responsive">
-            테스트1
+            <h2>팝업</h2>
+            <div class="swiper"> 
+                <ul class="swiper-wrapper"> 
+                    <li class="swiper-slide popup1">
+                        <div class="inner">    
+                            <h3>누구나 일상에서 건강 숲을 누리도록</h3>
+                            <p>생명의숲이 시민의 힘으로 만들어 갑니다.</p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide popup2">
+                        <div class="inner">
+                            <h3>숲 활동을 통한 몸과 마음의 치유</h3>
+                            <p>그린짐은 몸과 마음을 건강하게 합니다<br>
+                                우리 지역사회와 자연환경을 건강하게 합니다</p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide popup3">
+                        <div class="inner">
+                            <h3>특별한 날을 기념하는 새로운 방법</h3>
+                            <p>기념하고 싶은 날! 서울 곳곳에 나무 한 그루 심어보는 건 어떠세요?</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="paging"></div>
+            </div>
         </section>
         <section class="section tree fp-auto-height-responsive">
             TEST2
