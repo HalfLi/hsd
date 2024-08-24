@@ -183,7 +183,7 @@
     width: 33.3%;
     height: 55px;
     color: #fff;
-    line-height: 1.8;
+    line-height: 2.8;
     font-size: 20px;
     margin: 0;
     display: block;
@@ -192,8 +192,11 @@
     opacity: 1;
     text-align: center;
     backdrop-filter: blur(10px);
+    border-width: 1px 1px 0 0;
+    border-color: rgba(255,255,255,0.4);
+    border-style: solid;
 }
-.visual .swiper .paging .item.swiper-pagination-bullets-active,
+.visual .swiper .paging .item.swiper-pagination-bullet-active,
 .visual .swiper .paging .item:hover {
     background-color: #80B156;
 }
@@ -225,6 +228,9 @@
     .visual .swiper {
         height: 600px;
     }
+    .visual .swiper .swiper-slide {
+        height: 600px;
+    }
     .visual .swiper .swiper-slide .inner h3 {
         font-size: 35px;
         margin-bottom: 5px;
@@ -234,21 +240,28 @@
     }
     .visual .swiper .paging {
         bottom: 24px;
-        width: 50%;
+        width: auto;
         left: 50%;
         transform: translateX(-50%);
+    }
+    .visual .swiper .paging .item.swiper-pagination-bullet-active {
+        width: 50px;
     }
     .visual .swiper .paging .item {
         width: 20px;
         height: 8px;
         border-radius: 30px;
         background-color: rgba(255,255,255,0.4);
-        margin: 0 , 5px;
+        margin: 0px 10px 0 0;
     }
     .visual .swiper .paging .item.swiper-pagination-bullets-active,
     .visual .swiper .paging .item:hover {
         background-color: #80B156;
     }
+    .visual .swiper .paging .item span {
+        display: none;
+    }
+   
 }
     
 

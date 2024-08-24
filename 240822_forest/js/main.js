@@ -42,7 +42,7 @@ $(document).ready(function(){
 			el: '.visual .paging', /* 해당 요소의 class명 */
 			clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
 			renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-				return '<div class="item '+className+'"><span class="text' + (index + 1) + '</span></div>';
+				return '<div class="item '+className+'"><span class="text' + (index + 1) + '"></span></div>';
 			},
 		},
 	}); // swiper 
