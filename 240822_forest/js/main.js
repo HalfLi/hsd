@@ -25,8 +25,11 @@ $(document).ready(function(){
       		}
 			$('.side_nav ul li').removeClass('active')
 			$('.side_nav ul li').eq(destination.index).addClass('active')
+			if(destination.index == 1){ // 1번 풀페이지 (2번째 섹션)이 실행될때...
+				$('.tree .count .counter').counterUp(); 
+			}
 		},
-		responsiveWidth: 1000 /* fullpage를 적용시키지 않을 모바일 사이즈 */
+		responsiveWidth: 1001 /* fullpage를 적용시키지 않을 모바일 사이즈 */
 	}); // fullpage
 	
 	const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -45,5 +48,22 @@ $(document).ready(function(){
 				return '<div class="item '+className+'"><span class="text' + (index + 1) + '"></span></div>';
 			},
 		},
-	}); // swiper 
+	}); // visual swiper 
+
+	const story_swiper = new Swiper('.story .swiper', { 
+		slidesPerView: "auto", 
+		spaceBetween: 16, 
+		breakpoints: {
+			1510: {  
+				slidesPerView: 4,
+				spaceBetween: 40,
+			},
+		},
+		centeredSlides: true, 
+		loop: true,  
+		autoplay: { 
+			delay: 10000,
+			disableOnInteraction: true,
+		},
+	}); // slide swiper
 })//$(document).ready

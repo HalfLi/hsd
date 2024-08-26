@@ -28,6 +28,11 @@ html, body {
 }
 /* 1260px 나의 wrapper의 넓이에 좌우 여백 20px씩 추가한 사이즈부터
    반응형 */
+@media screen and (max-width:1510px){
+    .wrapper {
+        width: auto;
+        margin: 0 170px; /* 좌우에 퀵메뉴 여백만큼 */
+}
 @media screen and (max-width:1300px){
     html, body {
         font-size: 15px;
@@ -35,14 +40,14 @@ html, body {
     #wrap {
         min-width: 100%;
     }
-    .wrapper {
-        width: auto;
-        margin: 0 20px; /* 좌우에 20px */
-    }
+}
 }/* media */
 @media screen and (max-width:1000px){ /* 모바일 반응형 */
     html, body {
         font-size: 13px;
+    }
+    .wrapper {
+        margin: 0 20px;
     }
 }/* media */
 
