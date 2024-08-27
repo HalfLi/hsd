@@ -5,7 +5,8 @@ $(document).ready(function(){
 		navigationPosition: 'left', /* 위치 */
 		navigationTooltips: ['Main', '심은 나무', '활동소개', '활동이야기'], /* 툴팁 */
 		showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
-
+		
+		lockAnchors: true,
 		anchors: ['visual', 'tree', 'relife', 'story', 'footer'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
 
 		autoScrolling:true, /* 한페이지씩 스크롤 */
@@ -51,19 +52,21 @@ $(document).ready(function(){
 	}); // visual swiper 
 
 	const story_swiper = new Swiper('.story .swiper', { 
-		slidesPerView: "auto", 
-		spaceBetween: 16, 
+		slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+		spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
 		breakpoints: {
-			1510: {  
+			700: {   /* 1024px 이상일때 적용 */
+				slidesPerView: 2,
+				spaceBetween: 40,
+			},
+			1024: {   /* 1024px 이상일때 적용 */
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+			1280: {    /* 1280px 이상일때 적용 */
 				slidesPerView: 4,
 				spaceBetween: 40,
 			},
-		},
-		centeredSlides: true, 
-		loop: true,  
-		autoplay: { 
-			delay: 10000,
-			disableOnInteraction: true,
 		},
 	}); // slide swiper
 })//$(document).ready
