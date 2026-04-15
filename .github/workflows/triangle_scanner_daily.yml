@@ -36,11 +36,18 @@ jobs:
             --max-tickers 1000 \
             --output-dir triangle_scanner_webapp/reports
 
+      - name: Sync report files for web dashboard
+        run: |
+          mkdir -p docs/triangle-scanner/data
+          cp triangle_scanner_webapp/reports/latest_candidates.csv docs/triangle-scanner/data/latest_candidates.csv
+          cp triangle_scanner_webapp/reports/latest_candidates.json docs/triangle-scanner/data/latest_candidates.json
+          cp triangle_scanner_webapp/reports/latest_metadata.json docs/triangle-scanner/data/latest_metadata.json
+
       - name: Commit report artifacts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add triangle_scanner_webapp/reports
+          git add triangle_scanner_webapp/reports docs/triangle-scanner/data
           if git diff --cached --quiet; then
             echo "No report changes to commit"
             exit 0

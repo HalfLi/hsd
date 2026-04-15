@@ -21,6 +21,8 @@
   자동 생성 결과 저장 폴더
 - `../.github/workflows/triangle_scanner_daily.yml`  
   평일 자동 실행 워크플로
+- `../docs/triangle-scanner/index.html`  
+  브라우저에서 바로 보는 정적 대시보드 (GitHub Pages용)
 
 ## 로컬 실행 (웹앱)
 
@@ -53,7 +55,21 @@ python triangle_scanner_webapp/scripts/daily_triangle_report.py \
 `.github/workflows/triangle_scanner_daily.yml` 이 평일 18:10(KST)에 자동 실행됩니다.
 원하면 GitHub Actions에서 수동 실행(`workflow_dispatch`)도 가능합니다.
 
-자동 실행 시 리포트 파일이 저장소에 커밋됩니다.
+자동 실행 시 리포트 파일이 아래 경로에 커밋됩니다.
+
+- `triangle_scanner_webapp/reports/` (원본 산출물)
+- `docs/triangle-scanner/data/` (웹 대시보드용 데이터)
+
+## 웹으로 바로 보기 (간단 대시보드)
+
+`docs/triangle-scanner/index.html`은 `assetx2-dashboard`처럼 브라우저에서 바로 볼 수 있는 정적 페이지입니다.
+
+GitHub Pages를 켜면 아래 주소로 접속할 수 있습니다.
+
+1. GitHub 저장소 `Settings` → `Pages`
+2. Source: `Deploy from a branch`
+3. Branch: `main`, Folder: `/docs`
+4. 접속 URL: `https://<github-id>.github.io/<repo-name>/triangle-scanner/`
 
 ## 중요한 점
 
