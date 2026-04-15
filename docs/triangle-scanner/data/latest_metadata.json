@@ -1,0 +1,9 @@
+{
+  "generated_at_utc": null,
+  "generated_at_kst": null,
+  "market": "ALL",
+  "top_n": 30,
+  "max_tickers": 1000,
+  "count": 0,
+  "scan_error": "아직 workflow가 실행되지 않았습니다."
+}

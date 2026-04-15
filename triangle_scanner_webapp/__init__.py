@@ -1,0 +1,1 @@
+"""Triangle scanner package."""
