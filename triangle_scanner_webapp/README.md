@@ -6,8 +6,8 @@
 
 1. **로컬 Streamlit 웹앱**
    - 브라우저에서 직접 조건을 조절하며 스캔
-2. **GitHub Pages용 정적 대시보드 + GitHub Actions**
-   - 장 마감 후 자동으로 결과를 갱신하고, GitHub Pages에서 결과만 바로 확인
+2. **데일리 자동 리포트 생성기**
+   - GitHub Actions 또는 cron으로 매일 후보를 자동 생성
 
 ## 구성
 
@@ -15,41 +15,45 @@
   로컬에서 실행하는 Streamlit 앱
 - `triangle_scanner_krx.py`  
   패턴 스캐너 엔진
-- `scripts/export_triangle_results.py`  
-  정적 페이지에 뿌릴 JSON/CSV/차트 생성 스크립트
-- `../docs/triangle-scanner/`  
-  GitHub Pages에서 보게 될 정적 페이지
+- `scripts/daily_triangle_report.py`  
+  CSV / JSON / Markdown 데일리 리포트 생성 스크립트
+- `reports/`  
+  자동 생성 결과 저장 폴더
 - `../.github/workflows/triangle_scanner_daily.yml`  
-  매일 자동 스캔 워크플로
+  평일 자동 실행 워크플로
 
-## 로컬 실행
+## 로컬 실행 (웹앱)
 
 ```bash
 pip install -r triangle_scanner_webapp/requirements.txt
 streamlit run triangle_scanner_webapp/app.py
 ```
 
-## GitHub Pages로 보기
+## 로컬 실행 (데일리 리포트)
 
-이 리포에는 `docs/triangle-scanner/` 정적 페이지와 자동 갱신 워크플로가 포함되어 있습니다.
+```bash
+pip install -r triangle_scanner_webapp/requirements.txt
+pip install tabulate
+python triangle_scanner_webapp/scripts/daily_triangle_report.py \
+  --market ALL \
+  --top-n 30 \
+  --max-tickers 900 \
+  --output-dir triangle_scanner_webapp/reports
+```
 
-딱 한 번만 GitHub에서 아래를 켜면 됩니다.
+생성 파일 예시:
 
-1. **Settings**
-2. **Pages**
-3. **Build and deployment**
-4. Source: **Deploy from a branch**
-5. Branch: **main**
-6. Folder: **/docs**
+- `triangle_scanner_webapp/reports/latest_candidates.csv`
+- `triangle_scanner_webapp/reports/latest_candidates.json`
+- `triangle_scanner_webapp/reports/latest_report.md`
+- `triangle_scanner_webapp/reports/latest_metadata.json`
 
-그 다음 주소는 보통 이렇게 됩니다.
+## GitHub Actions 자동 갱신
 
-- `https://halfli.github.io/hsd/triangle-scanner/`
+`.github/workflows/triangle_scanner_daily.yml` 이 평일 18:10(KST)에 자동 실행됩니다.
+원하면 GitHub Actions에서 수동 실행(`workflow_dispatch`)도 가능합니다.
 
-## 자동 갱신
-
-`.github/workflows/triangle_scanner_daily.yml` 이 평일 장 마감 후 결과를 다시 생성합니다.
-원하면 GitHub Actions 화면에서 수동 실행도 가능합니다.
+자동 실행 시 리포트 파일이 저장소에 커밋됩니다.
 
 ## 중요한 점
 
